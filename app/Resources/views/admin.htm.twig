@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta NAME="ROBOTS" CONTENT="NOINDEX">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE"/>
+    <title>Karbon CMS Administration Panel</title>
+
+    <!-- icons -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="apple-touch-icon" sizes="57x57"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-57x57.png?2018062101">
+    <link rel="apple-touch-icon" sizes="60x60"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-60x60.png?2018062101">
+    <link rel="apple-touch-icon" sizes="72x72"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-72x72.png?2018062101">
+    <link rel="apple-touch-icon" sizes="76x76"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-76x76.png?2018062101">
+    <link rel="apple-touch-icon" sizes="114x114"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-114x114.png?2018062101">
+    <link rel="apple-touch-icon" sizes="120x120"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-120x120.png?2018062101">
+    <link rel="apple-touch-icon" sizes="144x144"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-144x144.png?2018062101">
+    <link rel="apple-touch-icon" sizes="152x152"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-152x152.png?2018062101">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-180x180.png?2018062101">
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.sirvoy.com/build/meta/favicon.ico?2018062101">
+    <link rel="icon" type="image/png" href="https://cdn.sirvoy.com/build/meta/favicon-32x32.png?2018062101"
+          sizes="32x32">
+    <link rel="icon" type="image/png" href="https://cdn.sirvoy.com/build/meta/android-chrome-192x192.png?2018062101"
+          sizes="192x192">
+    <link rel="icon" type="image/png" href="https://cdn.sirvoy.com/build/meta/favicon-96x96.png?2018062101"
+          sizes="96x96">
+    <link rel="icon" type="image/png" href="https://cdn.sirvoy.com/build/meta/favicon-16x16.png?2018062101"
+          sizes="16x16">
+    <link rel="manifest" href="https://cdn.sirvoy.com/build/meta/manifest.json?2018062101">
+    <meta name="apple-mobile-web-app-title" content="Sirvoy">
+    <meta name="application-name" content="Sirvoy">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://cdn.sirvoy.com/build/meta/mstile-144x144.png?2018062101">
+    <meta name="msapplication-config" content="https://cdn.sirvoy.com/build/meta/browserconfig.xml?2018062101">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('templates/karbon/css/fonts.css') }}" media="all">
+    <link rel="stylesheet" type="text/css" href="{{ asset('templates/karbon/css/backend.css') }}" media="all">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('templates/karbon/css/tamasha.css') }}" media="all">
+
+    <!-- javascripts -->
+    <script src="{{ asset('templates/karbon/js/hinclude.js') }}"></script>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="{{ asset('templates/karbon/js/jquery-jquery-ui.1.11.0.min.js') }}"></script>
+    <script src="{{ asset('templates/karbon/js/jquery.ui.touch-punch.min.js') }}"></script>
+    <script src="{{ asset('templates/karbon/js/sweetalert2.min.js') }}"></script>
+    <script src="{{ asset('templates/karbon/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('templates/karbon/js/lc_switch.min.js') }}"></script>
+    <script src="{{ asset('templates/karbon/js/flexmenu.min.js') }}"></script>
+    <script src="{{ asset('templates/karbon/js/tippy.all.min.js') }}"></script>
+    <script src="{{ asset('templates/karbon/js/jquery.ui.datepicker-en.js') }}"></script>
+    <script src="{{ asset('templates/karbon/js/select2.min.js') }}"></script>
+    <script src="{{ asset('templates/karbon/js/backend-functions.js') }}"></script>
+    <script src="{{ asset('templates/karbon/js/jquery.comiseo.daterangepicker.js') }}"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            $('.js-datepicker').datepicker(
+                {
+                    changeMonth: true,
+                    changeYear: true,
+                    dateFormat: 'yy-mm-dd',
+
+                }
+            );
+        });
+
+    </script>
+
+</head>
+
+<body class=" ">
+
+
+<header class="page-header">
+
+    <div class="mobile-bar">
+        <div class="inner">
+            <div id="logo">
+                <a href="#"><img src="{{ asset('logo.png') }}"/></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div id="menu_bar">
+        <div id="nav_inner">
+            <div id="logo">
+                <a href="#"><img src="{{ asset('logo.png') }}"/></a>
+            </div>
+            <div id="navigation">
+                {% if is_granted('ROLE_CAN_ADMINISTER') %}
+                    {% include 'nav/nav.htm.twig' %}
+                {% else %}
+                    {% include 'nav/home.html.twig' %}
+                {% endif %}
+            </div>
+            <div id="menu_user_wrapper">
+                <div id="profile_wrapper">
+                    <select id="profile_menu" onchange="profile_menu_action(this.value);">
+                        <option value="/user/profile">
+                            User Profile
+                        </option>
+                        <option value="https://sirvoy.com/support">
+                            Support
+                        </option>
+                        <option value="/logout">Logout</option>
+                    </select>
+                    <div class="nice-select " tabindex="0"><span class="current">
+                                    User Profile                                </span>
+                        <ul class="list">
+                            <li class="option selected" data-value="/user/profile">
+                                User Profile
+                            </li>
+                            <li class="option " data-value="https://sirvoy.com/support">
+                                Support
+                            </li>
+                            <li class="option " data-value="/logout">Logout</li>
+                        </ul>
+                    </div>
+                    <script>
+                        $(function () {
+                            $('#profile_menu').niceSelect();
+                        });
+
+                    </script>
+                </div>
+                <div class="user">
+                    <div class="username">{{ app.user.firstName }} {{ app.user.lastName }}</div>
+
+                    <div id="sirvoy_context_switcher">
+                        <form name="form" method="post" action="#>
+                            <select id="form_customer" name="form[customer]">
+                        <option value="19133" selected="selected">
+                                Karbon CMS
+                     </option>
+                        </select>
+                        <div class="nice-select " tabindex="0"><span class="current">
+                            Sterling Capital Ltd
+                            </span>
+                            <ul class="list">
+                                <li class="option selected" data-value="19133">
+                                    <a href="{{ path('security_logout') }}">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <input type="hidden" id="form__token" name="form[_token]"
+                               value="jMKcBTkJvi0Xjvt6qYDm4zpi9WQRBbx69dPofJRu1AM"></form>
+                    </div>
+                    <script>
+                        $(function () {
+                            // submit form on context change
+                            $('#sirvoy_context_switcher select').niceSelect();
+                            $('#sirvoy_context_switcher select').change(function () {
+                                $(this).closest('form').submit();
+                            });
+                        });
+                    </script>
+
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</header>
+
+
+<section class="main {% block hasLeft %}{% endblock %}">
+    <div class="title_toolbar_wrap">
+        <div class="page-title-wrapper">
+            <div class="title">{% block pageTitle %}{% endblock %}</div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="toolbar_wrapper">
+            <div class="toolbar_inner">
+                {% block pageTop %}{% endblock %}
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content_wrapper">
+        <div class="inner_wrapper">
+            <div class="body-wrapper {% block right %}{% endblock %}">
+
+                {% block body %}{% endblock %}
+
+
+            </div>  <!-- div.body-wrapper -->
+        </div> <!-- div.inner_wrapper -->
+    </div> <!-- div.content_wrapper -->
+</section> <!-- section.main -->
+
+
+<footer class="page-footer">
+    <div class="copyright">
+        <a href="#" target="_blank">Terms & Conditions</a>
+        | Copyright © {{ "now" | date('Y') }} Sterling Capital Ltd
+    </div>
+</footer>
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<!-- x-editable (jquery) -->
+<link href="{{ asset('js/jqueryui-editable/css/jqueryui-editable.css') }}" rel="stylesheet">
+<script src="{{ asset('js/jqueryui-editable/js/jqueryui-editable.min.js') }}"></script>t
+
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('#dtable').DataTable();
+    } );
+</script>
+<script src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=5g5faf78gvk6yfq9bd3bbfjo858kjx1q8o0nbiwtygo2e4er'></script>
+
+<script type="text/javascript">
+    tinymce.init({
+        selector: '.tinymce',
+        setup: function (editor) {
+            editor.on('change', function () {
+                editor.save();
+            });
+        },
+        file_browser_callback: myFileBrowser,
+        theme: 'modern',
+        height: 200,
+        plugins: [
+            'code advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+            'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+            'save table contextmenu directionality emoticons template paste textcolor'
+        ],
+        toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons | code'
+    });
+    function myFileBrowser(field_name, url, type, win) {
+
+        var cmsURL = "{{ path('file_manager', {module:'tiny', conf:'tiny'}) }}";
+        if (cmsURL.indexOf("?") < 0) {
+            cmsURL = cmsURL + "?type=" + type;
+        }
+        else {
+            cmsURL = cmsURL + "&type=" + type;
+        }
+
+        tinyMCE.activeEditor.windowManager.open({
+            file: cmsURL,
+            title: 'File Manager',
+            width: 1024,
+            height: 500
+        }, {
+            window: win,
+            input: field_name
+        });
+
+        return false;
+    }
+
+</script>
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>

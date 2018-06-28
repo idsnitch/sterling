@@ -1,0 +1,169 @@
+	#ext-header {
+		background-size: cover;
+		height: 400px;
+		padding: 100px 0 0 0 ;
+		background-color: #ccc;
+	}
+	#ext-header h1 {
+		color: #fff;
+	}
+	#signup-container {
+		position: absolute;
+	}
+	#signup-box {
+		position: relative;
+	}
+	#signup-box-inner{
+		background-color: #edecea;
+		position:absolute;
+		top:0;
+		left:0;
+		z-index:100;
+		min-height: 350px;
+		width: 300px;
+		padding: 20px;
+	}
+	#signup-box input[type=text] {
+		display: block;
+		margin: 0 0 10px 0 ;
+		width: 200px;
+		padding: 5px;
+	}
+	#ext-rotation {
+		padding: 60px 0;
+	}
+	#ext-degrees {
+		padding: 40px 0 60px 0;	
+	}
+	#ext-degrees h2 {
+		font-size: 16px;
+		text-align: center;
+		height: 1px; 
+		border-top: 1px solid #aaa; 
+		text-align: center; 
+		position: relative;	
+		margin: 40px 10px 20px;
+		text-transform: uppercase;
+		color: #aaa;
+	}
+	#ext-degrees h3.faq {
+		font-size: 16px;
+		text-align: center;
+		height: 1px; 
+		border-top: 1px solid #aaa; 
+		text-align: center; 
+		position: relative;	
+		margin: 40px 10px 20px;
+		text-transform: uppercase;
+	}
+	#ext-degrees h2 span {
+		position: relative;
+		top: -.9em;
+		background: white;
+		display: inline-block;
+		padding: 0 10px;
+	}
+	.degree-online {
+		text-align: center;
+		line-height: 1.5;
+		padding: 0 0 15px 0;
+	}
+	.degree-online:hover {
+		-x-background-color: #eee2f0;
+	}
+	.degree-online a {
+		text-decoration: none;
+		color: #555;
+	}
+	.degree-online a span {
+		display: block
+	}
+	.degree-online a .hourcount {
+		-font-family: Vollkorn;
+		font-size: 55px;
+		margin: 0 0 -10px 0;
+		color: #999;
+	}
+	.degree-online a .hourcount::after {
+		content:"hours";
+		font-size: 12px;
+		display:block;
+		line-height: 1;
+		margin: -12px 0 20px 0;;
+	}
+	.degree-online a .abbr {
+		font-weight: bold;
+		margin: 0 0 5px 0;
+		font-size: 26px;
+		color: #5b2f6c;
+	}
+	.degree-online a .name {
+		margin: 0 0 5px 0;
+		-color: #5b2f6c;
+		font-family: Vollkorn;
+		font-size: 20px;
+		line-height: 1.3;
+	}
+	.degree-online a:hover .name {
+		text-decoration: underline;
+	}
+	.degree-online .description{
+		font-size: 12px;
+	}
+	#ext-degrees .hybrid-degrees h2 {
+		color: rgba(59, 163, 87, 1);
+		border-color: rgba(59, 163, 87, 1);
+	}
+	#ext-degrees .hybrid-degrees .degree-online a .abbr {
+		color: rgba(59, 163, 87, 1);
+	}
+	#ext-degrees .fully-online h2 {
+		color: #5b2f6c;
+		border-color: #5b2f6c;
+	}
+	#ext-degrees .fully-online .degree-online a .abbr {
+		-x-color: rgba(59, 163, 87, 1);
+	}
+	#ext-degrees .fully-online .degree-online a .hourcount {
+		-color: rgba(136, 166, 166, 1);
+	}
+	#ext-sample {
+		background-image: url(../../../dtsi.s3.amazonaws.com/landing/seminary-online/coffeeshop.jpg);
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 500px;
+		background-position: top center;
+		padding: 60px 0;
+	}
+	#upcoming-courses h2,
+	#upcoming-courses p {
+		--color: #fff;
+	}
+	#ext-map {
+		padding: 50px 0;
+	}
+	#location-map {
+		width: 100%;
+	}
+	.map-bg {
+		background: #dddbd3;
+	}
+	#action-buttons{
+		padding-top:100px;
+	}
+	
+@media only screen and (max-width: 480px) {
+	#ext-header {
+		padding-top:5px;
+	}
+	#action-buttons{
+		padding-top:5px;
+	}
+	#action-buttons a{
+		width:100%;
+
+	}
+	#ext-degrees{
+		padding-top:100px;
+	}
+}

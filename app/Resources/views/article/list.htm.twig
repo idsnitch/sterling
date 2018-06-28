@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    LTI Center
+{% endblock %}
+{% block pageTitle %}
+    LTI Center
+{% endblock %}
+{% block body %}
+            <div class="archives-posts">
+
+                <style>
+
+                    .subcribe-buttons {
+                        margin: 10px 0;
+                        text-align: center;
+                    }
+
+                    .channel-description {
+                        margin: 40px 0 0 0;
+                    }
+                    .page-item.active .page-link {
+                        z-index: 1;
+                        color: #fff;
+                        background-color: #43165e;
+                        border-color: #43165e;
+                    }
+                    .page-link {
+                        position: relative;
+                        display: block;
+                        padding: .5rem .75rem;
+                        margin-left: -1px;
+                        line-height: 1.25;
+                        color: #43165e;
+                        background-color: #fff;
+                        border: 1px solid #dee2e6;
+                    }
+                </style>
+             <div class="row">
+                    {% for article in articles %}
+                    <div class="column-fourth">
+                        <div class="card post-13287 posttype-magazinearticle ">
+                            <div class="card-outline">
+                                <span class="label">{{ article.category }}</span>
+                                <div class="card-image">
+                                    <a href="{{ path('view-article', {'slug': article.slug }) }}">
+                                        <div class="card-image-inner">
+                                            <img width="1280" height="720" src="{{ asset('images/products/') }}{{ article.imageName }}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="{{ asset('images/products/') }}{{ article.imageName }} 1280w, {{ asset('images/products/') }}{{ article.imageName }} 300w, {{ asset('images/products/') }}{{ article.imageName }} 768w, {{ asset('images/products/') }}{{ article.imageName }} 1024w, {{ asset('images/products/') }}{{ article.imageName }} 640w, {{ asset('images/products/') }}{{ article.imageName }} 610w" sizes="(max-width: 1280px) 100vw, 1280px">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-date">{{ article.createdAt | date('M d, Y') }}</div>
+
+                                <div class="card-contributors">
+                                    <div class="contributor-count-1">
+                                        <span class="contributor contributor-3167">
+                                            <span class="contributor-image">
+                                                  {% if article.createdBy.profile[0] is defined %}
+                                                      {% set userProfile=article.createdBy.profile[0] %}
+                                                      <img width="150px" height="150px" src="{{ asset('images/products/') }}{{ userProfile.imageName }}"/>
+                                                   {% else %}
+                                                      <img width="150px" height="150px" src="{{ asset('default-avatar.png') }}"/>
+                                                  {% endif %}
+                                            </span>
+                                            <span class="name">{{ article.createdBy }}</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <a href="{{ path('view-article', {'slug': article.slug }) }}">
+                                        <span class="title">{{ article.title }}</span>
+                                    </a>
+                                    <span class="excerpt">{{ article.intro | raw }}</span>
+                                </div>
+                            </div>
+                        </div></div>
+                    {% endfor %}
+                </div>
+                <div class="row">
+                    <div class="column-full">
+                        <div class="archives-pagination">
+
+                            <nav class="navigation pagination" role="navigation">
+                                <h2 class="screen-reader-text">Posts navigation</h2>
+                                <div class="nav-links">
+                                {{ knp_pagination_render(articles) }}
+                                </div>
+                            </nav>			</div>
+                    </div>
+                </div>
+{% endblock %}

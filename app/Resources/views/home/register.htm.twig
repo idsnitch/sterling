@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+{% block title %} My LTI {% endblock %}
+{% block pageTitle %} My LTI {% endblock %}
+{% block body %}
+    <div class="grid-container">
+
+
+        <div class="archives-posts">
+
+            <style>
+                form div ul li{
+                    color: red;
+                }
+                .subcribe-buttons {
+                    margin: 10px 0;
+                    text-align: center;
+                }
+
+                .channel-description {
+                    margin: 40px 0 0 0;
+                }
+                label{
+                    font-weight: bold;
+                }
+                form div{
+                    padding:10px;
+                }
+                button.et_bloom_submit_subscription {
+                    background-color: #43165e !important;
+                    border-radius: 4px !important;
+                    -webkit-border-radius: 3px !important;
+                    color:white;
+                    padding: 10px;
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 14px;
+                    width:150px;
+                }
+                .horizontal-form{
+                    border: 1px #43165e solid;
+                    padding:5px;
+                    border-radius: 2px;
+                }
+                .required:after {
+                    content:" *";
+                    color:red;
+                }
+            </style>
+            <div class="row">
+                <div class="column-half">
+                    <h1 class="post-title">Create an Account</h1>
+                        {{ form_start(form,{'attr':{'class':'horizontal-form'}}) }}
+                    <fieldset>
+                            {{ form_row(form.firstName) }}
+                            {{ form_row(form.lastName) }}
+                            {{ form_row(form.dateOfBirth) }}
+                            {{ form_row(form.levelOfEducation) }}
+                            {{ form_row(form.lifeStatus) }}
+                    </fieldset>
+                    <fieldset>
+                            {{ form_row(form.email) }}
+                            {{ form_row(form.plainPassword.first,{'attr':{'class':'form-control'},'label':'Password'}) }}
+                            {{ form_row(form.plainPassword.second,{'attr':{'class':'form-control'},'label':'Repeat Password'}) }}
+                    </fieldset>
+                    <fieldset>
+                            {{ form_row(form.imageFile,{'attr':{'class':'form-control'},'label':'Profile Image'}) }}
+                    </fieldset>
+                    <button class="et_bloom_submit_subscription">
+                        Register </button>
+                    {{ form_end(form) }}
+
+                </div>
+
+            <div class="column-half">
+
+                <div class="channel-description">
+                    <p>MY LTI is your official profile page on LTI. It allows you to join discussions and update your
+                        profile information. With a LTI account, you also have access to private messages for any
+                        personal communications with our contributors.</p>
+                    <p>All fields are required.</p>
+                </div>
+
+                <div class="subcribe-buttons">
+                    <a class="button button-subscribe" href="{{ path('security_login') }}">Login</a>
+                </div>
+
+
+                <div class="chapel-schedule">
+                            </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    </div>
+{% endblock %}

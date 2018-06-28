@@ -1,0 +1,64 @@
+{% extends 'admin.htm.twig' %}
+{% block pageTitle %}Homepage Settings{% endblock %}
+{% block body %}
+
+    <article>
+        <div class="article_inner">
+
+            <div id="tabs" style="" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+                <div id="ui-tabs-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-2" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-3" role="tabpanel" aria-expanded="true" aria-hidden="false"><meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+                    <div id="listDiv_current">
+                        <form id="list_form_current" method="post" action="">
+                            <table id="dtable" width="100%" border="0" cellpadding="0" cellspacing="0" class="list-bookings" style="font-size: 10pt;">
+                                <thead>
+                                <th class="booking-list-header">Sort Order</th>"
+
+                                <th class="booking-list-header" style="white-space:nowrap;">Service.</th>
+                                <th class="booking-list-header mobile-hide-cell-850">Created By</th>
+                                <th class="booking-list-header mobile-hide-cell-850">Created At </th>
+                                <th class="booking-list-header mobile-hide-cell-850">Last Updated By </th>
+                                <th class="booking-list-header mobile-hide-cell-850">Last Updated At</th>
+
+                                <th class="booking-list-header mobile-hide-cell-550">Manage</th>
+                                </thead>
+                                <tbody>
+
+                                {% for setting in settings  %}
+                                    <tr>
+                                        <td class="booking-list-cell">{{ setting.sortOrder }}</td>
+
+                                        <td class="booking-list-cell"><span style="color:#0cc2aa">{{ setting.service }}</span></td>
+                                        <td class="booking-list-cell">{{ setting.createdBy }}</td>
+                                        <td class="booking-list-cell">{{ setting.createdAt | date("F jS \\a\\t g:ia") }}</td>
+                                        <td class="booking-list-cell">{{ setting.updatedBy }}</td>
+                                        <td class="booking-list-cell">{{ setting.updatedAt | date("F jS \\a\\t g:ia") }}</td>
+
+                                        <td class="booking-list-cell">
+
+                                            <a id="js-deactivate-account" href="{{ path('update-homepage-settings', {'id': setting.id }) }}"
+                                               class="btn btn-xs white btn-icon"><i id="deactivate" title="Edit Partner" class="fa fa-edit"></i></a>
+
+                                        </td>
+                                    </tr>
+                                {% else %}
+                                    <tr style="background: #ffffff">
+                                        <td class="booking-list-cell" colspan="11" style="padding: 10px 10px 12px 10px;">
+                                            No Settings were found.                                            <br>(Can't find a setting? Check above to see which list your are looking through)                                        </td>
+                                    </tr>
+                                {% endfor  %}
+
+                                </tbody></table>
+                        </form>
+
+
+
+
+                    </div>
+                </div><div id="ui-tabs-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-4" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-5" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-5" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-6" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-6" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-7" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-7" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-8" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div>
+            </div>
+
+        </div>
+    </article>
+
+{% endblock %}

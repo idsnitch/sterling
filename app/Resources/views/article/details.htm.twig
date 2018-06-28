@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ article.title }} | LTI Center {% endblock %}
+{% block pageTitle %}LTI Center {% endblock %}
+{% block body %}
+    <article id="post-44361"
+             class="post-44361 magazinearticle type-magazinearticle status-publish has-post-thumbnail hentry category-campus-news tag-current-events tag-leadership tag-preaching contributor-raquel-p-wroten">
+
+        <div class="post-header">
+            <div class="post-contributors">
+                <div class="contributor-count-1">
+                    <a class="contributor contributor-4334" href="#">
+                        <span class="contributor-image">
+                            <img src="https://voice.dts.edu/wp-content/uploads/sites/11/2017/06/Raquel%20P.%20Wroten%20portrait-150x150.jpg"
+                                 alt="Raquel P. Wroten">
+                        </span>
+                        <span class="name">{{ article.createdBy }}</span>
+                    </a>
+                </div>
+            </div>
+
+            <h1 class="post-title">{{ article.title }}</h1></div>
+        <div class="article-image">
+            <a href="#">
+                <img width="1600" height="900" src="{{ asset('images/products/') }}{{ article.imageName }}"
+                     class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
+                     srcset="{{ asset('images/products/') }}{{ article.imageName }} 1600w, {{ asset('images/products/') }}{{ article.imageName }} 300w, {{ asset('images/products/') }}{{ article.imageName }} 768w, {{ asset('images/products/') }}{{ article.imageName }} 1024w, {{ asset('images/products/') }}{{ article.imageName }} 640w, {{ asset('images/products/') }}{{ article.imageName }} 610w"
+                     sizes="(max-width: 1600px) 100vw, 1600px"> </a>
+        </div>
+        <div class="post-info">
+            <div class="post-date-category">
+                <!--
+                <span class="post-info-circle"></span>
+                -->
+                <span class="meta">on</span>
+                {{ article.createdAt | date('M d,Y') }}
+                <span class="meta">in</span>
+                <a href="#">{{ article.category }}</a></div>
+
+            <div class="post-social">
+
+
+                <a href="http://www.facebook.com/sharer.php?u={{ path('view-article', {'slug': article.slug}) }}"
+                   class="post-info-circle info-facebook socicon-facebook"></a>
+                <a href="https://twitter.com/home?status={{ path('view-article', {'slug': article.slug}) }}"
+                   class="post-info-circle info-twitter socicon-twitter"></a>
+                <a href="https://plus.google.com/share?url={{ path('view-article', {'slug': article.slug}) }}"
+                   class="post-info-circle info-google socicon-google"></a>
+                <!--
+                <span class="post-info-circle info-email"></span>
+                -->
+            </div>
+        </div>
+
+
+        <div class="article-main">
+
+            <div class="article-content">
+                {{ article.content | raw }}
+            </div>
+
+        </div>
+        <div class="post-tags">
+            Comments: <a href="https://voice.dts.edu/tag/current-events/"><i class="fas fa-plus-circle"></i> Add Comment</a>
+            {{ render(controller('AppBundle:Home/Home:newComment',{'id':article.id })) }}
+
+        </div>
+        <div class="post-contributors-fullbios" style="border-top: 0px; ">
+
+
+
+            {% for comment in article.comments %}
+            <div class="contributor">
+                <div class="contributor-image"><img
+                            src="https://voice.dts.edu/wp-content/uploads/sites/11/2017/06/Raquel%20P.%20Wroten%20portrait-150x150.jpg"
+                            alt="{{ comment.author }}"></div>
+                <div class="contributor-info">
+                    <div class="contributor-info-header">
+                        <a class="name" href="#">{{ comment.author }}</a><br/>
+                        <span>{{ comment.createdAt | date('M d,Y H:M') }}</span>
+                        <div class="contributor-links"><a href="https://twitter.com/{{ comment.author.twitter }}" target="_blank"
+                                                          class="contributor-link twitter socicon-twitter"></a><a
+                                    href="https://facebook.com/{{ comment.author.fb }}" target="_blank"
+                                    class="contributor-link facebook socicon-facebook"></a>
+                        </div>
+                    </div>
+                    <div class="bio">
+                        {{ comment.commentText }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="post-tags">
+            Tags: <a href="https://voice.dts.edu/tag/current-events/">current events</a><a href="https://voice.dts.edu/tag/leadership/">leadership</a><a href="https://voice.dts.edu/tag/preaching/">preaching</a><br>
+        </div>
+    </article>
+
+{% endblock %}

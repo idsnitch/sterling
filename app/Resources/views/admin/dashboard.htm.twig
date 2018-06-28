@@ -1,0 +1,54 @@
+{% extends 'admin.htm.twig' %}
+{% block body %}
+    <article>
+        <div class="article_inner">
+            <div class="settings_box">
+                <h3 class="divider">
+                    Current status &nbsp;<i class="fa fa-tachometer"></i>
+                </h3>
+
+                <div class="home status">
+                    <div class="status-item">
+                        <a href="#" style="color: #ea3e70;">
+                            <div class="amount" style="color: #ea3e70;">0 <i class="fa fa-download"></i></div>
+                            recordings                    </a>
+                    </div>
+
+
+                    <div class="status-item">
+                        <a href="#" style="color: #ea3e70;">
+                            <div class="amount" style="color: #ea3e70;">0 <i class="fa fa-users"></i></div>
+                            artists                    </a>
+                    </div>
+
+                    <div class="status-item checkins">
+                        <a href="#" style="color: #0b8788;">
+                            <div class="amount" style="color: #0b8788;">0 <i class="fa fa-database"></i></div>
+                            partners                    </a>
+                    </div>
+
+                    <div class="status-item checkouts">
+                        <a href="#" style="color: #0b8788;">
+                            <div class="amount" style="color: #0b8788;">0 <i class="fa fa-user-o"></i></div>
+                            partner users                    </a>
+                    </div>
+
+                    <div class="status-item occupancy">
+                <span class="no-href" style="color: #5f8398;">
+                    <div class="amount" style="color: #5f8398;">0<i class="fa fa-drivers-license"></i></div>
+                    data clerks                </span>
+                    </div>
+
+                    <div class="status-item availability">
+                <span class="no-href" style="color: #5f8398;">
+                    <div class="amount" style="color: #5f8398;">0 <i class="fa fa-user-secret"></i></div>
+                    managers                </span>
+                    </div>
+
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+
+
+        </div></article>
+{% endblock %}

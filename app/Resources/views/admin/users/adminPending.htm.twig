@@ -1,0 +1,246 @@
+{% extends 'base.htm.twig' %}
+{% block pageTitle %}Users{% endblock %}
+{% block users  %}active{% endblock %}
+{% block hasLeft %}has_left_side_menu{% endblock %}
+  {% block javascripts %}
+      <script type="text/javascript">
+          $(document).ready(function () {
+              $.fn.editable.defaults.mode = 'inline';
+
+              //make MemberNumber editable
+              $('a#member').editable({
+                  source: [
+                      {value: 1, text: 'Data Capture'},
+                      {value: 2, text: 'Administrator'},
+                      {value: 3, text: 'Manager'},
+                      {value: 4, text: 'CEO'}
+                  ]
+              });
+              jQuery('#js-activate-account').on('click',function (e)  {
+                  //Prevent Normal Submit
+                  e.preventDefault();
+
+                  $(".messages").fadeOut("slow");
+
+                  $(this).find('.fa-lock')
+                      .removeClass('fa-lock')
+                      .addClass('fa-spinner')
+                      .addClass('fa-spin');
+
+                  $(this).find('.fa-check')
+                      .removeClass('fa-check')
+                      .addClass('fa-spinner')
+                      .addClass('fa-spin');
+
+
+                  // get form values
+                  var values = $(this).serialize();
+
+                  $.ajax({
+                      url: $(this).data('url'),
+                      method: 'GET'
+                  }).done(function () {
+                      //$el.fadeOut("slow");
+                      $(".messages").fadeIn("slow");
+
+                      $("#activate")
+                          .removeClass('fa-spinner')
+                          .removeClass('fa-spin')
+                          .addClass('fa-check');
+
+                  }).fail(function () {
+                      //$el.fadeOut("slow");
+                      $(".errors").fadeIn("slow");
+
+                      $("#activate")
+                          .removeClass('fa-spinner')
+                          .removeClass('fa-spin')
+                          .addClass('fa-times');
+                  })
+
+              });
+              jQuery('#js-deactivate-account').on('click',function (e)  {
+                  //Prevent Normal Submit
+                  e.preventDefault();
+
+                  $(".messages").fadeOut("slow");
+
+                  $(this).find('.fa-times-rectangle')
+                      .removeClass('fa-times-rectangle')
+                      .addClass('fa-spinner')
+                      .addClass('fa-spin');
+
+                  $(this).find('.fa-check')
+                      .removeClass('fa-check')
+                      .addClass('fa-spinner')
+                      .addClass('fa-spin');
+
+
+                  // get form values
+                  var values = $(this).serialize();
+
+                  $.ajax({
+                      url: $(this).data('url'),
+                      method: 'GET'
+                  }).done(function () {
+                      //$el.fadeOut("slow");
+                      $(".messages").fadeIn("slow");
+
+                      $("#deactivate")
+                          .removeClass('fa-spinner')
+                          .removeClass('fa-spin')
+                          .addClass('fa-check');
+                  }).fail(function () {
+                      //$el.fadeOut("slow");
+                      $(".errors").fadeIn("slow");
+
+                      $("#deactivate")
+                          .removeClass('fa-spinner')
+                          .removeClass('fa-spin')
+                          .addClass('fa-times');
+                  })
+
+              });
+
+
+          });
+
+      </script>
+
+  {% endblock %}
+{% block body %}
+
+    <article>
+        <div class="article_inner">
+
+            <div id="tabs" style="" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+                <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                    <li class="ui-state-default ui-corner-top ui-tabs-active" role="tab" tabindex="-1" aria-controls="ui-tabs-1" aria-labelledby="ui-id-2" aria-selected="false">
+                        <a href="{{ path('pending-admin-accounts') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">
+                            <i class="fa fa-angle-right"></i>
+                            Pending Administrators
+                        </a>
+                    </li>
+                    <!--  <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="ui-tabs-1" aria-labelledby="ui-id-2" aria-selected="false">
+                        <a href="{{ path('pending-admin-accounts') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">
+                            <i class="fa fa-angle-right"></i>
+                            Pending Users
+                        </a>
+                    </li> -->
+                    <li class="ui-state-default ui-corner-top " role="tab" tabindex="0" aria-controls="ui-tabs-2" aria-labelledby="ui-id-3" aria-selected="true">
+                        <a href="{{ path('users') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">
+                            <i class="fa fa-angle-right"></i>All Users<span class="badge">0</span>
+                        </a>
+                    </li>
+                    <!--<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="ui-tabs-3" aria-labelledby="ui-id-4" aria-selected="false">
+                        <a href="{{ path('active-artists') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4">
+                            <i class="fa fa-angle-right"></i>Partner Users<span class="badge">0</span>
+                        </a>
+                    </li>
+                    <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="ui-tabs-4" aria-labelledby="ui-id-5" aria-selected="false">
+                        <a href="{{ path('inactive-artists') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-5">
+                            <i class="fa fa-angle-right"></i>Inactive users<span class="badge">0</span>
+                        </a>
+                    </li> -->
+                </ul><div id="ui-tabs-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-2" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-3" role="tabpanel" aria-expanded="true" aria-hidden="false"><meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+                    <div id="listDiv_current">
+
+                        <form id="list_form_current" method="post" action="">
+                            <table id="dtable" width="100%" border="0" cellpadding="0" cellspacing="0" class="list-bookings" style="font-size: 10pt;">
+                                <thead>
+                                <td class="booking-list-header" style="white-space:nowrap;">Name.</td>
+                                <td class="booking-list-header" style="white-space:nowrap;">Role.</td>
+                                <td class="booking-list-header" style="white-space:nowrap;">Company.</td>
+                                <td class="booking-list-header" style="white-space:nowrap;">Status.</td>
+                                <td class="booking-list-header mobile-hide-cell-850">Created By</td>
+                                <td class="booking-list-header mobile-hide-cell-850">Created At </td>
+                                <td class="booking-list-header mobile-hide-cell-850">Last Updated By </td>
+                                <td class="booking-list-header mobile-hide-cell-850">Last Updated At</td>
+                                <td class="booking-list-header mobile-hide-cell-550">Manage</td>
+                                </thead>
+                                <tbody>
+                                {% for user in users  %}
+                                    <tr>
+                                        <td class="booking-list-cell"><span style="color:#0cc2aa">{{ user }}</span></td>
+                                        <td class="booking-list-cell">
+
+                                            {% for role in user.roles %}
+                                                {% if(role =="ROLE_ADMINISTRATOR") %}
+                                                    <a href="#" id="member" data-type="select" data-pk="{{ user.id }}"
+                                                       data-url="{{ path('update-member') }}" data-title="Select Role">
+                                                        Administrator
+                                                    </a>
+                                                {% elseif(role =="ROLE_DATA_CAPTURE") %}
+                                                    <a href="#" id="member" data-type="select" data-pk="{{ user.id }}"
+                                                       data-url="{{ path('update-member') }}" data-title="Select Role">
+
+                                                        Data Capture
+                                                    </a>
+                                                {% elseif(role =="ROLE_MANAGER") %}
+                                                    <a href="#" id="member" data-type="select" data-pk="{{ user.id }}"
+                                                       data-url="{{ path('update-member') }}" data-title="Select Role">
+
+                                                        Manager
+                                                    </a>
+                                                {% elseif(role =="ROLE_PARTNER") %}
+                                                    Partner
+                                                {% elseif(role =="ROLE_CEO") %}
+                                                    CEO
+                                                {% elseif(role =="ROLE_USER") %}
+                                                    Partner User
+                                                {% elseif(role =="ROLE_ADMIN") %}
+                                                    Pending Administrator
+                                                {% endif %}
+                                            {% endfor %}
+
+
+
+                                        </td>
+                                        <td class="booking-list-cell">{{ user.partner }}</td>
+                                        <td class="booking-list-cell">
+                                            {% if user.isActive %}
+                                                Active
+                                            {% else %}
+                                                Inactive
+                                            {% endif %}
+                                        </td>
+                                        <td class="booking-list-cell">{{ user.accountCreatedBy }}</td>
+                                        <td class="booking-list-cell">{{ user.accountCreatedAt | date("F jS \\a\\t g:ia") }}</td>
+                                        <td class="booking-list-cell">{{ user.updatedBy }}</td>
+                                        <td class="booking-list-cell">{{ user.updatedAt | date("F jS \\a\\t g:ia") }}</td>
+
+                                        <td class="booking-list-cell">
+                                            {% if user.isActive %}
+                                                <a id="js-deactivate-account" href="#" data-url="{{ path('deactivate-account',{'id': user.id }) }}"
+                                                   class="btn btn-xs white btn-icon"><i id="deactivate" title="De-activate Account" class="fa fa-times-rectangle"></i></a>
+                                            {% else %}
+                                                <a id="js-activate-account" href="#" data-url="{{ path('activate-account',{'id': user.id }) }}"
+                                                   class="btn btn-xs white btn-icon"><i id="activate" title="Activate Account" class="fa fa-lock"></i></a>
+                                            {% endif %}
+
+                                        </td>
+                                    </tr>
+                                {% else %}
+                                    <tr style="background: #ffffff">
+                                        <td class="booking-list-cell" colspan="11" style="padding: 10px 10px 12px 10px;">
+                                            No Pending administrator users were found.
+                                            <br>(Can't find a user? Check above to see which list your are looking through)                                        </td>
+                                    </tr>
+                                {% endfor  %}
+
+                                </tbody></table>
+                        </form>
+
+
+
+
+                    </div>
+
+                </div><div id="ui-tabs-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-4" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-5" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-5" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-6" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-6" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-7" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-7" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-8" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div>
+            </div>
+
+        </div>
+    </article>
+
+{% endblock %}

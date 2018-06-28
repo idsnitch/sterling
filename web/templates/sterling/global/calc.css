@@ -1,0 +1,463 @@
+.pension-calculator-wrapper {
+    overflow: hidden;
+    border-bottom: 1px dotted #cccccc;
+    border-bottom: none;
+}
+
+.pension-calculator-wrapper .intro-block {
+    padding: 10px 0 0 0px;
+    float: left;
+    width: 100%;
+}
+
+.pension-calculator-wrapper .help-block {
+    padding: 24px 30px 23px 20px;
+    font-size: 18px;
+    font-family: 'futura-pt', Verdana, sans-serif;
+}
+
+.pension-calculator-wrapper .pension-calculator-inner {
+    margin-bottom: 60px;
+}
+
+.pension-calculator-wrapper .results-summary-wrapper {
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+.pension-calculator-wrapper .results-summary-wrapper .results-summary-wrapper-inner {
+    border: #e2e2e2 1px solid;
+    border-bottom: none;
+}
+
+.pension-calculator-wrapper .results-header {
+    font-family: FuturaLight;
+    font-weight: 700;
+    background: #ffffff;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 36%, #e6e7e9 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(36%, #ffffff), color-stop(100%, #e6e7e9));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 36%, #e6e7e9 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 36%, #e6e7e9 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 36%, #e6e7e9 100%);
+    /* IE10+*/
+    background: linear-gradient(to bottom, #ffffff 36%, #e6e7e9 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e7e9', GradientType=0);
+    /* IE6-9 */
+}
+
+.pension-calculator-wrapper .results-header div {
+    padding: 24px 30px 23px 20px;
+    font-size: 18px;
+    font-family: 'futura-pt', Verdana, sans-serif;
+}
+
+.pension-calculator-wrapper .option-one-header div {
+    padding: 24px 30px 23px 20px;
+    font-size: 18px;
+    font-family: 'futura-pt', Verdana, sans-serif;
+}
+
+.pension-calculator-wrapper .option-two-header div {
+    padding: 24px 30px 23px 20px;
+    font-size: 18px;
+    font-family: 'futura-pt', Verdana, sans-serif;
+}
+
+.pension-calculator-wrapper .results-summary-wrapper table {
+    width: 100%;
+    border-right: none;
+}
+
+.pension-calculator-wrapper .after-results-content {
+    padding: 0px 30px 15px 20px;
+    font-size: 14px;
+}
+
+.pension-calculator-wrapper .help-block {
+    padding: 24px 30px 23px 20px;
+    font-size: 18px;
+    font-family: 'futura-pt', Verdana, sans-serif;
+}
+
+.pension-calculator-wrapper .option-one-header {
+    font-family: FuturaLight;
+    border-bottom-style: hidden;
+    background: #ffffff;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 36%, #e6e7e9 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(36%, #ffffff), color-stop(100%, #e6e7e9));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 36%, #e6e7e9 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 36%, #e6e7e9 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 36%, #e6e7e9 100%);
+    /* IE10+*/
+    background: linear-gradient(to bottom, #ffffff 36%, #e6e7e9 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e7e9', GradientType=0);
+    /* IE6-9 */
+}
+
+.pension-calculator-wrapper .option-two-header {
+    font-family: FuturaLight;
+    border-bottom-style: hidden;
+    background: #ffffff;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 36%, #e6e7e9 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(36%, #ffffff), color-stop(100%, #e6e7e9));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 36%, #e6e7e9 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 36%, #e6e7e9 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 36%, #e6e7e9 100%);
+    /* IE10+*/
+    background: linear-gradient(to bottom, #ffffff 36%, #e6e7e9 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e7e9', GradientType=0);
+    /* IE6-9 */
+    border-top: 1px dotted #bcbcbc;
+}
+
+.results-summary-wrapper-inner table tr td {
+    padding: 15px 10px 15px 20px;
+    border-left: none;
+    border-bottom: 1px dotted #bcbcbc;
+    font-size: 14px;
+    border-right: 1px dotted #bcbcbc;
+    font-weight: normal;
+}
+
+.results-summary-wrapper-inner table tr td.border-none-right {
+    border-right: none;
+    padding-right: 40px;
+    font-size: 14px;
+}
+
+.pension-calculator-wrapper .option-two-inner-block {
+    border-bottom: 1px dotted #bcbcbc;
+}
+
+.pension-calculator-wrapper .calculator-fields {
+    padding: 20px 10px 20px 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: 0;
+    border: none;
+}
+
+.pension-calculator-wrapper .row .calculator-fields {
+    font-weight: normal;
+    font-family: 'futura-pt', Verdana, sans-serif;
+    font-size: 16px;
+    padding-left: 0;
+}
+
+.calculator-fields .form-control {
+    font-family: 'futura-pt', Verdana, sans-serif;
+    color: #333;
+    border-radius: 0;
+    height: 50px;
+    border: #e2e2e2 1px solid;
+    font-size: 16px;
+    background: #eaeced;
+    box-shadow: none;
+    padding-top: 6px;
+}
+
+.pension-calculator-wrapper .conclusion-content {
+    font-size: 14px;
+}
+
+.pension-calculator-wrapper .calculator-fields .row {
+    margin: 0 0 10px 0;
+}
+
+.pension-calculator-wrapper .calculator-fields .row1 {
+    margin: 90px 0 10px 0;
+}
+
+.calculator-fields .row label {
+    font-weight: normal;
+    margin-top: 12px;
+    text-align: right;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.calculator-fields .row .gender-row label {
+    width: auto;
+}
+
+.calculator-fields .row .col-sm-6 {
+    font-weight: normal;
+    font-family: 'futura-pt', Verdana, sans-serif;
+    font-size: 16px;
+    padding-left: 0;
+}
+
+#nameErrorMessage {
+    font-weight: normal;
+    font-size: 14px;
+    color: #f00;
+    text-align: right;
+    font-family: FuturaLight;
+    display: block;
+    text-align: left;
+}
+
+.calculator-fields .row .col-sm-6 .date {
+    width: 30%;
+    padding-right: 10px;
+    float: left;
+}
+
+.calculator-fields .row .col-sm-6 .date-year {
+    width: 40%;
+    float: left;
+}
+
+.pension-calc-btn {
+    width: 25%;
+    padding-bottom: 30px;
+    padding-left: 8px;
+}
+
+@media (min-width: 500px) and (max-width: 767px) {
+    .calculator-fields .row .col-sm-6 .date {
+        width: 30%;
+        padding-right: 5px;
+        float: left;
+    }
+
+    .calculator-fields .row .col-sm-6 {
+        width: 50%;
+        float: left;
+    }
+
+    .calculator-fields .row .col-xs-12 {
+        width: 50%;
+        float: left;
+    }
+
+    .row .col-sm-push-4 {
+        width: 33.33333333333333%;
+        left: 33.33333333333333%;
+    }
+
+    .calculator-fields .row .col-sm-4 {
+        width: 33.33333333333333%;
+        float: left;
+    }
+
+    .calculator-fields .row label {
+        text-align: left !important;
+    }
+
+    .col-sm-push-4 .col-sm-push-4 {
+        left: 33.33333333333333%;
+    }
+}
+
+@media (max-width: 490px) {
+    .calculator-fields .row .col-sm-6 {
+        width: 50%;
+        float: left;
+    }
+
+    .calculator-fields .row .col-xs-12 {
+        width: 50%;
+        float: left;
+    }
+
+    .calculator-fields .row .col-sm-4 {
+        width: 100%;
+        float: left;
+        padding-left: 0px;
+    }
+
+    .calculator-fields .row label {
+        text-align: left !important;
+    }
+
+    .calculator-fields .row .col-sm-6 .date {
+        width: 100%;
+        padding-right: 0px;
+    }
+
+    .calculator-fields .row .col-sm-6 .date-year {
+        width: 100%;
+    }
+
+    .pension-calc-btn {
+        width: 56.1%;
+        padding-bottom: 0px;
+        padding-left: calc;
+    }
+}
+
+.calculator-fields .row label {
+    font-weight: normal;
+    margin-top: 12px;
+    text-align: right;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.calculator-fields .row .error {
+    color: red;
+}
+
+.results-summary-wrapper-inner table tr td.border-none-right.net-row {
+    font-weight: 700;
+}
+.call-me-back-container {
+    /*.generic-call-widget .generic-call-widget-body .form-group .form-control {
+border: none;
+border-radius: 0;
+height: 37px;
+font-size: 18px;
+background: #ffffff;
+}*/
+}
+
+.call-me-back-container .generic-call-widget {
+    background: #eaeced;
+    box-shadow: -4px 5px 5px #e2e2e2;
+    -moz-box-shadow: -4px 5px 5px #e2e2e2;
+    -webkit-box-shadow: -4px 5px 5px #e2e2e2;
+}
+
+.call-me-back-container .genric-vignette {
+    background: #69b80d;
+    background: -moz-linear-gradient(left, #69b80d 0%, #01624f 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #69b80d), color-stop(100%, #01624f));
+    background: -webkit-linear-gradient(left, #69b80d 0%, #01624f 100%);
+    background: -o-linear-gradient(left, #69b80d 0%, #01624f 100%);
+    background: -ms-linear-gradient(left, #69b80d 0%, #01624f 100%);
+    background: linear-gradient(to right, #69b80d 0%, #01624f 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#69b80d', endColorstr='#01624f', GradientType=1);
+    height: 10px;
+}
+
+.call-me-back-container .generic-call-widget .generic-call-widget-body {
+    padding: 26px 20px 0 20px;
+}
+
+.call-me-back-container .generic-call-widget .generic-call-widget-bodyy h2 {
+    padding: 0 0 23px 0;
+    margin: 0;
+}
+
+.call-me-back-container .generic-call-widget .generic-call-widget-body .form {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 20px;
+}
+
+.call-me-back-container .form {
+    margin-top: 20px;
+}
+
+.call-me-back-container .generic-call-widget .generic-call-widget-body .form-group {
+    margin-bottom: 10px;
+    font-family: 'futura-pt', Verdana, sans-serif;
+}
+
+.call-me-back-container .input, .call-me-back-container .input-focus {
+    font-size: 18px;
+    line-height: 21px;
+    color: #2f3133;
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid #bec0c2;
+    border-radius: 9px;
+    padding: 17px 20px;
+    font-weight: 300;
+}
+
+.call-me-back-container input.ng-valid:focus, .call-me-back-container textarea.ng-valid:focus {
+    box-shadow: 0 0 8px #6eab24;
+    border: 1px solid #6eab24;
+}
+
+.call-me-back-container input.ng-invalid:focus, .call-me-back-container textarea.ng-invalid:focus {
+    border: 1px solid lightpink !important;
+}
+
+.call-me-back-container .chosen-container-single .chosen-single, .call-me-back-container .chosen-container-active.chosen-with-drop .chosen-single {
+    background: #fff !important;
+    font-weight: normal;
+    border-radius: 9px;
+    font-weight: 300;
+    text-transform: initial !important;
+}
+
+.call-me-back-container .generic-call-widget-body h3 {
+    margin: 0px 0 20px 0 !important;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.call-me-back-container .thank-you-note h3 {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 600 !important;
+}
+
+.call-me-back-container .generic-call-widget-body h3 span {
+    font-weight: 600 !important;
+}
+
+.call-me-back-container .form-component {
+    font-size: 14px;
+    font-weight: 300;
+    color: #2f3133;
+    text-align: left;
+    letter-spacing: 0.02em;
+    line-height: 22px;
+    margin-bottom: 5px;
+}
+
+.call-me-back-container .errorMessage {
+    font-weight: normal;
+    font-size: 14px;
+    color: #f00;
+    text-align: right;
+    font-family: 'futura-pt', Verdana, sans-serif;
+    display: block;
+    text-align: left;
+}
+
+.call-me-back-container .ajax-loader {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    margin-left: -100px;
+    margin-top: -17px;
+    display: block;
+}
+
+.call-me-back-container #loaderDiv {
+    position: absolute;
+    top: 100%;
+    left: -42%;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    opacity: .8;
+}
+
+.call-me-back-container .thank-you-note {
+    text-align: center;
+    padding: 20px;
+}

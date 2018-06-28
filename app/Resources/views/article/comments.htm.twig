@@ -1,0 +1,50 @@
+<div class="post-contributors-fullbios comments" style="border-top: 0px;padding-top: 0px;margin-top: 0px ">
+<style>
+    @media (min-width: 700px){
+        .contributor-info-header {
+            width: 640px;
+        }
+    }
+</style>
+    {% for comment in comments %}
+        <div class="contributor">
+            <div class="contributor-image">
+                {% if comment.author.profile[0] is defined %}
+                    {% set userProfile=comment.author.profile[0] %}
+                    <img width="150px" height="150px" src="{{ asset('images/products/') }}{{ userProfile.imageName }}"/>
+                {% else %}
+                    <img width="150px" height="150px" src="{{ asset('default-avatar.png') }}"/>
+                {% endif %}
+                </div>
+            <div class="contributor-info">
+                <div class="contributor-info-header" style="">
+                    <a class="name" href="#">{{ comment.author }}</a>
+                    <div class="contributor-links">
+                        {% if comment.author.profile[0] is defined %}
+                            {% set userProfile=comment.author.profile[0] %}
+
+                        <a href="https://twitter.com/{{ userProfile.twitter }}" target="_blank"
+                                                      class="contributor-link twitter socicon-twitter"></a><a
+                                href="https://facebook.com/{{ userProfile.fb }}" target="_blank"
+                                class="contributor-link facebook socicon-facebook"></a>
+
+                        {% endif %}
+
+                        {% if is_granted('ROLE_CAN_DELETE_COMMENT') %}
+
+                        <a title="Remove Comment" id="remove" href="#" data-url="{{ path('remove-item', {'id': comment.id}) }}"
+                           class="contributor-link facebook socicon-mixer remove" aria-label="Remove this item" data-product_id="139" data-product_sku="2648777"></a>
+                            <i class="fa fa-spinner fa-spin" style="display: none"></i>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="bio">
+
+                    <span style="    font-size: 11px;
+    line-height: 1.3;">{{ comment.createdAt | date('M d,Y H:i') }}</span><br/>
+                    {{ comment.commentText }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

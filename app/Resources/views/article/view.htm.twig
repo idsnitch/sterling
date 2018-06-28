@@ -1,0 +1,191 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ article.title }} | LTI Center {% endblock %}
+{% block pageTitle %}LTI Center {% endblock %}
+{% block javascripts %}
+    <script type="text/javascript">
+        // prepare the form when the DOM is ready
+        $(document).ready(function () {
+            $('#comment').click(function () {
+                // bind to the form's submit event
+                $('#commentForm').submit(function (e) {
+                    var ajaxRequest;
+
+                    //Prevent Normal Submit
+                    e.preventDefault();
+
+                    $(".message").fadeOut("slow");
+
+                    $("#commentForm").fadeOut("slow");
+                    $('#saving').fadeIn("slow");
+
+                    var form = document.getElementById("commentForm");
+                    var elements = form.elements;
+                    for (var i = 0, len = elements.length; i < len; ++i) {
+                        elements[i].readOnly = true;
+                    }
+                    // get form values
+                    var values = $(this).serialize();
+
+                    $.ajax({
+                        url: $(this).data('url'),
+                        data: new FormData(this),
+                        contentType: false,
+                        cache:false,
+                        processData: false,
+                        method: 'POST'
+                    }).done(function () {
+                        $('#saving').fadeOut("slow");
+                        $('#message').fadeIn("slow");
+
+                       // window.location.reload();
+                        jQuery.get("{{ path('get-comments', {'id': article.id }) }}", function( data ) {
+                            jQuery('.comments').html(data);
+                        });
+                        setTimeout(function () {
+                            jQuery(".alert-success").fadeOut("slow");
+                        }, 3000);
+
+                    }).fail(function () {
+                        $('#saving').fadeOut("slow");
+
+                        $("#error").fadeIn("slow");
+
+                    })
+
+
+                });
+
+            })
+            $('#showForm').click(function () {
+                $('.addComment').fadeIn("slow");
+            })
+
+            $('#remove ').on('click', function (e) {
+                e.preventDefault();
+
+                var $el = jQuery(this).closest('.contributor');
+
+                $el.fadeOut("slow");
+                $('.fa-spin').fadeIn("slow");
+
+
+                $.ajax({
+                    url: jQuery(this).data('url'),
+                    method: 'GET'
+                }).done(function () {
+                    // window.location.reload();
+                    jQuery.get("{{ path('get-comments', {'id': article.id }) }}", function( data ) {
+                        jQuery('.comments').html(data);
+                    });
+                    setTimeout(function () {
+                        jQuery(".alert-success").fadeOut("slow");
+                    }, 3000);
+                }).fail(function(){
+
+                });
+            });
+        });
+
+
+    </script>
+{% endblock %}
+{% block body %}
+
+    <style>
+        span#showForm{
+            display: inline-block;
+            padding: 8px 12px;
+            -x-background: #ccc;
+            color: #444;
+            text-decoration: none;
+            margin: 0 0 10px 0;
+            font-size: 12px;
+            border-radius: 3px;
+            color: #ccc;
+        }
+        span#showForm:hover{
+         background:#43165e;
+         color:#fff
+        }
+    </style>
+    <article id="post-44361"
+             class="post-44361 magazinearticle type-magazinearticle status-publish has-post-thumbnail hentry category-campus-news tag-current-events tag-leadership tag-preaching contributor-raquel-p-wroten">
+
+        <div class="post-header">
+            <div class="post-contributors">
+                <div class="contributor-count-1">
+                    <a class="contributor contributor-4334" href="#">
+                        <span class="contributor-image">
+                              {% if article.createdBy.profile[0] is defined %}
+                                  {% set userProfile=article.createdBy.profile[0] %}
+                                  <img width="150px" height="150px" src="{{ asset('images/products/') }}{{ userProfile.imageName }}"/>
+                {% else %}
+                                  <img width="150px" height="150px" src="{{ asset('default-avatar.png') }}"/>
+                              {% endif %}
+                            <img src="https://voice.dts.edu/wp-content/uploads/sites/11/2017/06/Raquel%20P.%20Wroten%20portrait-150x150.jpg"
+                                 alt="Raquel P. Wroten">
+                        </span>
+                        <span class="name">{{ article.createdBy }}</span>
+                    </a>
+                </div>
+            </div>
+
+            <h1 class="post-title">{{ article.title }}</h1></div>
+        <div class="article-image">
+            <a href="#">
+                <img width="1600" height="900" src="{{ asset('images/products/') }}{{ article.imageName }}"
+                     class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
+                     srcset="{{ asset('images/products/') }}{{ article.imageName }} 1600w, {{ asset('images/products/') }}{{ article.imageName }} 300w, {{ asset('images/products/') }}{{ article.imageName }} 768w, {{ asset('images/products/') }}{{ article.imageName }} 1024w, {{ asset('images/products/') }}{{ article.imageName }} 640w, {{ asset('images/products/') }}{{ article.imageName }} 610w"
+                     sizes="(max-width: 1600px) 100vw, 1600px"> </a>
+        </div>
+        <div class="post-info">
+            <div class="post-date-category">
+                <!--
+                <span class="post-info-circle"></span>
+                -->
+                <span class="meta">on</span>
+                {{ article.createdAt | date('M d,Y') }}
+                <span class="meta">in</span>
+                <a href="#">{{ article.category }}</a></div>
+
+            <div class="post-social">
+
+
+                <a href="http://www.facebook.com/sharer.php?u={{ path('view-article', {'slug': article.slug}) }}"
+                   class="post-info-circle info-facebook socicon-facebook"></a>
+                <a href="https://twitter.com/home?status={{ path('view-article', {'slug': article.slug}) }}"
+                   class="post-info-circle info-twitter socicon-twitter"></a>
+                <a href="https://plus.google.com/share?url={{ path('view-article', {'slug': article.slug}) }}"
+                   class="post-info-circle info-google socicon-google"></a>
+                <!--
+                <span class="post-info-circle info-email"></span>
+                -->
+            </div>
+        </div>
+
+
+        <div class="article-main">
+
+            <div class="article-content">
+                {{ article.content | raw }}
+            </div>
+
+        </div>
+        <div class="post-tags">
+            Comments: <span id="showForm"><i class="fas fa-plus-circle"></i> Add Comment</span>
+           <div class="addComment" style="display: none">
+            {% if is_granted('ROLE_USER') %}
+            {{ render(controller('AppBundle:Home/Home:newComment',{'id':article.id })) }}
+            {% else %}
+                <p>To join the discussion, <a href="{{ path('security_login') }}">Click here</a> to login or <a href="{{ path('register') }}">Click here</a> to Register . </p>
+            {% endif %}
+           </div>
+
+        </div>
+      {{ include('article/comments.htm.twig') }}
+        <div class="post-tags">
+            Tags: <a href="https://voice.dts.edu/tag/current-events/">current events</a><a href="https://voice.dts.edu/tag/leadership/">leadership</a><a href="https://voice.dts.edu/tag/preaching/">preaching</a><br>
+        </div>
+    </article>
+
+{% endblock %}

@@ -1,0 +1,227 @@
+{% extends 'admin-base.htm.twig' %}
+{% block quick %}active{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript">
+        // prepare the form when the DOM is ready
+        $(document).ready(function () {
+            $('#new').click(function () {
+                // bind to the form's submit event
+                $('#newForm').submit(function (e) {
+                    var ajaxRequest;
+
+                    //Prevent Normal Submit
+                    e.preventDefault();
+
+                    $(".message").fadeOut("slow");
+                    /*
+                     $(this).find('.fa-save')
+                     .removeClass('fa-save')
+                     .addClass('fa-spinner')
+                     .addClass('fa-spin');
+
+                     $(this).find('.fa-check')
+                     .removeClass('fa-check')
+                     .addClass('fa-spinner')
+                     .addClass('fa-spin');
+                     */
+                    $("#newForm").fadeOut("slow");
+                    $('#saving').fadeIn("slow");
+
+                    var form = document.getElementById("newForm");
+                    var elements = form.elements;
+                    for (var i = 0, len = elements.length; i < len; ++i) {
+                        elements[i].readOnly = true;
+                    }
+                    // get form values
+                    var values = $(this).serialize();
+
+                    $.ajax({
+                        url: $(this).data('url'),
+                        data: new FormData(this),
+                        contentType: false,
+                        cache:false,
+                        processData: false,
+                        method: 'POST'
+                    }).done(function (company) {
+                        $('#saving').fadeOut("slow");
+                        $('#message').fadeIn("slow");
+
+                        window.location.reload();
+
+                    }).fail(function () {
+                        $('#saving').fadeOut("slow");
+
+                        $("#error").fadeIn("slow");
+
+                        document.getElementById("companyCodeTxt").disabled = true;
+
+                    })
+
+
+                });
+
+            })
+
+        });
+
+
+    </script>
+{% endblock %}
+{% block body %}
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {display:none;}
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input[type=checkbox]:checked ~ .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus ~ .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked ~ .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+
+    <div id="page-wrapper">
+        <div class="graphs">
+            <div class="breadcrumb">
+                <ul>
+                    <li><a href="{{ path('dashboard') }}">Dashboard</a></li>
+
+                    <li>/</li>
+                    <li><a href="#">Content</a></li>
+                    <li>/</li>
+                    <li><a href="{{ path('articles') }}">Manage Articles</a></li>
+                    <li>/</li>
+                    <li>New Article</li>
+                </ul>
+            </div>
+            <h3>New Article</h3>
+            <div class="tab-content">
+                <div id="message" style="display: none">
+                    <div class="alert alert-success" role="alert">
+                        Article saved!
+                    </div>
+                </div>
+                <div id="saving" style="display: none">
+                    <div class="alert alert-warning" role="alert">
+                        <span class="fa fa-spin fa-spinner"></span> Saving Article...
+                    </div>
+                </div>
+                <div id="error" style="display: none">
+                    <div class="alert alert-danger" role="alert">
+                        Article not Saved.
+                    </div>
+                </div>
+                <div class="tab-pane active" id="horizontal-form">
+                    {{ form_start(articleForm,{'attr':{'id':'newForm'}}) }}
+                   <div class="col-md-12" style="padding: 10px;padding-bottom: 18px">
+                    <button type="submit" class="button button-primary" style="">
+                        <span class="icon"><span class="fa fa-save"></span> </span>
+                        Save and Close</button>
+                       <button id="new" type="submit" class="button button-primary" style="">
+                           <span class="icon"><span class="fa fa-save"></span> </span>
+                           Save and New</button>
+                   </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            {{ form_row(articleForm.title,{'attr':{'class':'form-control1'}}) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_row(articleForm.intro,{'attr':{'class':'form-control1 tinymce'}}) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_row(articleForm.content,{'attr':{'class':'form-control1 tinymce'}}) }}
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Active</label>
+                        </div>
+                        <div class="form-group switch">
+                            <label class="switch">
+                                <input id="app_bundle_article_form_isActive" name="app_bundle_article_form_isActive" value="1" checked type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Featured</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="switch">
+                                <input id="app_bundle_article_form_isFeatured" name="app_bundle_article_form_isFeatured" value="0" type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            {{ form_row(articleForm.category,{'attr':{'class':'form-control1 selector1'}}) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_row(articleForm.accessLevel,{'attr':{'class':'form-control1 selector1'}}) }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_row(articleForm.imageFile) }}
+                        </div>
+
+                    </div>
+                    <div class="col-md-12">
+                    <button type="submit" class="button button-primary">
+                        <span class="icon"><span class="fa fa-save"></span> </span>
+                        Save and Close</button>
+                        <button id="new" type="submit" class="button button-primary" style="">
+                            <span class="icon"><span class="fa fa-save"></span> </span>
+                            Save and New</button>
+                    </div>
+                    {{ form_end(articleForm) }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

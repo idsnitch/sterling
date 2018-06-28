@@ -1,0 +1,57 @@
+{% if app.user.isFirstTime %}
+<ul class="main-ul menu_main">
+    <li>
+        <a href="#" class="menu menu_main menu_item_homepage">
+            <span class="menu_text">Dashboard</span>
+        </a>
+    </li>
+    <li>
+        <a href="#"
+           class="menu menu_main menu_item_user">
+            <span class="menu_text">New user</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="#" class="menu menu_main recordings">
+            <span class="menu_text">Recordings</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="#" class="menu menu_main menu_item_users">
+            <span class="menu_text">Users</span>
+        </a>
+    </li>
+{% else %}
+<ul class="main-ul menu_main">
+    <li>
+        <a href="{{ path('home') }}" class="menu menu_main menu_item_homepage {% if dashboard is defined %}{{ dashboard }}{% endif %}">
+            <span class="menu_text">Dashboard</span>
+        </a>
+    </li>
+    {% if app.user.accountType =="Administrator" %}
+
+    <li>
+        <a href="{{ path('new-user') }}"
+           class="menu menu_main menu_item_user {% if newUser is defined %}{{ newUser }}{% endif %}">
+            <span class="menu_text">New user</span>
+        </a>
+    </li>
+{% endif %}
+    <li>
+        <a href="{{ path('home-recordings') }}" class="menu menu_main recordings {% if recordingsx is defined %}{{ recordingsx }}{% endif %}">
+            <span class="menu_text">Recordings</span>
+        </a>
+    </li>
+    {% if app.user.accountType =="Administrator" %}
+
+    <li>
+        <a href="{{ path('home-users') }}" class="menu menu_main menu_item_users {% if usersx is defined %}{{ usersx }}{% endif %}">
+            <span class="menu_text">Users</span>
+        </a>
+    </li>
+
+    {% endif %}
+</ul>
+{% endif %}

@@ -1,0 +1,153 @@
+{% extends 'base.htm.twig' %}
+{% block pageTitle %}Users{% endblock %}
+{% block users  %}active{% endblock %}
+{% block hasLeft %}has_left_side_menu{% endblock %}
+  {% block javascripts %}
+      <script type="text/javascript">
+          $(document).ready(function () {
+              $.fn.editable.defaults.mode = 'inline';
+
+              //make MemberNumber editable
+              $('a#member').editable({
+                  source: [
+                      {value: 1, text: 'Data Capture'},
+                      {value: 2, text: 'Administrator'},
+                      {value: 3, text: 'Manager'},
+                      {value: 4, text: 'CEO'}
+                  ]
+              });
+              jQuery('#js-activate-account').on('click',function (e)  {
+                  //Prevent Normal Submit
+                  e.preventDefault();
+
+                  $(".messages").fadeOut("slow");
+
+                  $(this).find('.fa-lock')
+                      .removeClass('fa-lock')
+                      .addClass('fa-spinner')
+                      .addClass('fa-spin');
+
+                  $(this).find('.fa-check')
+                      .removeClass('fa-check')
+                      .addClass('fa-spinner')
+                      .addClass('fa-spin');
+
+
+                  // get form values
+                  var values = $(this).serialize();
+
+                  $.ajax({
+                      url: $(this).data('url'),
+                      method: 'GET'
+                  }).done(function () {
+                      //$el.fadeOut("slow");
+                      $(".messages").fadeIn("slow");
+
+                      $("#activate")
+                          .removeClass('fa-spinner')
+                          .removeClass('fa-spin')
+                          .addClass('fa-check');
+
+                  }).fail(function () {
+                      //$el.fadeOut("slow");
+                      $(".errors").fadeIn("slow");
+
+                      $("#activate")
+                          .removeClass('fa-spinner')
+                          .removeClass('fa-spin')
+                          .addClass('fa-times');
+                  })
+
+              });
+              jQuery('#js-deactivate-account').on('click',function (e)  {
+                  //Prevent Normal Submit
+                  e.preventDefault();
+
+                  $(".messages").fadeOut("slow");
+
+                  $(this).find('.fa-times-rectangle')
+                      .removeClass('fa-times-rectangle')
+                      .addClass('fa-spinner')
+                      .addClass('fa-spin');
+
+                  $(this).find('.fa-check')
+                      .removeClass('fa-check')
+                      .addClass('fa-spinner')
+                      .addClass('fa-spin');
+
+
+                  // get form values
+                  var values = $(this).serialize();
+
+                  $.ajax({
+                      url: $(this).data('url'),
+                      method: 'GET'
+                  }).done(function () {
+                      //$el.fadeOut("slow");
+                      $(".messages").fadeIn("slow");
+
+                      $("#deactivate")
+                          .removeClass('fa-spinner')
+                          .removeClass('fa-spin')
+                          .addClass('fa-check');
+                  }).fail(function () {
+                      //$el.fadeOut("slow");
+                      $(".errors").fadeIn("slow");
+
+                      $("#deactivate")
+                          .removeClass('fa-spinner')
+                          .removeClass('fa-spin')
+                          .addClass('fa-times');
+                  })
+
+              });
+
+
+          });
+
+      </script>
+
+  {% endblock %}
+{% block body %}
+
+    <article>
+        <div class="article_inner">
+
+            <div id="tabs" style="" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+                <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                    <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="ui-tabs-1" aria-labelledby="ui-id-2" aria-selected="false">
+                        <a href="{{ path('pending-admin-accounts') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">
+                            <i class="fa fa-angle-right"></i>
+                            Pending Administrators
+                        </a>
+                    </li>
+                  <!--  <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="ui-tabs-1" aria-labelledby="ui-id-2" aria-selected="false">
+                        <a href="{{ path('pending-admin-accounts') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">
+                            <i class="fa fa-angle-right"></i>
+                            Pending Users
+                        </a>
+                    </li> -->
+                    <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="ui-tabs-2" aria-labelledby="ui-id-3" aria-selected="true">
+                        <a href="{{ path('users') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">
+                            <i class="fa fa-angle-right"></i>All Users<span class="badge">0</span>
+                        </a>
+                    </li>
+                    <!--<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="ui-tabs-3" aria-labelledby="ui-id-4" aria-selected="false">
+                        <a href="{{ path('active-artists') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4">
+                            <i class="fa fa-angle-right"></i>Partner Users<span class="badge">0</span>
+                        </a>
+                    </li>
+                    <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="ui-tabs-4" aria-labelledby="ui-id-5" aria-selected="false">
+                        <a href="{{ path('inactive-artists') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-5">
+                            <i class="fa fa-angle-right"></i>Inactive users<span class="badge">0</span>
+                        </a>
+                    </li> -->
+                </ul><div id="ui-tabs-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-2" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-3" role="tabpanel" aria-expanded="true" aria-hidden="false"><meta http-equiv="content-type" content="text/html; charset=utf-8">
+                {{ render(controller("AppBundle:Admin:allUsersList")) }}
+                </div><div id="ui-tabs-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-4" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-5" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-5" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-6" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-6" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-7" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-7" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-8" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div>
+            </div>
+
+        </div>
+    </article>
+
+{% endblock %}

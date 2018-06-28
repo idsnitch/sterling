@@ -1,0 +1,160 @@
+{% extends 'base.html.twig' %}
+{% block title %} My LTI {% endblock %}
+{% block pageTitle %} My LTI {% endblock %}
+{% block javascripts %}
+    <script type="text/javascript">
+        // prepare the form when the DOM is ready
+        $(document).ready(function () {
+            $('#update').click(function () {
+                // bind to the form's submit event
+                $('#newForm').submit(function (e) {
+                    var ajaxRequest;
+
+                    //Prevent Normal Submit
+                    e.preventDefault();
+
+                    $(".message").fadeOut("slow");
+
+                    $("#newForm").fadeOut("slow");
+                    $('#saving').fadeIn("slow");
+
+                    var form = document.getElementById("newForm");
+                    var elements = form.elements;
+                    for (var i = 0, len = elements.length; i < len; ++i) {
+                        elements[i].readOnly = true;
+                    }
+                    // get form values
+                    var values = $(this).serialize();
+
+                    $.ajax({
+                        url: $(this).data('url'),
+                        data: new FormData(this),
+                        contentType: false,
+                        cache:false,
+                        processData: false,
+                        method: 'POST'
+                    }).done(function (company) {
+                        $('#saving').fadeOut("slow");
+                        $('#message').fadeIn("slow");
+
+                        window.location.reload();
+
+                    }).fail(function () {
+                        $('#saving').fadeOut("slow");
+
+                        $("#error").fadeIn("slow");
+
+                    })
+
+
+                });
+
+            })
+
+        });
+
+
+    </script>
+{% endblock %}
+{% block body %}
+    <div class="grid-container">
+        <div class="archives-posts">
+
+            <style>
+                form div ul li{
+                    color: red;
+                }
+                .subcribe-buttons {
+                    margin: 10px 0;
+                    text-align: center;
+                }
+
+                .channel-description {
+                    margin: 40px 0 0 0;
+                }
+                label{
+                    font-weight: bold;
+                }
+                form div{
+                    padding:10px;
+                }
+                button.et_bloom_submit_subscription {
+                    background-color: #43165e !important;
+                    border-radius: 4px !important;
+                    -webkit-border-radius: 3px !important;
+                    color:white;
+                    padding: 10px;
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 14px;
+                    width:150px;
+                }
+                .horizontal-form{
+                    border: 1px #43165e solid;
+                    padding:5px;
+                    border-radius: 2px;
+                }
+                .required:after {
+                    content:" *";
+                    color:red;
+                }
+            </style>
+            <div class="row">
+                <div class="column-half">
+                    <h1 class="post-title">Update Profile Picture</h1>
+                    <div id="message" style="display: none">
+                        <div class="alert alert-success" role="alert">
+                            Profile Picture updated!
+                        </div>
+                    </div>
+                    <div id="saving" style="display: none">
+                        <div class="alert alert-warning" role="alert">
+                            <span class="fa fa-spin fa-spinner"></span> updating Profile Picture...
+                        </div>
+                    </div>
+                    <div id="error" style="display: none">
+                        <div class="alert alert-danger" role="alert">
+                            Profile Picture not Updated.
+                        </div>
+                    </div>
+
+                    {{ form_start(form,{'attr':{'class':'horizontal-form','id':'newForm'}}) }}
+                    <fieldset>
+                        {% if profile.imageName %}
+                        <img src="{{ asset('images/products/') }}{{ profile.imageName }}">
+                            {% endif %}
+                            {{ form_row(form.imageFile) }}
+                    </fieldset>
+                    <button id="update" class="et_bloom_submit_subscription">
+                        Update </button>
+                    {{ form_end(form) }}
+
+                </div>
+
+            <div class="column-half">
+
+                <div class="channel-description">
+                    <p>MY LTI is your official profile page on LTI. It allows you to join discussions and update your
+                        profile information. This form allows you to manage some of the fields on your Profile.</p>
+
+                </div>
+
+                <div class="subcribe-buttons">
+                    <a class="button button-subscribe" href="{{ path('update-profile') }}">Update Profile</a>
+                    <a class="button button-subscribe" href="{{ path('change-password') }}">Change Password</a>
+                </div>
+
+
+                <div class="chapel-schedule">
+                            </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    </div>
+{% endblock %}

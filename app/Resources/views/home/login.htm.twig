@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+{% block title %} My LTI {% endblock  %}
+{% block pageTitle %} My LTI {% endblock %}
+{% block body %}
+    <div class="grid-container">
+
+
+
+        <div class="archives-posts">
+
+            <style>
+
+                .subcribe-buttons {
+                    margin: 10px 0;
+                    text-align: center;
+                }
+
+                .channel-description {
+                    margin: 40px 0 0 0;
+                }
+
+            </style>
+            <div class="row">
+                <div class="column-half">
+                    <div class="card post-44361 posttype-magazinearticle card-full-top card-blue">
+                        <div class="card-outline">
+                            <span class="label">{{ article.category }}</span>
+                            <div class="card-image">
+                                <a href="{{ path('view-article', {'slug': article.slug }) }}">
+                                    <div class="card-image-inner">
+                                        <img width="1600" height="900" src="{{ asset('images/products/') }}{{ article.imageName }}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="{{ asset('images/products/') }}{{ article.imageName }} 1600w, {{ asset('images/products/') }}{{ article.imageName }} 300w, {{ asset('images/products/') }}{{ article.imageName }} 768w, {{ asset('images/products/') }}{{ article.imageName }} 1024w, {{ asset('images/products/') }}{{ article.imageName }} 640w, {{ asset('images/products/') }}{{ article.imageName }} 610w" sizes="(max-width: 1600px) 100vw, 1600px">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="card-date">{{ article.createdAt | date('M d, Y') }}</div>
+                            <div class="card-contributors"><div class="contributor-count-1"><span class="contributor contributor-4334"><span class="contributor-image"><img src="https://voice.dts.edu/wp-content/uploads/sites/11/2017/06/Raquel%20P.%20Wroten%20portrait-150x150.jpg" alt="Raquel P. Wroten"></span><span class="name">{{ article.createdBy }}</span></span></div></div>
+                            <div class="card-body">
+                                <a href="https://voice.dts.edu/article/four-dts-alumni-named-in-baylors-survey/">
+                                    <span class="title">{{ article.title }}</span>
+                                </a>
+                                <span class="excerpt">{{ article.intro | raw }}</span>
+                            </div>
+                        </div>
+                    </div>		</div>
+                <div class="column-half">
+
+                    <div class="channel-description">
+                        <p>MY LTI is your official profile page on LTI. It allows you to join discussions and update your profile information. With a LTI account, you also have access to private messages for any personal communications with our contributors.</p>
+                    </div>
+
+                    <div class="subcribe-buttons">
+                        <a class="button button-subscribe" href="{{ path('security_login') }}">Login</a>
+                        <a class="button button-subscribe" href="{{ path('register') }}">Register</a>
+                    </div>
+
+                    <!--
+                    <div class="chapel-schedule">
+                                </div>
+                    -->
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </div>
+{% endblock %}

@@ -1,0 +1,175 @@
+{% extends 'admin.htm.twig' %}
+{% block javascripts %}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( ".js-date" ).datepicker();
+        } );
+    </script>
+    <script type="text/javascript">
+        // prepare the form when the DOM is ready
+        $(document).ready(function () {
+            $('#new').click(function () {
+                // bind to the form's submit event
+                $('#newForm').submit(function (e) {
+                    var ajaxRequest;
+
+                    //Prevent Normal Submit
+                    e.preventDefault();
+
+                    $(".message").fadeOut("slow");
+                    $("#newForm").fadeOut("slow");
+                    $('#saving').fadeIn("slow");
+
+                    var form = document.getElementById("newForm");
+                    var elements = form.elements;
+                    for (var i = 0, len = elements.length; i < len; ++i) {
+                        elements[i].readOnly = true;
+                    }
+                    // get form values
+                    var values = $(this).serialize();
+
+                    $.ajax({
+                        url: $(this).data('url'),
+                        data: new FormData(this),
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        method: 'POST'
+                    }).done(function (company) {
+                        $('#saving').fadeOut("slow");
+                        $('#message').fadeIn("slow");
+                        jQuery.get("/administrator/pages/form", function( data ) {
+                            jQuery('#form-data').html(data);
+                        });
+                        setTimeout(function () {
+                            jQuery("#message").fadeOut("slow");
+                        }, 3000);
+
+                    }).fail(function () {
+                        $('#saving').fadeOut("slow");
+
+                        $("#error").fadeIn("slow");
+
+
+                    })
+
+
+                });
+
+            })
+
+        });
+
+
+    </script>
+
+{% endblock %}
+{% block service %}active{% endblock %}
+{% block pageTitle %}New Page{% endblock %}
+{% block body %}
+    <style>
+        .required:after {
+            content:" *";
+            color:red;
+        }
+        label{
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+    </style>
+
+    <article>
+        <div class="article_inner">
+            <div id="form-data" class="form form-wrap" style="">
+                {{ form_start(form,{'attr':{'id':'newForm'}}) }}
+                <h2>Basic Details</h2>
+
+                <div style="height:220px">
+                    <div class="column">
+                        <div class="form-row">
+                            <div class="form-widget">
+                                {{ form_row(form.page, { 'attr': {'id': 'login_form_credentials_username'} }) }}
+                            </div>
+                            <div class="form-errors"></div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-widget">
+                                {{ form_row(form.tagline, { 'attr': {'id': 'login_form_credentials_username'} }) }}
+                            </div>
+                            <div class="form-errors"></div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-widget">
+                                {{ form_row(form.intro, { 'attr': {'id': 'login_form_credentials_username'} }) }}
+                            </div>
+                            <div class="form-errors"></div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="column">
+                        <div class="form-row">
+                            <div class="form-widget">
+                                {{ form_row(form.title, { 'attr': {'id': 'login_form_credentials_username'} }) }}
+                            </div>
+                            <div class="form-errors"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-widget">
+                                {{ form_row(form.subLine, { 'attr': {'id': 'login_form_credentials_username'} }) }}
+                            </div>
+                            <div class="form-errors"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-widget">
+                                <label for="app_bundle_service_form_tagline" class="required">Banner</label>
+                                {{ form_row(form.imageFile, { 'attr': {'id': 'login_form_credentials_username'} }) }}
+                            </div>
+                            <div class="form-errors"></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Content</h2>
+                    <div class="form-row">
+                        <div class="form-widget">
+                            {{ form_row(form.content, { 'attr': {'id': 'login_form_credentials_username','class':'tinymce'} }) }}
+                        </div>
+                        <div class="form-errors"></div>
+                    </div>
+                </div>
+
+                <div class="button-row">
+                    <input id="login_form__submit" type="submit" value="Save and Close">
+
+                    <a href="{{ path('sub-pages') }}" id="restore">
+                        Cancel </a>
+                </div>
+                {{ form_end(form) }}
+            </div>
+
+        </div>
+    </article>
+
+
+    <aside class="">
+        <i class="fa fa-question-circle help-icon"></i>
+        <p>ALL the fields marked (*) are required.</p>
+        <p>The <b>Tagline</b> is the first line on an image placed on the Banner at the top of the page</p>
+        <p>The <b>Subline</b> is the second line</p>
+        <p>The image selected here will be the main banner on the service page.</p>
+        {% if page is defined %}
+            <p>To update the image File, choose a new file and tick the delete button at the bottom of the form then Save the page.</p>
+
+        {% endif %}
+    </aside>
+
+
+
+{% endblock %}

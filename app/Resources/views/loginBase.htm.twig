@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class='login-page' lang='en'>
+<head>
+    <link href='//cdn.onelogin.com/typography-fonts/fonts.css' media='all' rel='stylesheet' type='text/css'>
+    <link href="{{ asset('lti/css/login.css') }}" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('lti/css/login-a.css') }}" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('lti/css/login-style.css') }}" media="screen" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <title>Login</title>
+    <style>
+        ol {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        fieldset {
+            border: 0;
+            margin: 0;
+            padding: 0;
+        }
+        .login-links{
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body id='login-page'>
+<div id='login-shade'></div>
+<div id='body-main'>
+    <div id='envelope'>
+        <div id='wrapper-flex'></div>
+        <div data-action='new' data-controller='sessions' id='login-box' style="margin: 0 auto">
+            <div class='logo-area'>
+                <div class='logo' id='login-logo'></div>
+            </div>
+            <div id='onelogin_login'>
+                <div class='errors' id='errors'>
+                </div>
+                <div id='notice'>
+                    {% if error %}
+                        <div class="alert alert-danger">
+                            {{ error.messageKey|trans(error.messageData, 'security') }}
+                        </div>
+                    {% endif %}
+                </div>
+                    {{ form_start(loginForm,{'attr':{'class':'formtastic user'}})  }}
+                    <fieldset class="inputs">
+                        <ol>
+                            <li class="email optional" id="user_email_input">
+                                {{ form_row(loginForm._username) }}</li>
+                            <li class="password optional" id="user_password_input">
+                                {{ form_row(loginForm._password) }}
+                            </li>
+                        </ol>
+                        {% block role %}
+                        {% endblock %}
+                        <ol>
+                            <li class="commit"><input class="suppress create" id="user_submit"
+                                                      name="commit" type="submit" value="Log in"/></li>
+                        </ol>
+
+                    </fieldset>
+
+                {{ form_end(loginForm) }}
+                <div class='login-links suppress'>
+                     <a href="{{ path('forgot-password') }}" class="plain"
+                                                              id="forgot_password_login">Forgot password</a>
+                </div>
+            </div>
+        </div>
+
+        <div id='wrapper-flex'></div>
+    </div>
+</div>
+
+</body>
+</html>

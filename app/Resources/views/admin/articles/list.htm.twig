@@ -1,0 +1,74 @@
+{%  extends 'admin-base.htm.twig' %}
+{% block content %}active{% endblock %}
+{% block body %}
+    <div id="page-wrapper">
+        <div class="graphs">
+            <div class="breadcrumb">
+                <ul >
+                    <li><a href="{{ path('dashboard') }}">Dashboard</a> </li>
+
+                    <li>/ </li>
+                    <li><a href="#">Content</a> </li>
+                    <li>/</li>
+                    <li>Manage Articles </li>
+                </ul>
+            </div>
+            <a href="{{ path('new-article') }}" class="button button-primary">
+                <span class="icon"><span class="fa fa-plus-circle"></span> </span>
+                Add Article</a>
+            <div class="xs tabls">
+                <div class="list" data-example-id="contextual-table">
+                    <table class="table table-list">
+                        <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th></th>
+                            <th></th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Featured</th>
+                            <th>Author</th>
+                            <th>Published</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for article in articles  %}
+                        <tr>
+                            <th><input type="checkbox"/></th>
+                            <th scope="row">{{ loop.index }}</th>
+                            <td> <img width="140px" src="{{ asset('images/products/') }}{{ article.imageName }}"/></td>
+                            <td>{{ article.title }}</td>
+                            <td>
+                                {% if article.isActive %}
+                                    <span class="status active"></span>
+
+                                {% else %}
+                                    <span class="status inactive"></span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if article.isFeatured %}
+                                    <span class="status active"></span>
+
+                                {% else %}
+                                    <span class="status inactive"></span>
+                                {% endif %}
+                            </td>
+                            <td>{{ article.createdBy }}</td>
+                            <td>{{ article.createdAt | date('d-m-Y') }}</td>
+                            <td><a href="{{ path('edit-article', {'id': article.id }) }}"><span class="fa fa-edit"></span> </a> </td>
+
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

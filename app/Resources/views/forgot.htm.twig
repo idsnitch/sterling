@@ -1,0 +1,190 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="ROBOTS" content="NOINDEX">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+    <title>Karbon CMS</title>
+
+    <!-- icons -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="57x57"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-57x57.png?2018062101">
+    <link rel="apple-touch-icon" sizes="60x60"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-60x60.png?2018062101">
+    <link rel="apple-touch-icon" sizes="72x72"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-72x72.png?2018062101">
+    <link rel="apple-touch-icon" sizes="76x76"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-76x76.png?2018062101">
+    <link rel="apple-touch-icon" sizes="114x114"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-114x114.png?2018062101">
+    <link rel="apple-touch-icon" sizes="120x120"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-120x120.png?2018062101">
+    <link rel="apple-touch-icon" sizes="144x144"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-144x144.png?2018062101">
+    <link rel="apple-touch-icon" sizes="152x152"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-152x152.png?2018062101">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-180x180.png?2018062101">
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.sirvoy.com/build/meta/favicon.ico?2018062101">
+    <link rel="icon" type="image/png" href="https://cdn.sirvoy.com/build/meta/favicon-32x32.png?2018062101"
+          sizes="32x32">
+    <link rel="icon" type="image/png" href="https://cdn.sirvoy.com/build/meta/android-chrome-192x192.png?2018062101"
+          sizes="192x192">
+    <link rel="icon" type="image/png" href="https://cdn.sirvoy.com/build/meta/favicon-96x96.png?2018062101"
+          sizes="96x96">
+    <link rel="icon" type="image/png" href="https://cdn.sirvoy.com/build/meta/favicon-16x16.png?2018062101"
+          sizes="16x16">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('templates/karbon/css/fonts.css') }}" media="all">
+    <link rel="stylesheet" type="text/css" href="{{ asset('templates/karbon/css/backend.css') }}" media="all">
+    <link rel="stylesheet" type="text/css" href="{{ asset('templates/karbon/css/tamasha.css') }}" media="all">
+
+    <!-- javascripts -->
+    <script src="{{ asset('templates/karbon/js/jquery-jquery-ui.1.11.0.min.js') }}"></script>
+    <script src="{{ asset('templates/karbon/js/jquery.ui.touch-punch.min.js') }}"></script>
+    <script src="{{ asset('templates/karbon/js/sweetalert2.min.js') }}"></script>
+    <script src="{{ asset('templates/karbon/js/backend-functions.js') }}"></script>
+
+
+    <script>
+        // always clear sessionStorage when we end up here so things are tidy
+        // (we are here before login, and redirected here after logout)
+        sessionStorage.clear();
+
+        $(function () {
+            $('#login_form__username').focus();
+        });
+    </script>
+    <script type="text/javascript">
+        // prepare the form when the DOM is ready
+        $(document).ready(function () {
+            $('#new').click(function () {
+                // bind to the form's submit event
+                $('#newForm').submit(function (e) {
+                    var ajaxRequest;
+
+                    //Prevent Normal Submit
+                    e.preventDefault();
+
+                    $(".message").fadeOut("slow");
+                    $("#newForm").fadeOut("slow");
+                    $('#saving').fadeIn("slow");
+
+                    var form = document.getElementById("newForm");
+                    var elements = form.elements;
+                    for (var i = 0, len = elements.length; i < len; ++i) {
+                        elements[i].readOnly = true;
+                    }
+                    // get form values
+                    var values = $(this).serialize();
+
+                    $.ajax({
+                        url: $(this).data('url'),
+                        data: new FormData(this),
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        method: 'POST'
+                    }).done(function (company) {
+                        $('#saving').fadeOut("slow");
+                        $('#message').fadeIn("slow");
+
+
+                    }).fail(function () {
+                        $('#saving').fadeOut("slow");
+
+                        $("#error").fadeIn("slow");
+
+
+                    })
+
+
+                });
+
+            })
+
+        });
+
+
+    </script>
+
+
+</head>
+
+<body class="login">
+
+
+<header class="page-header">
+    <div id="menu_bar">
+        <div id="nav_inner">
+            <div id="logo">
+                <a href="/"><img style="width: 200px;margin-left: -37px" src="{{ asset('logo.png') }}"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="main">
+
+    <div class="content_wrapper">
+        <div class="inner_wrapper">
+            <div class="body-wrapper ">
+                <article>
+                    <div class="article_inner">
+
+                        <div class="form form-wrap">
+                            <div id="saving" class="alert alert-warning" style="display: none">
+                                <i class="fa fa-spin fa-spinner"></i>&nbsp;Requesting reset
+                            </div>
+                            <div id="error" class="alert alert-danger" style="display: none">
+                                <i class="fa fa-times"></i>&nbsp;Error, Request not Sent
+                            </div>
+                            <div id="message" class="alert alert-success" style="display: none">
+                                <i class="fa fa-check"></i>&nbsp;The request has been successfully sent, check your email for a link to reset your password.
+                            </div>
+
+                            {{ form_start(form,{'attr':{'id':'newForm'}}) }}
+                            <h2> Request Password Reset</h2>
+
+                            <div class="column">
+
+                                <div class="form-row form-field-login_form_credentials_username ">
+                                    <div class="form-label">
+                                        <label for="login_form_credentials_username"
+                                               class="required">Email</label>
+
+                                    </div>
+                                    <div class="form-widget">
+                                        {{ form_row(form.email, { 'attr': {'id': 'login_form_credentials_username'} }) }}
+                                    </div>
+                                    <div class="form-errors"></div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="button-row">
+                                <input id="new" type="submit" value="Request">
+
+                            </div>
+                            {{ form_end(form) }}
+                        </div>
+
+                    </div>
+                </article>
+            </div>  <!-- div.body-wrapper -->
+        </div> <!-- div.inner_wrapper -->
+    </div> <!-- div.content_wrapper -->
+</section> <!-- section.main -->
+
+
+<footer class="page-footer">
+    <div class="copyright">
+        <a href="#" target="_blank">Terms &amp; Conditions</a>
+        | Copyright © {{ "now" | date('Y') }} Sterling Capital Ltd
+    </div>
+</footer>
+
+</body>
+</html>

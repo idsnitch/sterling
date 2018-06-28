@@ -1,0 +1,33 @@
+<style>
+    button.et_bloom_submit_subscription {
+        background-color: #43165e !important;
+        border-radius: 4px !important;
+        -webkit-border-radius: 3px !important;
+        color:white;
+        padding: 10px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        width:150px;
+    }
+</style>
+<div id="message" style="display: none">
+    <div class="alert alert-success" role="alert">
+        Comment submitted!
+    </div>
+</div>
+<div id="saving" style="display: none">
+    <div class="alert alert-warning" role="alert">
+        <span class="fa fa-spin fa-spinner"></span> Submitting Comment...
+    </div>
+</div>
+<div id="error" style="display: none">
+    <div class="alert alert-danger" role="alert">
+        Comment not Submitted.
+    </div>
+</div>
+{{ form_start(form,{'attr':{'id':'commentForm'}}) }}
+<div class="form-group">
+{{ form_row(form.commentText,{'attr':{'class':'form-control'}}) }}
+</div>
+    <button id="comment" type="submit" class="et_bloom_submit_subscription">Comment</button>
+{{ form_end(form) }}

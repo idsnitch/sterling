@@ -1,0 +1,69 @@
+{%  extends 'admin-base.htm.twig' %}
+{% block content %}active{% endblock %}
+{% block body %}
+    <style>
+
+    </style>
+    <div id="page-wrapper">
+        <div class="graphs">
+            <div class="breadcrumb">
+                <ul >
+                    <li><a href="{{ path('dashboard') }}">Dashboard</a> </li>
+
+                    <li>/ </li>
+                    <li><a href="#">Content</a> </li>
+                    <li>/</li>
+                    <li>Manage Categories </li>
+                </ul>
+            </div>
+            <a href="{{ path('new-category') }}" class="button button-primary">
+                <span class="icon"><span class="fa fa-plus-circle"></span> </span>
+                Add Category</a>
+            <div class="xs tabls">
+                <div class="list" data-example-id="contextual-table">
+                    <table class="table table-list">
+                        <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th></th>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Author</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for category in categories %}
+                        <tr>
+                            <td><input type="checkbox"/></td>
+                            <td></td>
+                            <td scope="row">{{ loop.index }}</td>
+                            <td>{{ category.categoryName }}</td>
+                            <td>
+                                {% if category.isActive %}
+                                    <span class="status active"></span>
+
+                                {% else %}
+                                    <span class="status inactive"></span>
+                                {% endif %}
+                            </td>
+                            <td>{{ category.createdBy }}</td>
+                            <td><a href="{{ path('edit-category', {'id': category.id }) }}"><span class="fa fa-edit"></span> </a> </td>
+                        </tr>
+                            {% else %}
+                            <tr>
+                                <td colspan="5">No Categories</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

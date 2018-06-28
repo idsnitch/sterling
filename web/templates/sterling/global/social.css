@@ -1,0 +1,1829 @@
+.social-feed-container {
+    padding: 0;
+    margin: 0;
+}
+
+.social-feed-container svg {
+    margin: 54px auto;
+    display: block;
+}
+
+.social-feed-container svg path,
+.social-feed-container svg rect {
+    fill: #6eab24;
+}
+
+.social-feed-container .social-feed-body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.social-feed-container .social-feed-body .social-feed-card {
+    display: inline-block;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    background-color: #fff;
+    border-radius: 9px;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+    padding: 0 0 25px 0;
+    margin: 6px 0 9px 0;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .shadow-parent {
+    padding: 10px;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-profile-section {
+    padding: 0;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-profile-section img {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    margin: 13px 13px 13px 25px;
+    vertical-align: middle;
+    float: left;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-profile-section .social-feed-profile-name {
+    text-transform: uppercase;
+    font-family: 'FuturaBold';
+    font-size: 14px;
+    color: #57595b;
+    text-align: left;
+    line-height: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 175px);
+    display: block;
+    float: left;
+    margin: 21px 0;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-profile-section .social-feed-hours-posted {
+    color: #C1C1C1;
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    margin: 21px 25px 21px 1px;
+    color: #bec0c2;
+    float: right;
+    line-height: 14px;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-green-line {
+    width: 100%;
+    overflow: hidden;
+    height: 2px;
+    background: #006150;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(-270deg, #6eab24, #006150);
+    /* Standard syntax */
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-content-image {
+    margin: 0;
+    padding: 0;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-content-image img {
+    width: 100%;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-content-text {
+    overflow: hidden;
+    margin: 15px 25px 28px 25px;
+    font-family: 'FuturaLight';
+    font-size: 16px;
+    color: #57595b;
+    text-align: left;
+    line-height: 24px;
+    padding: 0;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-content-text p {
+    margin: 0;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-footer {
+    position: relative;
+    text-align: center;
+    margin: 25px 25px 0;
+    color: #bec0c2;
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    min-height: 22px;
+    padding: 0;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-footer .social-card-footer-comments-likes {
+    float: left;
+    margin: auto 0;
+    vertical-align: baseline;
+    display: block;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-footer .social-card-footer-comments-likes .social-card-comment-button {
+    display: inline-block;
+    margin: 4px 20px 0 0;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-footer .social-card-footer-comments-likes .social-card-comment-button img {
+    vertical-align: baseline;
+    margin-right: 5px;
+    height: 14px;
+    width: 16px;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-footer .social-card-footer-comments-likes .social-card-like-button {
+    display: inline-block;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-footer .social-card-footer-comments-likes .social-card-like-button img {
+    vertical-align: baseline;
+    margin-right: 5px;
+    height: 16px;
+    width: 18px;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-footer .social-card-footer-comments-likes span {
+    font-size: 14px;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-footer .social-card-source {
+    color: #C1C1C1;
+    font-weight: 200;
+    float: right;
+    font-size: 14px;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-footer .social-card-source span {
+    vertical-align: middle;
+}
+
+.social-feed-container .social-feed-body .social-feed-card .social-card-footer .social-card-source img {
+    vertical-align: middle;
+    height: 22px;
+    width: 22px;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four {
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    max-width: 358px;
+    background-color: #fff;
+    border-radius: 9px;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+    padding: 0 0 25px 0;
+    margin: 6px 15px 9px 0;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-profile-section {
+    padding: 0;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-profile-section img {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    margin: 13px 13px 13px 25px;
+    vertical-align: middle;
+    float: left;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-profile-section .social-feed-profile-name {
+    text-transform: uppercase;
+    font-family: 'FuturaBold';
+    font-size: 14px;
+    color: #57595b;
+    text-align: left;
+    line-height: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 175px);
+    display: block;
+    float: left;
+    margin: 21px 0;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-profile-section .social-feed-hours-posted {
+    color: #C1C1C1;
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    margin: 21px 25px 21px 1px;
+    color: #bec0c2;
+    float: right;
+    line-height: 14px;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-green-line {
+    overflow: hidden;
+    height: 2px;
+    background: #006150;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(-270deg, #6eab24, #006150);
+    /* Standard syntax */
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-content-image {
+    margin: 0;
+    padding: 0;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-content-image img {
+    width: 100%;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-content-text {
+    overflow: hidden;
+    margin: 15px 25px 28px 25px;
+    font-family: 'FuturaLight';
+    font-size: 16px;
+    color: #57595b;
+    text-align: left;
+    line-height: 24px;
+    padding: 0;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-content-text p {
+    margin: 0;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-footer {
+    position: relative;
+    text-align: center;
+    margin: 25px 25px 0;
+    color: #bec0c2;
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    min-height: 22px;
+    padding: 0;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-footer .social-card-footer-comments-likes {
+    float: left;
+    margin: auto 0;
+    vertical-align: baseline;
+    display: block;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-footer .social-card-footer-comments-likes .social-card-comment-button {
+    display: inline-block;
+    margin: 4px 20px 0 0;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-footer .social-card-footer-comments-likes .social-card-comment-button img {
+    vertical-align: baseline;
+    margin-right: 5px;
+    height: 14px;
+    width: 16px;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-footer .social-card-footer-comments-likes .social-card-like-button {
+    display: inline-block;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-footer .social-card-footer-comments-likes .social-card-like-button img {
+    vertical-align: baseline;
+    margin-right: 5px;
+    height: 16px;
+    width: 18px;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-footer .social-card-footer-comments-likes span {
+    font-size: 14px;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-footer .social-card-source {
+    color: #C1C1C1;
+    font-weight: 200;
+    float: right;
+    font-size: 14px;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-footer .social-card-source span {
+    vertical-align: middle;
+}
+
+.social-feed-container .social-feed-body .social-feed-card-lesser-than-four .social-card-footer .social-card-source img {
+    vertical-align: middle;
+    height: 22px;
+    width: 22px;
+}
+
+.social-feed-container .social-feed-body .gen-wrapper {
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+.social-feed-container .social-feed-body .gen-columns {
+    -webkit-column-count: 3;
+    -webkit-column-gap: 15px;
+    -webkit-column-fill: auto;
+    -moz-column-count: 3;
+    -moz-column-gap: 15px;
+    -moz-column-fill: auto;
+    column-count: 3;
+    column-gap: 15px;
+    column-fill: auto;
+    margin: -6px 0 0;
+}
+
+.social-feed-container .social-feed-body .social-feed-card:hover {
+    cursor: pointer;
+    cursor: hand;
+    opacity: 0.4;
+}
+
+.social-feed-container .social-feed-body .loader-button {
+    height: 41px;
+    width: 240px;
+    background-color: #6eab24;
+    border-radius: 9px;
+    margin: 54px auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.social-feed-container .social-feed-body .loader-button p {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 41px;
+    color: #fff;
+    font-family: 'FuturaLight';
+    font-size: 18px;
+    margin: 0;
+}
+
+.social-feed-container .social-feed-body .loader-button:hover {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.social-feed-popup-card-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(51, 51, 51, 0.7);
+    z-index: 10;
+    padding: 0;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row {
+    position: fixed;
+    min-width: 100%;
+    height: 500px;
+    left: 0;
+    top: calc(50% - 250px);
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card {
+    position: fixed;
+    overflow: hidden;
+    width: 978px;
+    max-height: 550px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 9px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-image-side {
+    margin: auto 0;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-image-side img {
+    width: 100%;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-image-side-random {
+    padding: -10;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side {
+    position: relative;
+    padding: 0;
+    height: 550px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-feed-popup-card-profile-section {
+    padding: 0;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-feed-popup-card-profile-section img {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    margin: 13px 13px 13px 25px;
+    vertical-align: middle;
+    float: left;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-feed-popup-card-profile-section .social-feed-profile-name {
+    text-transform: uppercase;
+    font-family: 'FuturaBold';
+    font-size: 14px;
+    color: #57595b;
+    text-align: left;
+    line-height: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 170px;
+    display: block;
+    float: left;
+    margin: 21px 0;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-feed-popup-card-profile-section .social-feed-hours-posted {
+    color: #C1C1C1;
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    margin: 21px 25px 21px 5px;
+    color: #bec0c2;
+    float: right;
+    line-height: 14px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-card-green-line {
+    overflow: hidden;
+    height: 2px;
+    background: #006150;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(-270deg, #6eab24, #006150);
+    /* Standard syntax */
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-card-content-image {
+    margin: 0;
+    padding: 0;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-card-content-image img {
+    width: 100%;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-card-content-text {
+    padding: 0;
+    margin-bottom: 28px;
+    overflow: hidden;
+    max-height: 250px;
+    padding: 15px 25px 28px 25px;
+    font-family: 'FuturaLight';
+    font-size: 16px;
+    color: #57595b;
+    text-align: left;
+    line-height: 24px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-card-content-text p {
+    margin: 0;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-feed-popup-card-divider {
+    height: 1px;
+    background-color: #bec0c2;
+    margin: 19px 25px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-feed-card-share {
+    margin: 19px 25px;
+    height: 22px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-feed-card-share h3 {
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    color: #006150;
+    line-height: 14px;
+    margin: 5px 6px 0 0;
+    float: left;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-feed-card-share .share-image {
+    float: left;
+    margin-right: 15px;
+    margin: 3px 15px 0 0;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-feed-card-share .social-share-icon {
+    float: left;
+    margin-right: 15px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-feed-popup-card-close {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 25px 25px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-feed-popup-card-close p {
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    color: #bec0c2;
+    text-align: left;
+    line-height: 14px;
+    float: left;
+    margin: 3px 10px 0 0;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-feed-popup-card-close img {
+    float: left;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-feed-popup-card-close :hover {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-card-footer {
+    position: relative;
+    text-align: center;
+    margin: 25px 25px 0;
+    color: #bec0c2;
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    min-height: 22px;
+    padding: 0;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-card-footer .social-card-footer-comments-likes {
+    float: left;
+    margin: auto 0;
+    vertical-align: baseline;
+    display: block;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-card-footer .social-card-footer-comments-likes .social-card-comment-button {
+    display: inline-block;
+    margin: 4px 20px 0 0;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-card-footer .social-card-footer-comments-likes .social-card-comment-button img {
+    vertical-align: baseline;
+    margin-right: 5px;
+    height: 14px;
+    width: 16px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-card-footer .social-card-footer-comments-likes .social-card-like-button {
+    display: inline-block;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-card-footer .social-card-footer-comments-likes .social-card-like-button img {
+    vertical-align: baseline;
+    margin-right: 5px;
+    height: 16px;
+    width: 18px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-card-footer .social-card-footer-comments-likes span {
+    font-size: 14px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-card-footer .social-card-source {
+    color: #C1C1C1;
+    font-weight: 200;
+    float: right;
+    font-size: 14px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-card-footer .social-card-source span {
+    vertical-align: middle;
+    text-transform: lowercase;
+    margin-right: 13px;
+    text-decoration: underline;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card .social-feed-popup-card-content-side .social-card-footer .social-card-source img {
+    vertical-align: middle;
+    height: 22px;
+    width: 22px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile {
+    max-height: 550px;
+    max-width: 500px;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 9px;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+    padding: 0;
+    margin: 6px auto 9px auto;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .shadow-parent {
+    padding: 10px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-profile-section {
+    padding: 0;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-profile-section img {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    margin: 13px 13px 13px 25px;
+    vertical-align: middle;
+    float: left;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-profile-section .social-feed-profile-name {
+    text-transform: uppercase;
+    font-family: 'FuturaBold';
+    font-size: 14px;
+    color: #57595b;
+    text-align: left;
+    line-height: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 175px);
+    display: block;
+    float: left;
+    margin: 21px 0;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-profile-section .social-feed-hours-posted {
+    color: #C1C1C1;
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    margin: 21px 25px 21px 1px;
+    color: #bec0c2;
+    float: right;
+    line-height: 14px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-content-image {
+    margin: 0;
+    padding: 0;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-content-image img {
+    width: 100%;
+    max-height: 300px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-content-image .social-card-source {
+    color: #C1C1C1;
+    font-weight: 200;
+    float: left;
+    position: relative;
+    float: right;
+    -ms-transform: translate(-50%, -50px);
+    /* IE 9 */
+    -webkit-transform: translate(-50%, -50px);
+    /* Safari */
+    transform: translate(-50%, -50px);
+    z-index: 1000;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 9px;
+    padding: 5px 10px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-content-image .social-card-source span {
+    vertical-align: middle;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-content-image .social-card-source img {
+    vertical-align: middle;
+    height: 22px;
+    width: 22px;
+    text-transform: lowercase;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-content-text {
+    overflow: hidden;
+    margin: 15px 25px 28px 25px;
+    font-family: 'FuturaLight';
+    max-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    color: #57595b;
+    text-align: left;
+    line-height: 24px;
+    padding: 0;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-content-text p {
+    margin: 0;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-footer {
+    position: relative;
+    text-align: center;
+    margin: 0 10px 0;
+    color: #bec0c2;
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    min-height: 22px;
+    padding: 0;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-footer .social-share-icon {
+    margin: 0 8px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-footer .social-feed-card-share {
+    float: left;
+    margin: auto 0;
+    vertical-align: baseline;
+    display: block;
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 430px) {
+    .social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-footer .social-feed-card-share {
+        margin: 10px auto;
+        padding-left: 0;
+        width: 100%;
+    }
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-footer .social-feed-popup-card-share-parent {
+    float: right;
+    margin-top: 2px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-footer .social-feed-popup-card-share-parent h3 {
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    color: #006150;
+    line-height: 14px;
+    margin: 1px 6px 0 0;
+    float: right;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-footer .social-feed-popup-card-share-parent .share-image {
+    float: right;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-footer .social-card-footer-comments-likes {
+    float: left;
+    margin: auto 18px;
+    vertical-align: baseline;
+    display: block;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-footer .social-card-footer-comments-likes .social-card-comment-button {
+    display: inline-block;
+    margin: 4px 20px 0 0;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-footer .social-card-footer-comments-likes .social-card-comment-button img {
+    vertical-align: baseline;
+    margin-right: 5px;
+    height: 14px;
+    width: 16px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-footer .social-card-footer-comments-likes .social-card-like-button {
+    display: inline-block;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-footer .social-card-footer-comments-likes .social-card-like-button img {
+    vertical-align: baseline;
+    margin-right: 5px;
+    height: 16px;
+    width: 18px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-card-footer .social-card-footer-comments-likes span {
+    font-size: 14px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-feed-popup-card-close {
+    float: right;
+    margin: 0 25px 25px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-feed-popup-card-close p {
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    color: #bec0c2;
+    text-align: left;
+    line-height: 14px;
+    float: left;
+    margin: 3px 10px 0 0;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-feed-popup-card-close img {
+    float: left;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-mobile .social-feed-popup-card-close :hover {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-navigation {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 25px 25px;
+}
+
+.social-feed-popup-card-container .social-feed-popup-card-row .social-feed-popup-card-navigation img {
+    float: left;
+    margin-right: 30px;
+}
+
+.social-feed-card-share a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.grid {
+    border: 1px solid #cccccc;
+    list-style: none;
+    background: #ffffff;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
+}
+
+.grid-img {
+    width: 100%;
+    vertical-align: middle;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.grid-img.img-loaded {
+    visibility: visible;
+    opacity: 1;
+}
+.ag-no-transition {
+    -webkit-transition: none !important;
+    transition: none !important;
+}
+
+.angular-grid {
+    position: relative;
+}
+
+.angular-grid > * {
+    opacity: 0
+}
+
+.angular-grid > .angular-grid-item {
+    opacity: 1
+}
+.digital-events-wall-container {
+    padding: 0;
+    margin: 0;
+}
+
+.digital-events-wall-container svg {
+    margin: 54px auto;
+    display: block;
+}
+
+.digital-events-wall-container svg path,
+.digital-events-wall-container svg rect {
+    fill: #6eab24;
+}
+
+.digital-events-wall-container .digital-events-wall-body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    padding: 10px 10px;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card {
+    display: inline-block;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    background-color: #fff;
+    border-radius: 9px;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+    padding: 0 0 25px 0;
+    margin: 6px 0 9px 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .shadow-parent {
+    padding: 10px;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-profile-section {
+    padding: 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-profile-section img {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    margin: 13px 13px 13px 25px;
+    vertical-align: middle;
+    float: left;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-profile-section .digital-events-wall-profile-name {
+    text-transform: uppercase;
+    font-family: 'FuturaBold';
+    font-size: 14px;
+    color: #57595b;
+    text-align: left;
+    line-height: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 175px);
+    display: block;
+    float: left;
+    margin: 21px 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-profile-section .digital-events-wall-hours-posted {
+    color: #C1C1C1;
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    margin: 21px 25px 21px 1px;
+    color: #bec0c2;
+    float: right;
+    line-height: 14px;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-green-line {
+    width: 100%;
+    overflow: hidden;
+    height: 2px;
+    background: #006150;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(-270deg, #6eab24, #006150);
+    /* Standard syntax */
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-content-image {
+    margin: 0;
+    padding: 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-content-image img {
+    width: 100%;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-content-text {
+    overflow: hidden;
+    margin: 15px 25px 28px 25px;
+    font-family: 'FuturaLight';
+    font-size: 16px;
+    color: #57595b;
+    text-align: left;
+    line-height: 24px;
+    padding: 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-content-text p {
+    margin: 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-footer {
+    position: relative;
+    text-align: center;
+    margin: 25px 25px 0;
+    color: #bec0c2;
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    min-height: 22px;
+    padding: 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-footer .social-card-footer-comments-likes {
+    float: left;
+    margin: auto 0;
+    vertical-align: baseline;
+    display: block;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-footer .social-card-footer-comments-likes .social-card-comment-button {
+    display: inline-block;
+    margin: 4px 20px 0 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-footer .social-card-footer-comments-likes .social-card-comment-button img {
+    vertical-align: baseline;
+    margin-right: 5px;
+    height: 14px;
+    width: 16px;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-footer .social-card-footer-comments-likes .social-card-like-button {
+    display: inline-block;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-footer .social-card-footer-comments-likes .social-card-like-button img {
+    vertical-align: baseline;
+    margin-right: 5px;
+    height: 16px;
+    width: 18px;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-footer .social-card-footer-comments-likes span {
+    font-size: 14px;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-footer .social-card-source {
+    color: #C1C1C1;
+    font-weight: 200;
+    float: right;
+    font-size: 14px;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-footer .social-card-source span {
+    vertical-align: middle;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card .social-card-footer .social-card-source img {
+    vertical-align: middle;
+    height: 22px;
+    width: 22px;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four {
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    max-width: 358px;
+    background-color: #fff;
+    border-radius: 9px;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+    padding: 0 0 25px 0;
+    margin: 6px 15px 9px 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-profile-section {
+    padding: 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-profile-section img {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    margin: 13px 13px 13px 25px;
+    vertical-align: middle;
+    float: left;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-profile-section .digital-events-wall-profile-name {
+    text-transform: uppercase;
+    font-family: 'FuturaBold';
+    font-size: 14px;
+    color: #57595b;
+    text-align: left;
+    line-height: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 175px);
+    display: block;
+    float: left;
+    margin: 21px 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-profile-section .digital-events-wall-hours-posted {
+    color: #C1C1C1;
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    margin: 21px 25px 21px 1px;
+    color: #bec0c2;
+    float: right;
+    line-height: 14px;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-green-line {
+    overflow: hidden;
+    height: 2px;
+    background: #006150;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(-270deg, #6eab24, #006150);
+    /* Standard syntax */
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-content-image {
+    margin: 0;
+    padding: 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-content-image img {
+    width: 100%;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-content-text {
+    overflow: hidden;
+    margin: 15px 25px 28px 25px;
+    font-family: 'FuturaLight';
+    font-size: 16px;
+    color: #57595b;
+    text-align: left;
+    line-height: 24px;
+    padding: 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-content-text p {
+    margin: 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-footer {
+    position: relative;
+    text-align: center;
+    margin: 25px 25px 0;
+    color: #bec0c2;
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    min-height: 22px;
+    padding: 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-footer .social-card-footer-comments-likes {
+    float: left;
+    margin: auto 0;
+    vertical-align: baseline;
+    display: block;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-footer .social-card-footer-comments-likes .social-card-comment-button {
+    display: inline-block;
+    margin: 4px 20px 0 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-footer .social-card-footer-comments-likes .social-card-comment-button img {
+    vertical-align: baseline;
+    margin-right: 5px;
+    height: 14px;
+    width: 16px;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-footer .social-card-footer-comments-likes .social-card-like-button {
+    display: inline-block;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-footer .social-card-footer-comments-likes .social-card-like-button img {
+    vertical-align: baseline;
+    margin-right: 5px;
+    height: 16px;
+    width: 18px;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-footer .social-card-footer-comments-likes span {
+    font-size: 14px;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-footer .social-card-source {
+    color: #C1C1C1;
+    font-weight: 200;
+    float: right;
+    font-size: 14px;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-footer .social-card-source span {
+    vertical-align: middle;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card-lesser-than-four .social-card-footer .social-card-source img {
+    vertical-align: middle;
+    height: 22px;
+    width: 22px;
+}
+
+.digital-events-wall-container .digital-events-wall-body .gen-columns {
+    -webkit-column-count: 3;
+    -webkit-column-gap: 15px;
+    -webkit-column-fill: auto;
+    -moz-column-count: 3;
+    -moz-column-gap: 15px;
+    -moz-column-fill: auto;
+    column-count: 3;
+    column-gap: 15px;
+    column-fill: auto;
+    margin: -6px 0 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .digital-events-wall-card:hover {
+    cursor: pointer;
+    cursor: hand;
+    opacity: 0.4;
+}
+
+.digital-events-wall-container .digital-events-wall-body .loader-button {
+    height: 41px;
+    width: 240px;
+    background-color: #6eab24;
+    border-radius: 9px;
+    margin: 54px auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .loader-button p {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 41px;
+    color: #fff;
+    font-family: 'FuturaLight';
+    font-size: 18px;
+    margin: 0;
+}
+
+.digital-events-wall-container .digital-events-wall-body .loader-button:hover {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.digital-events-wall-popup-card-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(51, 51, 51, 0.7);
+    z-index: 10;
+    padding: 0;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row {
+    position: fixed;
+    min-width: 100%;
+    height: 500px;
+    left: 0;
+    top: calc(50% - 250px);
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card {
+    position: fixed;
+    overflow: hidden;
+    width: 978px;
+    max-height: 550px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 9px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-image-side {
+    margin: auto 0;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-image-side img {
+    width: 100%;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-image-side-random {
+    padding: -10;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side {
+    position: relative;
+    padding: 0;
+    height: 550px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .digital-events-wall-popup-card-profile-section {
+    padding: 0;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .digital-events-wall-popup-card-profile-section img {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    margin: 13px 13px 13px 25px;
+    vertical-align: middle;
+    float: left;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .digital-events-wall-popup-card-profile-section .digital-events-wall-profile-name {
+    text-transform: uppercase;
+    font-family: 'FuturaBold';
+    font-size: 14px;
+    color: #57595b;
+    text-align: left;
+    line-height: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 170px;
+    display: block;
+    float: left;
+    margin: 21px 0;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .digital-events-wall-popup-card-profile-section .digital-events-wall-hours-posted {
+    color: #C1C1C1;
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    margin: 21px 25px 21px 5px;
+    color: #bec0c2;
+    float: right;
+    line-height: 14px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .social-card-green-line {
+    overflow: hidden;
+    height: 2px;
+    background: #006150;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(-270deg, #6eab24, #006150);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(-270deg, #6eab24, #006150);
+    /* Standard syntax */
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .social-card-content-image {
+    margin: 0;
+    padding: 0;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .social-card-content-image img {
+    width: 100%;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .social-card-content-text {
+    padding: 0;
+    margin-bottom: 28px;
+    overflow: hidden;
+    max-height: 250px;
+    padding: 15px 25px 28px 25px;
+    font-family: 'FuturaLight';
+    font-size: 16px;
+    color: #57595b;
+    text-align: left;
+    line-height: 24px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .social-card-content-text p {
+    margin: 0;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .digital-events-wall-popup-card-divider {
+    height: 1px;
+    background-color: #bec0c2;
+    margin: 19px 25px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .digital-events-wall-card-share {
+    margin: 19px 25px;
+    height: 22px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .digital-events-wall-card-share h3 {
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    color: #006150;
+    line-height: 14px;
+    margin: 5px 6px 0 0;
+    float: left;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .digital-events-wall-card-share .share-image {
+    float: left;
+    margin-right: 15px;
+    margin: 3px 15px 0 0;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .digital-events-wall-card-share .social-share-icon {
+    float: left;
+    margin-right: 15px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .digital-events-wall-popup-card-close {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 25px 25px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .digital-events-wall-popup-card-close p {
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    color: #bec0c2;
+    text-align: left;
+    line-height: 14px;
+    float: left;
+    margin: 3px 10px 0 0;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .digital-events-wall-popup-card-close img {
+    float: left;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .digital-events-wall-popup-card-close :hover {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .social-card-footer {
+    position: relative;
+    text-align: center;
+    margin: 25px 25px 0;
+    color: #bec0c2;
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    min-height: 22px;
+    padding: 0;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .social-card-footer .social-card-footer-comments-likes {
+    float: left;
+    margin: auto 0;
+    vertical-align: baseline;
+    display: block;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .social-card-footer .social-card-footer-comments-likes .social-card-comment-button {
+    display: inline-block;
+    margin: 4px 20px 0 0;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .social-card-footer .social-card-footer-comments-likes .social-card-comment-button img {
+    vertical-align: baseline;
+    margin-right: 5px;
+    height: 14px;
+    width: 16px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .social-card-footer .social-card-footer-comments-likes .social-card-like-button {
+    display: inline-block;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .social-card-footer .social-card-footer-comments-likes .social-card-like-button img {
+    vertical-align: baseline;
+    margin-right: 5px;
+    height: 16px;
+    width: 18px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .social-card-footer .social-card-footer-comments-likes span {
+    font-size: 14px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .social-card-footer .social-card-source {
+    color: #C1C1C1;
+    font-weight: 200;
+    float: right;
+    font-size: 14px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .social-card-footer .social-card-source span {
+    vertical-align: middle;
+    text-transform: lowercase;
+    margin-right: 13px;
+    text-decoration: underline;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card .digital-events-wall-popup-card-content-side .social-card-footer .social-card-source img {
+    vertical-align: middle;
+    height: 22px;
+    width: 22px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile {
+    max-height: 550px;
+    max-width: 500px;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 9px;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+    padding: 0;
+    margin: 6px auto 9px auto;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .shadow-parent {
+    padding: 10px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-profile-section {
+    padding: 0;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-profile-section img {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    margin: 13px 13px 13px 25px;
+    vertical-align: middle;
+    float: left;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-profile-section .digital-events-wall-profile-name {
+    text-transform: uppercase;
+    font-family: 'FuturaBold';
+    font-size: 14px;
+    color: #57595b;
+    text-align: left;
+    line-height: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 175px);
+    display: block;
+    float: left;
+    margin: 21px 0;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-profile-section .digital-events-wall-hours-posted {
+    color: #C1C1C1;
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    margin: 21px 25px 21px 1px;
+    color: #bec0c2;
+    float: right;
+    line-height: 14px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-content-image {
+    margin: 0;
+    padding: 0;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-content-image img {
+    width: 100%;
+    max-height: 300px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-content-image .social-card-source {
+    color: #C1C1C1;
+    font-weight: 200;
+    float: left;
+    position: relative;
+    float: right;
+    -ms-transform: translate(-50%, -50px);
+    /* IE 9 */
+    -webkit-transform: translate(-50%, -50px);
+    /* Safari */
+    transform: translate(-50%, -50px);
+    z-index: 1000;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 9px;
+    padding: 5px 10px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-content-image .social-card-source span {
+    vertical-align: middle;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-content-image .social-card-source img {
+    vertical-align: middle;
+    height: 22px;
+    width: 22px;
+    text-transform: lowercase;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-content-text {
+    overflow: hidden;
+    margin: 15px 25px 28px 25px;
+    font-family: 'FuturaLight';
+    max-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    color: #57595b;
+    text-align: left;
+    line-height: 24px;
+    padding: 0;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-content-text p {
+    margin: 0;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-footer {
+    position: relative;
+    text-align: center;
+    margin: 0 10px 0;
+    color: #bec0c2;
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    min-height: 22px;
+    padding: 0;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-footer .social-share-icon {
+    margin: 0 8px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-footer .digital-events-wall-card-share {
+    float: left;
+    margin: auto 0;
+    vertical-align: baseline;
+    display: block;
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 430px) {
+    .digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-footer .digital-events-wall-card-share {
+        margin: 10px auto;
+        padding-left: 0;
+        width: 100%;
+    }
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-footer .digital-events-wall-popup-card-share-parent {
+    float: right;
+    margin-top: 2px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-footer .digital-events-wall-popup-card-share-parent h3 {
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    color: #006150;
+    line-height: 14px;
+    margin: 1px 6px 0 0;
+    float: right;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-footer .digital-events-wall-popup-card-share-parent .share-image {
+    float: right;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-footer .social-card-footer-comments-likes {
+    float: left;
+    margin: auto 18px;
+    vertical-align: baseline;
+    display: block;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-footer .social-card-footer-comments-likes .social-card-comment-button {
+    display: inline-block;
+    margin: 4px 20px 0 0;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-footer .social-card-footer-comments-likes .social-card-comment-button img {
+    vertical-align: baseline;
+    margin-right: 5px;
+    height: 14px;
+    width: 16px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-footer .social-card-footer-comments-likes .social-card-like-button {
+    display: inline-block;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-footer .social-card-footer-comments-likes .social-card-like-button img {
+    vertical-align: baseline;
+    margin-right: 5px;
+    height: 16px;
+    width: 18px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .social-card-footer .social-card-footer-comments-likes span {
+    font-size: 14px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .digital-events-wall-popup-card-close {
+    float: right;
+    margin: 0 25px 25px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .digital-events-wall-popup-card-close p {
+    font-family: 'FuturaLight';
+    font-size: 14px;
+    color: #bec0c2;
+    text-align: left;
+    line-height: 14px;
+    float: left;
+    margin: 3px 10px 0 0;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .digital-events-wall-popup-card-close img {
+    float: left;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-mobile .digital-events-wall-popup-card-close :hover {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-navigation {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 25px 25px;
+}
+
+.digital-events-wall-popup-card-container .digital-events-wall-popup-card-row .digital-events-wall-popup-card-navigation img {
+    float: left;
+    margin-right: 30px;
+}
+
+.digital-events-wall-card-share a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.grid {
+    border: 1px solid #cccccc;
+    list-style: none;
+    background: #ffffff;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
+}
+
+.grid-img {
+    width: 100%;
+    vertical-align: middle;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.grid-img.img-loaded {
+    visibility: visible;
+    opacity: 1;
+}

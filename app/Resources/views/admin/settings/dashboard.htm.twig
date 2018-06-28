@@ -1,0 +1,41 @@
+{% extends 'admin.htm.twig' %}
+{% block body %}
+    <article>
+        <div class="article_inner">
+            <div class="settings_box">
+                <h3 class="divider">
+                    Manage Models &nbsp;<i class="fa fa-tachometer"></i>
+                </h3>
+
+                <div class="home status">
+                    <div class="status-item">
+                        <a href="{{ path('new-service') }}" style="color: #ea3e70;">
+                            <div class="amount" style="color: #ea3e70;"> <i class="fa fa-download"></i></div>
+                            New Service                    </a>
+                    </div>
+
+
+                    <div class="status-item">
+                        <a href="{{ path('new-page') }}" style="color: #ea3e70;">
+                            <div class="amount" style="color: #ea3e70;"> <i class="fa fa-users"></i></div>
+                            New Page                    </a>
+                    </div>
+
+                    <div class="status-item">
+                        <a href="{{ path('new-setting') }}" style="color: #ea3e70;">
+                            <div class="amount" style="color: #ea3e70;"> <i class="fa fa-users"></i></div>
+                            New Setting                    </a>
+                    </div>
+                    <div class="status-item checkins">
+                        <a href="{{ path('new-administrator') }}" style="color: #0b8788;">
+                            <div class="amount" style="color: #0b8788;"> <i class="fa fa-database"></i></div>
+                            New User                    </a>
+                    </div>
+
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+
+
+        </div></article>
+{% endblock %}

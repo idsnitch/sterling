@@ -1,0 +1,348 @@
+.page-container {
+	background-image: url(//dtsi.s3.amazonaws.com/headers/page-bg-columns.jpg);
+}
+
+#main-video {
+	margin: 10px auto 50px;
+	width: 640px;
+}
+
+
+
+.part-wrapper {
+	width: 1000px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.three-part, .four-part {		
+	display: inline;
+	float: left;
+}
+
+.three-part.first {	
+	padding-right: 25px;
+	border-right: solid 1px #d9d6d6;
+	width: 325px;
+}
+.three-part.second {	
+	padding-right: 25px;
+	padding-left: 25px;	
+	border-right: solid 1px #d9d6d6;
+	width: 350px;
+}
+.three-part.third {	
+	padding-left: 25px;
+	width: 325px;
+}
+
+.four-part.first {	
+	padding-right: 10px;
+	border-right: solid 1px #d9d6d6;
+	width: 245px;
+}
+.four-part.second {	
+	padding-right: 10px;
+	padding-left: 10px;	
+	border-right: solid 1px #d9d6d6;
+	width: 255px;
+}
+.four-part.third {	
+	padding-right: 10px;
+	padding-left: 10px;	
+	border-right: solid 1px #d9d6d6;
+	width: 255px;
+}
+.four-part.fourth {	
+	padding-left: 10px;
+	width: 245px;
+}
+
+@media only screen and (max-width: 480px ) {
+
+	.page-block-dark .section-title,
+	.page-block-light .section-title {
+		width: auto;
+		margin: 20px 10px;		
+	}
+	
+	.page-block-dark .section-text,
+	.page-block-light .section-text {
+		width: auto;
+		margin: 20px 10px;
+	}
+	
+	
+	.part-wrapper {
+		width: auto;
+	}
+	
+	.three-part, .four-part {		
+		display: block;
+		float: none;
+	}
+	
+	.three-part.first,
+	.three-part.second,
+	.three-part.third,
+	.four-part.first,
+	.four-part.second,
+	.four-part.third,
+	.four-part.fourth {	
+		width: auto;
+		padding: 0;
+		margin: 10px;
+		border: 0;
+	}	
+
+	
+	
+}
+
+
+
+/* distinctives */
+.three-part img {
+	width: 100%;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+.three-part strong {
+	font-weight: 300;
+	font-size: 20px;
+	color: #484848;
+	display: block;
+	margin: 15px 0 10px;
+}
+
+.three-part p {
+	font-size: 13px;
+	color: #7a7a7a;
+}
+.three-part p a ,
+.four-part p a {	
+	color: #222;
+	text-decoration: none; 	
+}
+
+.three-part p a:hover ,
+.four-part p a:hover {	
+	text-decoration: underline; 	
+}
+
+#statistics {
+	background: #fff url(//dtsi.s3.amazonaws.com/about/main/about-statistics-bg.png) left bottom no-repeat;
+	padding: 70px 0;
+}
+
+/* statistics */
+#statistics  strong {
+	color: #3e322d;
+	font-size: 60px;
+	display: block;
+	margin: 20px 0 15px;
+	text-align: center;
+	line-height: 1;
+	font-weight: 400;
+}
+
+#statistics .four-part p {
+	color: #3e322d;
+	font-size: 13px;
+	display: block;
+	text-align: center;
+	margin: 0 10px 15px;
+}
+#stat-66 strong {
+	color: #7b4132;
+}
+#stat-students strong {
+	color: #3e322d;
+}
+#stat-alumni strong {
+	color: #5b2f6c;
+}
+#stat-denominations strong {
+	color: #d2793c;
+}
+
+/* timeline */
+#timeline-block {
+	background: #2b2525 url(//dtsi.s3.amazonaws.com/about/main/about-timeline-bg.png) left top repeat-x;
+	min-height: 500px;
+	padding-bottom:0;
+}
+#timeline-block .section-title {
+	color: #fbfaf9;
+}
+#timeline-block .section-text {
+	color: #a89893;
+}
+
+#timeline-wrapper {
+	height: 500px;
+}
+
+#profiles-and-faculty {
+	background: #fff url(//dtsi.s3.amazonaws.com/about/main/equipping-bg.jpg) left bottom no-repeat;	
+}
+
+#faculty-button {
+	display: block;
+	padding:  45px 60px;
+	font-sizE: 30px;
+	text-decoration: none;
+	font-family: 'Vollkorn';
+	text-transform: uppercase;
+	background: #fff url('../images/arrows/16-purple2-50.svg') right center no-repeat;
+	background-color: rgba(255,255,255,0.85);
+}
+.lt-ie9 #faculty-button {
+	background-image: url('../images/arrows/16-purple2-50.png');
+
+}
+#faculty-button:hover {
+	background-color: #fff;
+}
+
+#dallas-info {
+	
+	background: #ffffff url(//dtsi.s3.amazonaws.com/about/main/dallas-bg.jpg) left top no-repeat;	
+}
+
+@media only screen and (max-width: 480px) {
+	#main-video {
+		margin: 20px auto;
+		width: auto;	
+	}
+	
+}
+
+
+#milestones dt {
+	font-weight: bold;
+	width: 80px;
+	float: left;
+	clear:both;
+}
+#milestones dd {
+	
+	width: 620px;
+	float: left;
+	overflow: auto;
+}
+
+
+/*
+`faculty
+*/
+
+
+
+/*
+`sitemap
+*/
+.sitemap {
+	background: transparent;
+}
+.sitemap h2 {
+	padding: 15px;
+	background: #f7f5f4;
+	font-size: 20px;
+	line-height: 1;
+	text-decoration: none;
+}
+.sitemap h2 a {
+	text-decoration: none;
+}
+
+.sitemap ul li  {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.sitemap ul li a {
+	text-decoration: none;
+	color: #333;
+}
+.sitemap ul li a:hover {
+	text-decoration: underline;
+	color: #43165e;
+}
+
+
+
+
+
+/*
+`campuses pages
+*/
+
+.page-about_campuses .h3-nolink a:link, .page-about_campuses .h3-nolink a:visited{
+    text-decoration:none;
+    color:#666;
+    font-size:16px;
+}
+.page-about_campuses .h3-nolink a:hover {
+    color:#333;
+    text-decoration:underline;
+}
+
+.page-about_campuses .small-heading {
+    font-size:16px;
+    color:#666;
+}
+
+.page-about_campuses .clear {
+    margin: 30px 0;
+}
+
+.campus-button {
+display: block;
+width: 220px;
+height: 90px;
+background: transparent url(/images/about/campuses/buttons/campus-button-outline.png) top left no-repeat;
+position: relative;
+}
+
+.page-about_campuses .campus-button:hover {
+ background: #eee;
+ -moz-box-shadow:    inset 0 0 5px #999;
+   -webkit-box-shadow: inset 0 0 5px #999;
+   box-shadow:         inset 0 0 5px #999;
+}
+
+
+.page-about_campuses .campus-button .extra-info {
+position: absolute;
+top: 12px;
+left: 85px;
+font-weight: bold;
+font-size: 14px;
+color: #999;
+}
+
+.page-about_campuses .campus-button .campus-icon {
+position: absolute;
+top: 10px;
+left: 10px;
+}
+
+.page-about_campuses .campus-button .title {
+position: absolute;
+top: 32px;
+left: 85px;
+font-weight: bold;
+font-size: 20px;
+color: #333;
+}
+
+.page-about_campuses .campus-button .sub-title {
+position: absolute;
+top: 54px;
+left: 85px;
+color: #333;
+}
+

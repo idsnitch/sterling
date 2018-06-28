@@ -1,0 +1,287 @@
+<html lang="en-us" class=" js backgroundsize svg"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+        {% block title %}History | Dallas Theological Seminary (DTS){% endblock %}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=0.5">
+
+
+    <!-- IE Fixie -->
+    <div class="fit-vids-style">&shy;<style>              .fluid-width-video-wrapper {
+                width: 100%;
+                position: relative;
+                padding: 0;
+            }
+
+            .fluid-width-video-wrapper iframe, .fluid-width-video-wrapper object, .fluid-width-video-wrapper embed {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }                                        </style>
+    </div>
+    <script src="https://js.hs-scripts.com/1956353.js" type="text/javascript" id="hs-script-loader"></script>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/linkid.js"></script>
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <script>
+        if (typeof window.console == 'undefined') {
+            window.console = {
+                log: function () {
+                }
+            };
+        }
+    </script>
+
+
+    <!-- iTunes App Banner -->
+    <meta name="apple-itunes-app" content="app-id=719127058">
+    <link href="http://fonts.googleapis.com/css?family=Lato:200,400|Vollkorn:400italic,400" rel="stylesheet">
+
+    <link href="{{ asset('lti/css/site.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('lti/css/aboutlti.css') }}">
+
+    <!-- libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="{{ asset('lti/js/scripts.js') }}"></script>
+    <script src="{{ asset('lti/js/jquery-accessibleMegaMenu.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $("nav:first").accessibleMegaMenu({
+                /* prefix for generated unique id attributes, which are required
+                 to indicate aria-owns, aria-controls and aria-labelledby */
+                uuidPrefix: "accessible-megamenu",
+                /* css class used to define the megamenu styling */
+                menuClass: "nav-menu",
+                /* css class for a top-level navigation item in the megamenu */
+                topNavItemClass: "nav-item",
+                /* css class for a megamenu panel */
+                panelClass: "sub-nav",
+                /* css class for a group of items within a megamenu panel */
+                panelGroupClass: "sub-nav-group",
+                /* css class for the hover state */
+                hoverClass: "hover",
+                /* css class for the focus state */
+                focusClass: "focus",
+                /* css class for the open state */
+                openClass: "open"
+            });
+        });
+    </script>
+
+
+</head>
+<body id="body" class=" page-about_history page-about" style="">
+
+<div id="meta-menu">
+    <div id="meta-container">
+        <div id="meta-items">
+            {% if is_granted('ROLE_USER') %}
+                <a id="globalMenu-book_center" href="#">Welcome, {{ app.user.firstName }} {{ app.user.lastName }}</a>
+            {% endif %}
+            <a id="globalMenu-book_center" href="{{ path('lti-center') }}">LTI Counselling Center</a>
+
+        </div>
+        <div id="meta-user">
+            {% if is_granted('ROLE_USER') %}
+                <b id="dts-website-link"><a href="{{ path('my-lti') }}">My LTI Account</a></b>
+                <a id="globalMenu-login" href="{{ path('security_logout') }}"
+                   rel="nofollow">Logout</a>
+
+            {% else %}
+                <b id="dts-website-link"><a href="{{ path('lti-my') }}">My LTI Account</a></b>
+                <a id="globalMenu-login" href="{{ path('security_login') }}"
+                   rel="nofollow">Login</a>
+
+            {% endif %}
+
+
+        </div>
+    </div>
+</div> <!-- /#meta-menu -->
+<div id="container">
+    <header>
+
+        <div id="header-outer" class="">
+            <div id="header" style="display: block;">
+                <div id="header-inner">
+                    <div id="logo">
+
+                        <a href="{{ path('homepage') }}"><img style="top:0;margin-left: -25px" height="105px" width="170px"
+                                                              src="{{ asset('web_logo.png') }}"></a>
+                    </div>
+                    <div class="menu-container">
+
+
+                        <nav role="navigation">
+                            <ul class="nav-menu">
+                                <li class="nav-item">
+                                    <a href="{{ path('homepage') }}" id="accessible-megamenu-1527796553239-1" aria-haspopup="true"
+                                       aria-controls="accessible-megamenu-1527796553239-2"
+                                       aria-expanded="false">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ path('about') }}" id="accessible-megamenu-1527796553239-1" aria-haspopup="true"
+                                       aria-controls="accessible-megamenu-1527796553239-2"
+                                       aria-expanded="false">About LTI</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ path('lti-center') }}" id="accessible-megamenu-1527796553242-3" aria-haspopup="true"
+                                       aria-controls="accessible-megamenu-1527796553242-4" aria-expanded="false">LTI Center</a>
+                                </li>
+                                {% if is_granted('ROLE_USER') %}
+
+                                    <li class="nav-item">
+                                        <a href="{{ path('my-lti') }}" id="accessible-megamenu-1527796553244-5" aria-haspopup="true"
+                                           aria-controls="accessible-megamenu-1527796553244-6" aria-expanded="false">My LTI</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="{{ path('security_logout') }}" id="accessible-megamenu-1527796553246-7">Logout</a>
+
+                                    </li>
+                                {% else %}
+                                <li class="nav-item">
+                                    <a href="{{ path('lti-my') }}" id="accessible-megamenu-1527796553244-5" aria-haspopup="true"
+                                       aria-controls="accessible-megamenu-1527796553244-6" aria-expanded="false">My LTI</a>
+                                 </li>
+                             {% endif %}
+
+                                <li id="donate-menu-item" class="nav-item">
+                                    <a href="{{ path('donate') }}" class="highlight"
+                                       id="accessible-megamenu-1527796553250-12" aria-haspopup="true"
+                                       aria-controls="accessible-megamenu-1527796553250-13"
+                                       aria-expanded="false">Donate</a>
+                                    <div class="sub-nav donate-sub-nav" style="display:none !important;"
+                                         id="accessible-megamenu-1527796553250-13" role="group" aria-expanded="false"
+                                         aria-hidden="true"
+                                         aria-labelledby="accessible-megamenu-1527796553250-12"></div>
+                                </li>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <li class="nav-item"><a href="{{ path('dashboard') }}">Admin</a></li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                        <style>
+                            li#donate-menu-item div.donate-sub-nav {
+                                display: none !important;
+                            }
+
+                            li#donate-menu-item > a.highlight {
+                                background: none !important;
+                                background-color: #3E1656 !important;
+                            }
+                        </style>
+                        <script>
+                            $(document).ready(function () {
+                                $('#donate-menu-item').unbind();
+                            });
+                        </script>
+                    </div>
+
+                    <span id="header-mobile-button"></span>
+                </div>
+            </div> <!-- /#header -->
+        </div> <!-- /#header-container -->
+    </header>
+    <main role="main">
+        <div id="content">
+            <div class="page-container">
+                <span class="page-area-title">{% block current %}About LTI{% endblock %}</span>
+                <div id="breadcrumb">
+                    <ul>
+                        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                            <a href="{{ path('homepage') }}" itemprop="url"><span itemprop="title">Home</span></a></li>
+                        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                            <a href="#" itemprop="url"><span itemprop="title">Pages</span></a></li>
+                        <li><span class="current">{% block pageTitle %}{{ page.title }}{% endblock %}</span></li>
+                    </ul>
+                </div>
+                <div class="page-content-wrapper">
+                    <div class="page-with-menu container_12">
+                        <div class="page-content" id="maincontent">
+                            {% block body %}{% endblock %}
+
+                        </div><!-- /#main -->
+                        <div class="page-menu">
+                            <ul>
+                                <li><a href="#">About LTI</a>
+                                    <ul>
+                                        <li><a href="{{ path('about') }}">About LTI</a>
+                                        </li>
+                                        <li><a href="{{ path('donate') }}">Donate</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div><!-- /#pagemenu -->
+                        <div class="clear"></div>
+                    </div>
+                </div><!-- /#subpage-content -->
+                <div class="clear"></div>
+            </div><!-- /#menu-header -->
+            <div class="clear"></div>
+        </div><!-- /#content -->
+    </main>
+    <div class="clear"></div>
+</div> <!-- /#container -->
+<footer>
+
+    <div id="footer" class="" itemscope itemtype="http://schema.org/LocalBusiness">
+        <div id="identity" class="">
+
+            <span class="block" id="copyright">
+				&copy; {{ "now" | date('Y') }} Life Touch Impact. All Rights Reserved.
+			</span>
+        </div>
+        <div class="clear"></div>
+    </div><!-- /#footer -->
+
+</footer>
+
+<style>
+    #habla_panel_div {
+
+    }
+
+    #habla_both_div {
+
+    }
+
+    #habla_window_div textarea#habla_pre_chat_name_input,
+    #habla_window_div textarea#habla_pre_chat_email_input {
+        height: 24px !important;
+    }
+
+    #habla_pre_chat_submit_input {
+        background-color: #421F50 !important;
+    }
+
+    #habla_topbar_div {
+        background-color: #B67E07 !important;
+    }
+
+    #habla_expanded_div {
+
+    }
+
+    #habla_offline_submit_input {
+        background-color: #B67E07 !important;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        var checkExist = setInterval(function () {
+            if ($('#habla_expanded_div').length) {
+                $("#habla_middle_div ~ div").css("border", "9px solid red");
+                $("#habla_middle_div ~ div").remove();
+                clearInterval(checkExist);
+            }
+        }, 100);
+    });
+</script>
+</body>
+</html>

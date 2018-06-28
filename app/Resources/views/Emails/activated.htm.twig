@@ -1,0 +1,20 @@
+<h3>Account Activated</h3>
+<p>
+    Congratulations {{ name }}!
+</p><p>
+    Your account has been reviewed and activated.</p>
+<p>You can now login and join Discussions, click on the link below to Login.
+</p><p>
+    <a href="{{ path('security_login') }}">Click Here</a>.
+</p><p>
+    Thank you!
+</p><p>
+
+    --LTI Team
+</p><p>
+    {# Makes an absolute URL to the loko/images/PRISK_Logo_v_2.2_website.png file #}
+    <img src="{{ absolute_url(asset('web_logo.png')) }}">
+
+<hr/>
+Note: This is a system generated mail. Please do NOT reply to it.
+</p>

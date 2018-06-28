@@ -1,0 +1,65 @@
+<ul class="main-ul menu_main">
+    <li>
+        <a href="{{ path('admin-home') }}" class="menu menu_main menu_item_homepage {% if dashboard is defined %}{{ dashboard }}{% endif %}">
+            <span class="menu_text">Dashboard</span>
+        </a>
+    </li>
+    {% if is_granted('ROLE_SETTINGS') %}
+    <li>
+        <a href="{{ path('homepage-settings') }}"
+           class="menu menu_main menu_item_home_settings {% if homepage is defined %}{{ homepage }}{% endif %}">
+            <span class="menu_text">Homepage Settings</span>
+        </a>
+    </li>
+    {% endif %}
+    {% if is_granted('ROLE_CAN_UPDATE') %}
+    <li>
+        <a href="{{ path('services') }}"
+           class="menu menu_main menu_item_services {% if services is defined %}{{ services }}{% endif %}">
+            <span class="menu_text">Services</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="#"
+           class="menu menu_main menu_item_schemes {% if schemes is defined %}{{ schemes }}{% endif %}">
+            <span class="menu_text">Service Schemes</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('pages') }}"
+           class="menu menu_main menu_item_pages {% if pages is defined %}{{ pages }}{% endif %}">
+            <span class="menu_text">Pages</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('sub-pages') }}"
+           class="menu menu_main menu_item_subpages {% if subpages is defined %}{{ subpages }}{% endif %}">
+            <span class="menu_text">Sub Pages</span>
+        </a>
+    </li>
+    {% endif %}
+    {% if is_granted('ROLE_RESEARCH') %}
+    <li>
+        <a href="#"
+           class="menu menu_main menu_item_research {% if research is defined %}{{ research }}{% endif %}">
+            <span class="menu_text">Research</span>
+        </a>
+    </li>
+    {% endif %}
+    {% if is_granted('ROLE_CAN_MANAGE_USERS') %}
+    <li>
+        <a href="#" class="menu menu_main menu_item_users {% if usersx is defined %}{{ usersx }}{% endif %}">
+            <span class="menu_text">Users</span>
+        </a>
+    </li>
+    {% endif %}
+    {% if is_granted('ROLE_CORE') %}
+    <li>
+        <a href="{{ path('new-models') }}"
+           class="menu menu_main menu_item_new {% if new is defined %}{{ new }}{% endif %}">
+            <span class="menu_text">Models</span>
+        </a>
+    </li>
+    {% endif %}
+</ul>

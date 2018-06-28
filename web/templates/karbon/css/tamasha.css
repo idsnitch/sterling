@@ -1,0 +1,98 @@
+div.alert-danger{
+    background-color:#f27474;
+    color: #fff;
+
+}
+div.alert{
+    padding:10px;
+    border-radius:4px
+}
+.form-widget ul li{
+    color:orangered;
+}
+div.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+div.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+table.dataTable thead th,
+table.dataTable thead td {
+    padding: 10px 18px;
+    border-bottom: 1px solid #f7f9fa;
+}
+table.dataTable thead th:active,
+table.dataTable thead td:active {
+    outline: none;
+}
+table.dataTable tfoot th,
+table.dataTable tfoot td {
+    padding: 10px 18px 6px 18px;
+    border-top: 1px solid #f7f9fa;
+}
+table#dtable{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 1.5em;
+    padding: 0.5em 1em;
+    margin-left: 2px;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer;
+    color: #333 !important;
+    border: 1px solid transparent;
+    border-radius: 2px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #fff !important;
+    border: 1px solid #fff;
+    background: #E24C3F;
+
+}
+#dtable_paginate{
+    padding-left: 0;
+    list-style: none;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+}
+.dataTables_paginate .disabled{
+    color: #6c757d;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #fff;
+    border-color: #dee2e6;
+}
+table.dataTable.no-footer {
+    border-bottom: 0px;
+}
+.dataTables_wrapper .dataTables_paginate {
+    float: right;
+    text-align: right;
+    padding-top: 0px;
+}
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    height: 22px;
+}
+.ui-widget select{
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+}
+.ui-widget.ui-widget-content {
+    border: 0px;
+}
+.ui-widget.ui-widget-content {
+    border: 1px solid #ffffff;
+}
+.ui-widget-content{
+    border-width: 0px;
+}

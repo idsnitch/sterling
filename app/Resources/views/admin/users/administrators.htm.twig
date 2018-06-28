@@ -1,0 +1,101 @@
+{% extends 'base.htm.twig' %}
+{% block pageTitle %}Partners{% endblock %}
+{% block partners  %}active{% endblock %}
+{% block hasLeft %}has_left_side_menu{% endblock %}
+{% block body %}
+
+    <article>
+        <div class="article_inner">
+
+            <div id="tabs" style="" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+                <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                    <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="ui-tabs-1" aria-labelledby="ui-id-2" aria-selected="false">
+                        <a href="{{ path('new-partner') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">
+                            <i class="fa fa-angle-right"></i>
+                            New partner
+                        </a>
+                    </li>
+                    <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="ui-tabs-2" aria-labelledby="ui-id-3" aria-selected="true">
+                        <a href="{{ path('artists') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">
+                            <i class="fa fa-angle-right"></i>All partners<span class="badge">0</span>
+                        </a>
+                    </li>
+                    <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="ui-tabs-3" aria-labelledby="ui-id-4" aria-selected="false">
+                        <a href="{{ path('active-artists') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4">
+                            <i class="fa fa-angle-right"></i>Active partners<span class="badge">0</span>
+                        </a>
+                    </li>
+                    <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="ui-tabs-4" aria-labelledby="ui-id-5" aria-selected="false">
+                        <a href="{{ path('inactive-artists') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-5">
+                            <i class="fa fa-angle-right"></i>Inactive partners<span class="badge">0</span>
+                        </a>
+                    </li>
+                </ul><div id="ui-tabs-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-2" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-3" role="tabpanel" aria-expanded="true" aria-hidden="false"><meta http-equiv="content-type" content="text/html; charset=utf-8">
+                    <div style="width: 100%; text-align: left; margin: 0px 0 5px 0; padding: 0;">
+                        <div style="margin-bottom: 10px;">
+                            <div id="filterCurrentDiv" style="font-size: 8pt; float: left;" class="ui-buttonset">
+                                <input type="radio" id="currentRadio1" name="filter_current" value="1" onclick="update_current();" checked="" class="ui-helper-hidden-accessible">
+                                <label for="currentRadio1" class="ui-state-active ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button" aria-disabled="false"><span class="ui-button-text">Show all</span></label>
+
+                                <input type="radio" id="currentRadio2" name="filter_current" value="2" onclick="update_current();" class="ui-helper-hidden-accessible">
+                                <label for="currentRadio2" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Active</span></label>
+
+                                <input type="radio" id="currentRadio3" name="filter_current" value="3" onclick="update_current();" class="ui-helper-hidden-accessible">
+                                <label for="currentRadio3" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button" aria-disabled="false"><span class="ui-button-text">Inactive</span></label>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+
+                    </div>
+
+                    <div id="listDiv_current">
+                        <form id="list_form_current" method="post" action="">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="list-bookings" style="font-size: 10pt;">
+                                <tbody><tr>
+                                    <td class="booking-list-header" style="white-space:nowrap;">Partner Name.</td>
+                                    <td class="booking-list-header mobile-hide-cell-850">Created By</td>
+                                    <td class="booking-list-header mobile-hide-cell-850">Created At </td>
+                                    <td class="booking-list-header mobile-hide-cell-850">Last Updated By </td>
+                                    <td class="booking-list-header mobile-hide-cell-850">Last Updated At</td>
+
+                                    <td class="booking-list-header mobile-hide-cell-550">Manage</td>
+                                </tr>
+
+                                {% for partner in partners  %}
+                                    <tr>
+                                        <td><span style="color:#0cc2aa">{{ partner.partnerName }}</span></td>
+                                        <td>{{ partner.createdBy }}</td>
+                                        <td>{{ partner.createdAt | date("F jS \\a\\t g:ia") }}</td>
+                                        <td>{{ partner.updatedBy }}</td>
+                                        <td>{{ partner.updatedAt | date("F jS \\a\\t g:ia") }}</td>
+
+                                        <td>
+
+                                            <a id="js-deactivate-account" href="{{ path('update-partner', {'id': partner.id }) }}"
+                                               class="btn btn-xs white btn-icon"><i id="deactivate" title="Edit Partner" class="fa fa-edit"></i></a>
+                                            <a id="js-deactivate-account" href="{{ path('update-partner', {'id': partner.id }) }}"
+                                               class="btn btn-xs white btn-icon"><i id="deactivate" title="Add User" class="fa fa-user-plus"></i></a>
+
+                                        </td>
+                                    </tr>
+                                {% else %}
+                                    <tr style="background: #ffffff">
+                                        <td class="booking-list-cell" colspan="11" style="padding: 10px 10px 12px 10px;">
+                                            No partners were found.                                            <br>(Can't find an partner? Check above to see which list your are looking through)                                        </td>
+                                    </tr>
+                                {% endfor  %}
+
+                                </tbody></table>
+                        </form>
+
+
+
+
+                    </div>
+                </div><div id="ui-tabs-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-4" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-5" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-5" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-6" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-6" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-7" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div><div id="ui-tabs-7" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-8" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div>
+            </div>
+
+        </div>
+    </article>
+
+{% endblock %}

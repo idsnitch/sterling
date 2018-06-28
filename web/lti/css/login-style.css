@@ -1,0 +1,207 @@
+/* Set the navbar colors, including dropdowns, to the branded color, or variants of such */
+.main-navigation,
+.branded-background {
+  background-color: #ffffff;
+}
+
+.branded-text {
+  color: #402269;
+}
+
+.accent-background {
+  background-color: #402269;
+}
+.main-navigation .nav .dropdown:hover > a,
+.main-navigation .nav .dropdown.dropped > a,
+#navbar .ol-top-right > ul > li > a:hover,
+#navbar .ol-top-right > ul > li > a:focus,
+#navbar .ol-top-right > ul > li.dropdown > a:hover,
+#navbar .ol-top-right > ul > li.dropdown > a:focus,
+#cloud-search .cloudsearch .icon.active,
+#cloud-search #cloud-search-form form {
+  background: #e6e6e6;
+  
+  color: black;
+  
+}
+
+.main-navigation .ol-background-light-black {
+  background: #e6e6e6;
+  
+  color: black;
+  
+}
+
+.main-navigation .ol-background-light-black.dropdown-menu > li > a {
+  
+    color: black;
+  
+}
+.main-navigation .ol-background-light-black.dropdown-menu > li > a:hover, .main-navigation .ol-background-light-black.dropdown-menu > li > a:focus {
+  background: #ffffff;
+  
+    color: black;
+  
+}
+
+.main-navigation .ol-top-right > ul > li > a:hover, .main-navigation .ol-top-right > ul > li > a:focus, .main-navigation .ol-top-right > ul > li.dropdown > a:hover, .main-navigation .ol-top-right > ul > li.dropdown > a:focus {
+  background: #ffffff;
+  
+    color: black;
+  
+}
+
+#navbar .nav > li.nav-events-toggle.active a.open {
+  background-color: #ffffff;
+  
+    color: black;
+  
+}
+
+.main-navigation .nav .dropdown > a, #navbar .ol-top-right > ul > li > a, #navbar .ol-top-right > ul > li.dropdown > a, .branded-background {
+  
+    color: black;
+  
+}
+
+.dropdown-menu li.header {
+  background: #d9d9d9;
+  
+  color: black;
+  
+}
+
+
+/* Set the login-box top color to be branded */
+.login-page .logo-area {
+  background-color: #ffffff !important;
+  border-color: #e6e6e6 !important;
+}
+
+#login-logo {
+  background-image: url("../../web_logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 60px;
+  margin: auto;
+  max-width: 210px;
+}
+
+#logo {
+  background-image: url("https://cdn.onelogin.com/images/brands/logos/login/b74ffcffc8d1ad612dc7d4ad3198918e49e0db51.png?1504136591");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 60px;
+  margin: auto;
+  max-width: 210px;
+}
+
+.login-page body#login-page {
+  background: url("../../login-bck.jpg") repeat-x left center fixed;
+  background-size:1400px 900px;
+  overflow-y: hidden;
+}
+/* Debootstrapped button code */
+input[type="button"], input[type="reset"], input[type="submit"], .button {
+  background-color: #402269;
+  
+    color: white;
+  
+  -webkit-transition: background-color 0.25s ease 0s;
+  -moz-transition: background-color 0.25s ease 0s;
+  -ms-transition: background-color 0.25s ease 0s;
+  -o-transition: background-color 0.25s ease 0s;
+  transition: background-color 0.25s ease 0s;
+}
+
+input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover {
+  background-color: #572e90;
+  -webkit-transition: background-color 0.25s ease 0s;
+  -moz-transition: background-color 0.25s ease 0s;
+  -ms-transition: background-color 0.25s ease 0s;
+  -o-transition: background-color 0.25s ease 0s;
+  transition: background-color 0.25s ease 0s;
+}
+
+/* Old, bootstrapped buttons */
+.btn:not(.cancel):not(.toggly):not(.btn-switch), .modal .modal-footer.confirmation-alert .btn.btn-primary, .pagination li.active span, .tiled-list ul .selected {
+  background-color: #402269;
+  
+    color: white;
+  
+  -webkit-transition: background-color 0.25s ease 0s;
+  -moz-transition: background-color 0.25s ease 0s;
+  -ms-transition: background-color 0.25s ease 0s;
+  -o-transition: background-color 0.25s ease 0s;
+  transition: background-color 0.25s ease 0s;
+}
+
+/* New Layout Buttons */
+.new-style-blue-btn, a.new-style-blue-btn{
+  background-color: #402269;
+  
+    color: white;
+  
+  -webkit-transition: background-color 0.25s ease 0s;
+  -moz-transition: background-color 0.25s ease 0s;
+  -ms-transition: background-color 0.25s ease 0s;
+  -o-transition: background-color 0.25s ease 0s;
+  transition: background-color 0.25s ease 0s;
+}
+
+.pagination li.active span {
+  border-color: #402269;
+}
+
+.btn:hover:not(.cancel):not(.toggly):not(.btn-switch), .btn:active:not(.toggly), .btn:focus:not(.toggly), .modal .modal-footer.confirmation-alert .btn.btn-primary:hover, .modal .modal-footer.confirmation-alert .btn.btn-primary:active, .modal .modal-footer.confirmation-alert .btn.btn-primary:focus, ul.pager li a:hover, .tiled-list ul .selected:hover, .new-style-blue-btn:hover {
+  background-color: #572e90;
+  -webkit-transition: background-color 0.25s ease 0s;
+  -moz-transition: background-color 0.25s ease 0s;
+  -ms-transition: background-color 0.25s ease 0s;
+  -o-transition: background-color 0.25s ease 0s;
+  transition: background-color 0.25s ease 0s;
+}
+
+ul.pager li a:hover {
+  border-color: #572e90;
+}
+
+/*Brand top of modals */
+.modal .modal-body.confirmation-alert {
+  border-color: #ffffff;
+}
+
+.ol-branded-mask-background, #login-shade {
+  background-color: rgba(0,0,0,0);
+}
+/* For SVGs */
+.ol-branded-fill {
+  fill: #ffffff;
+}
+
+.ol-accent-fill {
+  fill: #402269;
+}
+
+.ol-branded-text-fill {
+  
+    fill: black;
+  
+}
+
+.ol-accent-text-fill {
+  
+    fill: white;
+  
+}
+
+.ol-branded-mask-fill {
+  fill: #000000;
+  fill-opacity: 0.0;
+}
+
+.ol-top-border {
+  border-top: 5px solid #ffffff;
+}

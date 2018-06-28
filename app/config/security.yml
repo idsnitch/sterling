@@ -1,0 +1,38 @@
+# Security SETUP
+security:
+
+    encoders:
+        AppBundle\Entity\User: bcrypt
+    role_hierarchy:
+        ROLE_SUPER_ADMINISTRATOR: [ROLE_CORE,ROLE_SETTINGS,ROLE_CAN_MANAGE_USERS,ROLE_CAN_UPDATE,ROLE_RESEARCH,ROLE_ADMINISTRATOR,ROLE_CAN_ADMINISTER,ROLE_ALLOWED_TO_SWITCH]
+        ROLE_ADMINISTRATOR: [ROLE_SETTINGS,ROLE_CAN_MANAGE_USERS,ROLE_CAN_UPDATE,ROLE_RESEARCH,ROLE_CAN_ADMINISTER]
+        ROLE_CONTENT_MANAGER: [ROLE_CAN_UPDATE,ROLE_RESEARCH,ROLE_CAN_ADMINISTER]
+        ROLE_RESEARCHR: [ROLE_RESEARCH,ROLE_CAN_ADMINISTER]
+    # User Provider
+    providers:
+        our_users:
+            entity: { class: AppBundle\Entity\User, property: email }
+
+    firewalls:
+        # disables authentication for assets and the profiler
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        login:
+            pattern: ^/api/login
+            stateless: true
+            anonymous: true
+        main:
+            anonymous: ~
+            guard:
+                authenticators:
+                    - app.security.login_form_authenticator
+            logout:
+                 path: /logout
+
+            switch_user: ~
+
+    access_control:
+        # - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/api/login,   roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/apis,         roles: IS_AUTHENTICATED_FULLY }

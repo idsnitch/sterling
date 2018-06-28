@@ -1,0 +1,95 @@
+{%  extends 'admin-base.htm.twig' %}
+{% block users %}active{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            $('.js-approve-user').on('click',function (e) {
+                e.preventDefault();
+
+                var $el = $(this).closest('.user-item');
+
+                $(this).find('.fa-toggle-off')
+                    .removeClass('fa-toggle-off')
+                    .addClass('fa-spinner')
+                    .addClass('fa-spin');
+                $.ajax({
+                    url: $(this).data('url'),
+                    method: 'GET'
+                }).done(function () {
+                    $el.fadeOut("slow");
+                });
+            });
+        })
+    </script>
+{% endblock %}
+{% block body %}
+    <div id="page-wrapper">
+        <div class="graphs">
+            <div class="breadcrumb">
+                <ul >
+                    <li><a href="{{ path('dashboard') }}">Dashboard</a> </li>
+
+                    <li>/ </li>
+                    <li><a href="#">User Manager</a> </li>
+                    <li>/</li>
+                    <li>Pending Users </li>
+                </ul>
+            </div>
+            <a href="{{ path('new-user') }}" class="button button-primary">
+                <span class="icon"><span class="fa fa-plus-circle"></span> </span>
+                Add User</a>
+            <div class="xs tabls">
+                <div class="list" data-example-id="contextual-table">
+                    <table class="table table-list">
+                        <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th></th>
+                            <th></th>
+                            <th>Names</th>
+                            <th>Status</th>
+                            <th>Registered On</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for user in users  %}
+                        <tr class="user-item">
+                            <th><input type="checkbox"/></th>
+                            <th scope="row">{{ loop.index }}</th>
+                            <td>
+                                {% if user.profile[0] is defined %}
+                                    {% set userProfile=user.profile[0] %}
+                                    <img width="140px" src="{{ asset('images/products/') }}{{ userProfile.imageName }}"/>
+                                {% else %}
+                                    <img width="140px" src="{{ asset('default-avatar.png') }}"/>
+                                {% endif %}
+                            </td>  <td>{{ user.firstName }} {{ user.lastName }}</td>
+                            <td>
+                                {% if user.isActive %}
+                                    <span class="status active"></span>
+
+                                {% else %}
+                                    <span class="status inactive"></span>
+                                {% endif %}
+                            </td>
+                            <td>{{ user.createdAt | date('d-m-Y') }}</td>
+                            <td><a title="Approve User" href="#"
+                                   class="action js-approve-user"
+                                   data-url="{{ path('approve-user',{
+                                       'id': user.id
+                                   }) }}"><i class="fa fa-toggle-off fa-2x" aria-hidden="true"></i> </a> </td>
+
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,710 @@
+
+<!DOCTYPE html>
+<!--
+ ___       _ _           _____ _            _           _         _   ___            _                    
+|   \ __ _| | |__ _ ___ |_   _| |_  ___ ___| |___  __ _(_)__ __ _| | / __| ___ _ __ (_)_ _  __ _ _ _ _  _ 
+| |) / _` | | / _` (_-<   | | | ' \/ -_) _ \ / _ \/ _` | / _/ _` | | \__ \/ -_) '  \| | ' \/ _` | '_| || |
+|___/\__,_|_|_\__,_/__/   |_| |_||_\___\___/_\___/\__, |_\__\__,_|_| |___/\___|_|_|_|_|_||_\__,_|_|  \_, |
+                                                  |___/                                              |__/ 
+ _______              _       _______         _   _         _                     __          __  _ _   
+|__   __|            | |     |__   __|       | | | |       | |                    \ \        / / | | |  
+   | | ___  __ _  ___| |__      | |_ __ _   _| |_| |__     | |     _____   _____   \ \  /\  / /__| | |  
+   | |/ _ \/ _` |/ __| '_ \     | | '__| | | | __| '_ \    | |    / _ \ \ / / _ \   \ \/  \/ / _ \ | |  
+   | |  __/ (_| | (__| | | |    | | |  | |_| | |_| | | |_  | |___| (_) \ V /  __/    \  /\  /  __/ | |_ 
+   |_|\___|\__,_|\___|_| |_|    |_|_|   \__,_|\__|_| |_(_) |______\___/ \_/ \___|     \/  \/ \___|_|_(_)
+-->
+<!--[if lt IE 7]> <html lang="en-us" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html lang="en-us" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html lang="en-us" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-us" class="no-js"> <!--<![endif]-->
+	<head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><title>
+	Error: Page cannot be found
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=0.5" />
+
+
+<!-- IE Fixie -->
+<script>
+	if (typeof window.console == 'undefined') {
+		window.console = { log: function() {} };
+	}
+</script>
+
+
+<!-- iTunes App Banner -->
+<meta name="apple-itunes-app" content="app-id=719127058" />
+
+
+<link rel="search" type="application/opensearchdescription+xml" title="DTS" href="../../opensearch.xml" />
+
+<!-- G+ -->
+<link rel="publisher" href="../../../https@plus.google.com/104471400415759406139" />
+<meta name="google-site-verification" content="LsYU3Ok7GgsvSDF3HSXSCycnEdFvqs4q86Y9gA37rpc" />
+
+<!-- WebFont families -->
+<link href="../../../fonts.googleapis.com/css@family=Lato_3A200,400_7CVollkorn_3A400italic,400" rel="stylesheet" />
+
+<link href="../site.min.css" rel="stylesheet" />
+
+
+<!-- libraries -->
+<script src="../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../../js/scripts.js@v=16"></script>
+<script src="../../js/jquery-accessibleMegaMenu.js"></script>
+<script>
+	$(document).ready(function(){
+		$("nav:first").accessibleMegaMenu({
+			/* prefix for generated unique id attributes, which are required
+			to indicate aria-owns, aria-controls and aria-labelledby */
+			uuidPrefix: "accessible-megamenu",
+			/* css class used to define the megamenu styling */
+			menuClass: "nav-menu",
+			/* css class for a top-level navigation item in the megamenu */
+			topNavItemClass: "nav-item",
+			/* css class for a megamenu panel */
+			panelClass: "sub-nav",
+			/* css class for a group of items within a megamenu panel */
+			panelGroupClass: "sub-nav-group",
+			/* css class for the hover state */
+			hoverClass: "hover",
+			/* css class for the focus state */
+			focusClass: "focus",
+			/* css class for the open state */
+			openClass: "open"
+		});
+	});
+</script>
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../https@www.googletagmanager.com/gtm.js@id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MWFVRLG');</script>
+<!-- End Google Tag Manager -->
+
+
+	<meta property="og:image" content="http://dtsi.s3.amazonaws.com/logo/logo-fb-og.png" />
+</head>
+	<body id="body">
+		<a href="#maincontent" class="dts-skip-nav">Skip to main content</a>
+		
+
+<div id="meta-menu">
+	<div id="meta-container">
+		<div id="meta-items">
+			<b id="dts-website-link">DTS Website</b>
+			<a id="globalMenu-library" href="../../../library.dts.edu/default.htm">Library</a>
+			<a id="globalMenu-book_center" href="../../../bookcenter.dts.edu/default.htm">Book Center</a>
+			<a id="globalMenu-alumni" href="../../../https@www.dts.edu/alumni">Alumni</a>
+			<a id="globalMenu-email" href="../../../https@webmail.dts.edu/owa">Email</a>
+			<a id="globalMenu-campusnet" href="../../../https@campus.dts.edu/default.htm">CampusNet</a>
+			
+			<a id="globalMenu-online" href="../../../https@online.dts.edu/default.htm">Canvas</a>
+		</div>
+		<div id="meta-user">
+			
+			
+				<a id="globalMenu-login" href="../../../https@webservices.dts.edu/saml/@ReturnUrl=https_3A_2F_2Fwww.dts.edu_2Fcms_2Ferror-404.aspx" rel="nofollow">Login</a>
+				<!--<b>DTS Account</b>-->
+			
+		</div>
+	</div>
+</div> <!-- /#meta-menu -->
+		<div id="container">
+			<header>
+				
+	<div id="header-outer">
+		<div id="header">
+			<div id="header-inner">
+				<div id="logo">
+					<a href="../../default.htm">
+						<span class="sr-only">DTS Home Page</span>
+						<span aria-hidden="true">Dallas Theological Seminary</span>
+						<em aria-hidden="true">Teach Truth. Love Well.</em>
+					</a>
+				</div>
+				<div class="menu-container">
+					
+
+
+<nav>
+	<ul class="nav-menu">
+		<li class="nav-item">
+			<a href="../../about/default.htm">About</a>
+			<div class="sub-nav">
+				<div class="mega-menu container_12">
+					<div class="mega-menu-block grid_6" >
+						<div id="mission-statement">
+							<p>
+								The mission of Dallas Theological Seminary is to
+								glorify God by equipping godly servant-leaders
+								for the proclamation of His Word and the
+								building up of the body of Christ worldwide.
+							</p>
+						</div>
+					</div>
+					<div class="mega-menu-block grid_2">
+						<h4>About</h4>
+						<ul class="sub-nav-group">
+							<li><a href="../../about/default.htm">About the Seminary</a></li>
+							<li><a href="../../about/history/default.htm">History</a></li>
+							<li><a href="../../about/doctrinalstatement/default.htm">Doctrinal Statement</a></li>
+							<li><a href="../../about/communitycovenant/default.htm">Community Covenant</a></li>
+							<li><a href="../../about/educationalmodel/default.htm">Educational Model</a></li>
+							<li><a href="../../about/accreditation/default.htm">Accreditation</a></li>
+							<li><a href="../../about/statistics/default.htm">Statistics</a></li>
+							<li><a href="../../about/faculty/default.htm">Faculty</a></li>
+						</ul>
+					</div>
+					<div class="mega-menu-block grid_2">
+						<h4>Info</h4>
+						<ul class="sub-nav-group">
+							<li><a href="../../calendar/default.htm">Calendar of Events</a></li>
+							<li><a href="../../about/campusmap/default.htm">Dallas Campus Map</a></li>
+							<li><a href="../../about/photos/default.htm">Photo Gallery</a></li>
+							<li><a href="../../about/sitemap/default.htm">Site Map</a></li>
+							<li><a href="../../departments/campus/employment/default.htm">Employment</a></li>
+							<li><a href="../../about/leadership/default.htm">Seminary Leadership</a></li>
+							<li><a href="../../about/policies/default.htm">Policies</a></li>
+							<li><a href="../../about/contact/default.htm">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="mega-menu-block grid_2">
+						<h4>Maps &amp; Tools</h4>
+						<ul class="sub-nav-group">
+							<li><a href="../../campusmap/default.htm">Campus Map</a></li>
+							<li><a href="../../findachurch/default.htm">Find a Church</a></li>
+							<li><a href="../../findacounselor/default.htm">Find a Counselor</a></li>
+							<li><a href="../../maps/alumni/default.htm">Alumni Global Impact</a></li>
+							<li><a href="../../maps/faculty">Faculty Speaking</a></li>
+							<li><a href="../../resources/attractions/default.htm">Dallas Attractions</a></li>
+							<li><a href="../../../seminarycomparison.com/default.htm">Seminary Comparison</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li class="nav-item">
+			<a href="../../admissions/default.htm">Admissions</a>
+			<div class="sub-nav">
+				<div class="mega-menu container_12">
+					<div class="mega-menu-block grid_3">
+						<h4>Become a Student</h4>
+						<ul class="sub-nav-group">
+							<li><a id="admissions-becomeAStudent-meet_team_admissions" href="../../admissions/team/default.htm">Meet Team Admissions</a></li>
+							<li><a id="admissions-becomeAStudent-degree_programs" href="../../admissions/degrees/default.htm">Degree Programs</a></li>
+							<li><a id="admissions-becomeAStudent-distance_education" href="../../onlineeducation/default.htm">Online &amp; Distance Education</a></li>
+							<li><a id="admissions-becomeAStudent-tuition_and_fees" href="../../admissions/feesandexpenses/default.htm">Tuition &amp; Fees</a></li>
+							<li><a id="admissions-becomeAStudent-scholarships" href="../../admissions/scholarships/default.htm">Scholarships &amp; Discounts</a></li>
+							<li><a id="admissions-becomeAStudent-download_catalog" href="../../admissions/catalog/default.htm">Download Catalog</a></li>
+							<li><a id="admissions-becomeAStudent-admissions_requirements" href="../../admissions/requirements/default.htm">Admissions Requirements</a></li>
+							<li><a id="admissions-becomeAStudent-international_students" href="../../admissions/international/default.htm">International Students</a></li>
+							<li><a id="admissions-becomeAStudent-visit_campus" href="../../admissions/visitcampus/default.htm">Visit Campus</a></li>
+						</ul>
+					</div>
+					<div class="mega-menu-block grid_3">
+						<h4><a href="../../admissions/degrees/default.htm">Professional Ministry Degrees</a></h4>
+						<ul class="sub-nav-group">
+							<li><a id="admissions-mastersPrograms-master_of_theology" href="../../thm">Master of Theology (ThM)</a></li>
+							<li><a id="admissions-mastersPrograms-master_of_divinity" href="../../mdiv/default.htm">Master of Divinity (MDiv)*</a></li>
+							<li><a id="admissions-mastersPrograms-master_of_sacred_theology" href="../../stm">Master of Sacred Theology (STM)</a></li>
+						</ul>
+						<ul class="sub-nav-group">
+							<li><a id="admissions-mastersPrograms-ma_in_biblical_counseling" href="../../biblical-christian-counseling-degree-mabc/default.htm">MA in Biblical Counseling</a></li>
+							<li><a id="admissions-mastersPrograms-ma_in_christian_education" href="../../christian-education-degree-mace/default.htm">MA in Christian Education</a></li>
+							<li><a id="admissions-mastersPrograms-ma_in_christian_leadership" href="../../christian-leadership-degree-macl/default.htm">MA in Christian Leadership</a></li>
+							<li><a id="admissions-mastersPrograms-ma_in_cross_cutural_ministry" href="../../cross-cultural-ministry-degree-macm/default.htm">MA in Cross-cultural Ministries</a></li>
+							<li><a id="admissions-mastersPrograms-ma_in_media_arts" href="../../media-arts-worship-degree-mamw/default.htm">MA in Media Arts &amp; Worship</a></li>
+						</ul>
+						<ul class="sub-nav-group">
+							<li><a id="admissions-onlinePrograms-programs_in_chinese" href="../../chinese/default.htm">中文課程 Programs in Chinese </a></li>
+							<li><a id="admissions-doctoralPrograms-dmin_en_espanol" href="../../espanol/default.htm">DTS en Español</a></li>
+						</ul>
+					</div>
+					<div class="mega-menu-block grid_3">
+						<h4><a href="../../admissions/degrees/default.htm">General Academic Programs</a></h4>
+						<ul class="sub-nav-group">
+							<li><a id="admissions-mastersPrograms-master_of_arts" href="../../academic-master-of-arts/default.htm">Master of Arts (OT, NT, ST majors)</a></li>
+							<li><a id="admissions-mastersPrograms-ma_in_biblical_exegesis" href="../../biblical-linguistics-translation-degree-mabel/default.htm">MA (Biblical Exegesis &amp; Linguistics)</a></li>
+							<li><a id="admissions-onlinePrograms-ma_biblical_studies" href="../../online-masters-degree-bible-seminary/default.htm">MA (Christian Studies) <img src="../../../dtsi.s3.amazonaws.com/onlineeducation/computer-lightblue.svg" class="mega-online-degree" width="20" alt="The Master of Christian Studies degree is available fully online" /></a></li>
+							<li><a id="admissions-mastersPrograms-mabts" href="../../mbts/default.htm">Master of Biblical and Theological Studies (MBTS) <img src="../../../dtsi.s3.amazonaws.com/onlineeducation/computer-lightblue.svg" class="mega-online-degree" width="20" alt="The Master of Biblical and Theological Studies degree is available fully online" /></a></li>
+							<li><a id="admissions-onlinePrograms-certificate_program_cgs" href="../../cgs/default.htm">Certificate Program (CGS) <img src="../../../dtsi.s3.amazonaws.com/onlineeducation/computer-lightblue.svg" width="20" class="mega-online-degree" alt="The Certificate of Graduate Studies program is available fully online" /></a></li>
+						</ul>
+						<h4><a href="../../admissions/degrees/default.htm">Doctoral Programs</a></h4>
+						<ul class="sub-nav-group">
+							<li><a id="admissions-doctoralPrograms-doctor_of_philosophy" href="../../admissions/degrees/phd/default.htm">Doctor of Philosophy (PhD)</a></li>
+							<li><a id="admissions-doctoralPrograms-doctor_of_ministry" href="../../dmin/default.htm">Doctor of Ministry (DMin)</a></li>
+							<li><a id="admissions-doctoralPrograms-doctor_of_ed_ministry" href="../../dedmin/default.htm">Doctor of Ed. Ministry (DEdMin)</a></li>
+						</ul>
+					</div>
+					<div class="mega-menu-block grid_3">
+						<a id="admissions-blocks-request_information" href="../../admissions/requestinfo/default.htm" class="arrow-button">Request Information</a>
+						<a id="admissions-blocks-visit_a_campus" href="../../admissions/visitcampus/default.htm" class="arrow-button">Visit a Campus</a>
+						<a id="admissions-blocks-apply_online" href="../../admissions/apply/default.htm" class="arrow-button">Apply Online</a>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li class="nav-item">
+			<a href="../../campuses/default.htm">Campuses</a>
+			<div class="sub-nav">
+				<div class="mega-menu container_12">
+					<div class="mega-menu-block grid_3">
+						<h4><a href="../../admissions/default.htm">Dallas</a></h4>
+						<ul class="sub-nav-group">
+							<li><a href="../../admissions/degrees/default.htm">Degree Programs</a></li>
+							<li><a href="../../admissions/visitcampus/default.htm">Schedule a Visit</a></li>
+							<li><a href="../../maps/dallascampus/default.htm">Campus Map</a></li>
+							<li><a href="../../about/contact/default.htm">Contact</a></li>
+						</ul>
+					</div>
+					<div class="mega-menu-block grid_3">
+						<h4><a href="../../houston/default.htm">Houston</a></h4>
+						<ul class="sub-nav-group">
+							<li><a href="../../houston/admissions/default.htm">Degree Programs</a></li>
+							<li><a href="../../houston/admissions/woodlands/default.htm">The Woodlands</a></li>
+							<li><a href="../../maps/houstoncampus/default.htm">Campus Map</a></li>
+							<li><a href="../../houston/about/locationandhours/default.htm">Contact</a></li>
+						</ul>
+					</div>
+					<div class="mega-menu-block grid_3">
+						<h4><a href="../../washingtondc/default.htm">Washington, DC</a></h4>
+						<ul class="sub-nav-group">
+							<li><a href="../../washingtondc/admissions/default.htm">Degree Programs</a></li>
+							<li><a href="../../washingtondc/admissions/veterans/default.htm">VA Benefits</a></li>
+							<li><a href="../../washingtondc/about/campusmap/default.htm">Campus Map</a></li>
+							<li><a href="../../washingtondc/about/contact/default.htm">Contact</a></li>
+						</ul>
+					</div>
+					<div class="mega-menu-block grid_3">
+						<h4>Online</h4>
+						<ul class="sub-nav-group">
+							<li><a href="../../online/default.htm">Online Degree Programs</a></li>
+							<li><a href="../../chinese/default.htm">Chinese Online</a></li>
+							<li><a href="../../itunes/default.htm">Sample Classes</a></li>
+							<li><a href="../../about/campuses/onlineeducation/faq/default.htm">FAQs</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="mega-menu container_12 menu-inline">
+					<div class="mega-menu-block grid_12">
+						<h4>US Sites</h4>
+						<ul>
+							<li><a href="../../locations/atlanta/default.htm">Atlanta</a></li>
+							<li><a href="../../locations/austin/default.htm">Austin</a></li>
+							<li><a href="../../locations/nashville/default.htm">Nashville</a></li>
+							<li><a href="../../locations/northwestarkansas/default.htm">Northwest Arkansas</a></li>
+							<li><a href="../../locations/sanantonio/default.htm">San Antonio</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="mega-menu container_12 menu-inline">
+					<div class="mega-menu-block grid_12">
+						<h4>International</h4>
+						<ul>
+							<li><a href="../../locations/australasia/default.htm">Australasia</a></li>
+							<li><a href="../../guatemala/default.htm">Guatemala</a></li>
+							<li><a href="../../chinese/default.htm">Hong Kong</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li class="nav-item">
+			<a href="../../students/default.htm">Students</a>
+			
+		</li>
+		<li class="nav-item">
+			<a href="../../departments/default.htm">Departments</a>
+			<div class="sub-nav">
+				<div class="mega-menu container_12">
+					<div class="mega-menu-block grid_3">
+						<h4><a id="departments-campus_departments" href="../../departments/default.htm">Campus Departments</a></h4>
+						<ul class="sub-nav-group">
+							<li><a id="departments-campusDepartments-advancement_and_donations" href="../../supporters/default.htm">Advancement &amp; Donations</a></li>
+							<li><a id="departments-campusDepartments-advising_center" href="../../departments/campus/advising/default.htm">Advising Center</a></li>
+							<li><a id="departments-campusDepartments-alumni_and_placement" href="../../../alumni.dts.edu/default.htm">Alumni &amp; Career Services</a></li>
+							<li><a id="departments-campusDepartments-business_office" href="../../departments/campus/businessoffice/default.htm">Business Office</a></li>
+							<li><a id="departments-campusDepartments-campus_police" href="../../departments/campus/campuspolice/default.htm">Campus Police</a></li>
+							<li><a id="departments-campusDepartments-employment" href="../../departments/campus/employment/default.htm">Employment</a></li>
+							<li><a id="departments-campusDepartments-event_services" href="../../departments/campus/eventservices/default.htm">Event Services</a></li>
+							<li><a id="departments-campusDepartments-plant_operations" href="../../departments/campus/fpo/default.htm">Facilities &amp; Plant Operations</a></li>
+						</ul>
+					</div>
+					<div class="mega-menu-block grid_3">
+						<h4>&nbsp;</h4>
+						<ul class="sub-nav-group">
+							<li><a id="departments-campusDepartments-financial_aid" href="../../departments/campus/financialaid/default.htm">Financial Aid</a></li>
+							<li><a id="departments-campusDepartments-institutional_research_and_effectiveness" href="../../departments/campus/ire/default.htm">Institutional Research &amp; Effectiveness</a></li>
+							<li><a id="departments-campusDepartments-international_student_office" href="../../departments/campus/iso/default.htm">International Student Office</a></li>
+							<li><a id="departments-campusDepartments-lukes_ministries" href="../../departments/campus/lukesministries/default.htm">Luke&rsquo;s Ministries</a></li>
+							<li><a id="departments-campusDepartments-registrars_office" href="../../departments/campus/registrar/default.htm">Registrar&rsquo;s Office</a></li>
+							<li><a id="departments-campusDepartments-student_housing" href="../../departments/campus/housing/default.htm">Student Housing</a></li>
+							<li><a id="departments-campusDepartments-student_services" href="../../students/default.htm">Student Services</a></li>
+						</ul>
+					</div>
+					<div class="mega-menu-block grid_3">
+						<h4><a id="departments-academic_departments" href="../../departments/default.htm">Academic Departments</a></h4>
+						<ul class="sub-nav-group">
+							<li><a id="departments-biblical_counseling" href="../../departments/academic/bc/default.htm">Biblical Counseling</a></li>
+							<li><a id="departments-bible_exposition" href="../../departments/academic/be/default.htm">Bible Exposition</a></li>
+							<li><a id="departments-doctor_of_ministry" href="../../departments/academic/dmin/default.htm">Doctor of Ministry (DMin)</a></li>
+							<li><a id="departments-doctor_of_philosophy" href="../../departments/academic/phd/default.htm">Doctor of Philosophy (PhD)</a></li>
+							<li><a id="departments-educational_ministries" href="../../departments/academic/eml/default.htm">Educational Ministries &amp; Leadership</a></li>
+							<li><a id="departments-internships" href="../../departments/academic/internships/default.htm">Internships</a></li>
+						</ul>
+					</div>
+					<div class="mega-menu-block grid_3">
+						<h4>&nbsp;</h4>
+						<ul class="sub-nav-group">
+							<li><a id="departments-media_arts_and_worship" href="../../departments/academic/maw/default.htm">Media Arts &amp; Worship</a></li>
+							<li><a id="departments-new_testament_studies" href="../../departments/academic/nt/default.htm">New Testament Studies</a></li>
+							<li><a id="departments-old_testament_studies" href="../../departments/academic/ot/default.htm">Old Testament Studies</a></li>
+							<li><a id="departments-pastoral_ministries" href="../../departments/academic/pm/default.htm">Pastoral Ministries</a></li>
+							<li><a id="departments-theological_studies" href="../../departments/academic/ts/default.htm">Theological Studies</a></li>
+							<li><a id="departments-world_missions_and_intercultural_studies" href="../../departments/academic/wm/default.htm">World Missions &amp; Intercultural Studies</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="mega-menu container_12">
+					<div class="mega-menu-block grid_4">
+						<a id="departments-layinstitute" href="../../layinstitute/default.htm" class="arrow-button">Lay Institute</a>
+					</div>
+					<div class="mega-menu-block grid_4">
+						<a id="departments-hendricks" href="../../hendrickscenter/default.htm" class="arrow-button">Hendricks Center</a>
+					</div>
+					<div class="mega-menu-block grid_4">
+						<a id="departments-foundation" href="../../../www.dallasseminaryfoundation.org/default.htm" class="arrow-button">Dallas Seminary Foundation</a>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li class="nav-item">
+			<a href="../../media/default.htm">Media</a>
+			<div class="sub-nav">
+				<div class="mega-menu container_12">
+					<div class="mega-menu-block grid_3">
+						<h3>DTS Chapel</h3>
+						
+						<ul class="sub-nav-group">
+							<li><a href="../../media/chapel/default.htm">Chapel Home &raquo;</a></li>
+						</ul>
+					</div>
+					<div class="mega-menu-block grid_3">
+						<h3>The Table Podcast</h3>
+						
+						<ul class="sub-nav-group">
+							<li><a href="../../thetable/default.htm">The Table &raquo;</a></li>
+						</ul>
+					</div>
+					<div class="mega-menu-block grid_3">
+						<h4>DTS Magazine</h4>
+						
+						<ul class="sub-nav-group">
+							<li><a href="../../../https@voice.dts.edu/magazine/default.htm">DTS Magazine</a></li>
+						</ul>
+					</div>
+					<div class="mega-menu-block grid_3">
+						<h4>Media &amp; Publications</h4>
+						<ul class="sub-nav-group">
+							<li><a id="resources-publications-book_reviews" href="../../media/profiles/default.htm">DTS Video Stories</a></li>
+							<li><a id="resources-publications-bibliotheca_sacra" href="../../publications/bibliothecasacra/default.htm"><em>Bibliotheca Sacra</em></a></li>
+							<li><a id="resources-publications-veritas" href="../../publications/veritas/default.htm"><em>Veritas</em></a></li>
+							<li><a id="resources-publications-alumni_connection" href="../../alumni/enrichment/alumnipublications/connection/default.htm">Alumni Connection</a></li>
+							<li><a id="resources-publications-book_reviews" href="../../reviews/default.htm">Book Reviews</a></li>
+							<li><a id="resources-publications-books_by_alumni_and_faculty" href="../../publications/books/default.htm">Books by Alumni &amp; Faculty</a></li>
+
+							<li><a id="resources-publications-free_classes" href="../../../courses.dts.edu/@utm_source=homepage&utm_medium=menu&utm_campaign=courses">Free Online Courses</a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li id="donate-menu-item" class="nav-item">
+			<a href="../../supporters/donateonline/default.htm" class="highlight">Donate</a>
+			<div class="sub-nav donate-sub-nav" style="display:none !important;"></div>
+		</li>
+	</ul>
+</nav>
+<style>
+	li#donate-menu-item div.donate-sub-nav{
+		display:none !important;
+	}
+	li#donate-menu-item > a.highlight{
+		background: none !important;
+		background-color: #3E1656 !important;
+	}
+</style>
+<script>
+	$(document).ready(function(){
+		$('#donate-menu-item').unbind();
+	});
+</script>
+				</div>
+				<div id="global-search">
+					<input id="search-text" name="q" type="text" title="search" placeholder="Search DTS">
+					<input type="button" id="search-button" value="search">
+				</div>
+				<span id="header-mobile-button"></span>
+			</div>
+		</div> <!-- /#header -->
+	</div> <!-- /#header-container -->
+			</header>
+			<main role="main" id="maincontent">
+				<div id="content">
+					
+
+<div class="page-container" style="background-image: url(../../../dtsi.s3.amazonaws.com/headers/page-bg-columns.jpg);" >
+
+	<span class="page-area-title">Error</span>
+	
+	<div class="page-content-wrapper">
+
+		<div class="container_12">
+			<div class="grid_12">
+		
+				<h1 class="mega-title">404: <span>Webpage Left Behind Error</span></h1>
+				
+				
+				<p>Sorry, the page you were looking for <strong>http://www.dts.edu/css/areas/miscellaneous.css?v=16</strong> doesn't exist.</p>
+				
+				<p>You can try the menu area above or use the search to find what you're looking for.</p>
+				
+				<br><br><br><br><br><br>
+		
+			</div>
+		</div>
+
+	</div>
+	
+</div>
+
+
+				</div><!-- /#content -->
+			</main>
+			<div class="clear"></div>
+		</div> <!-- /#container -->
+		<footer>
+			
+	<div id="footer" class="container_12" itemscope itemtype="http://schema.org/LocalBusiness">
+		<div id="social-links" class="grid_3 push_1 left">
+			
+				<span class="social-link phone" itemprop="telephone">800-387-9673</span>
+			
+			<a id="footer-make_a_gift" href="../../supporters/donateonline/@adsource=DTS_Footer" class="social-link donate">Make a Gift</a>
+			<a id="footer-apply_online" href="../../admissions/apply/@adsource=DTS_Footer" class="social-link apply">Apply Online</a>
+			<a id="footer-contact_dts" href="../../about/contact/default.htm" class="social-link contact">Contact DTS</a>
+			<div id="mobile-footer">
+				<a id="footer-mobile-facebook" href="../../../https@www.facebook.com/dallasseminary" class="social-link facebook">Facebook</a>
+				<a id="footer-mobile-itunes_u" href="../../itunesu/@adsource=DTS_Footer" class="social-link itunes">iTunes U</a>
+				<a id="footer-mobile-instagram" href="../../../instagram.com/dallasseminary/default.htm" class="social-link instagram">Instagram</a>
+				<a id="footer-mobile-twitter" href="../../../https@twitter.com/dallasseminary/default.htm" class="social-link twitter">Twitter</a>
+			</div>
+		</div>
+		<div id="identity" class="grid_4 push_1">
+			<span id="seal">DTS</span>
+			<span itemprop="name" class="block" id="title">Dallas Theological Seminary</span>
+			
+				<a id="footer-address" href="../../maps/dallascampus/default.htm">
+					<span class="block"><span itemprop="streetAddress">3909 Swiss Avenue</span></span>
+					<span class="block">
+						<span itemprop="addressLocality">Dallas</span>,
+						<span itemprop="addressRegion">Texas</span>
+						<span itemprop="postalCode">75204-6411</span>
+					</span>
+				</a>
+				
+			<span class="block" id="copyright">
+				All content &copy; 2018 Dallas Theological Seminary
+			</span>
+		</div>
+		<div id="social-links" class="grid_3 push_1 right">
+			<a id="footer-facebook" href="../../../https@www.facebook.com/dallasseminary" class="social-link facebook">Facebook</a>
+			<a id="footer-itunes_u" href="../../itunesu/default.htm" class="social-link itunes">iTunes U</a>
+			<a id="footer-instagram" href="../../../instagram.com/dallasseminary/default.htm" class="social-link instagram">Instagram</a>
+			<a id="footer-twitter" href="../../../https@twitter.com/dallasseminary/default.htm" class="social-link twitter">Twitter</a>
+		</div>
+		<div class="clear"></div>
+	</div><!-- /#footer -->
+
+		</footer>
+		
+
+<!-- Start of Async HubSpot Analytics Code -->
+  <script type="text/javascript">
+    (function(d,s,i,r) {
+      if (d.getElementById(i)){return;}
+      var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+      n.id=i;n.src='../../../js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/1956353.js';
+      e.parentNode.insertBefore(n, e);
+    })(document,"script","hs-analytics",300000);
+  </script>
+<!-- End of Async HubSpot Analytics Code -->
+
+
+<!-- NEW Google Universal Analytics -->
+<!--ipt>
+	(function(i,s,o,g,r,a,m){
+		i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-64595-1', 'dts.edu');
+	ga('require', 'linkid', 'linkid.js');
+	ga('send', 'pageview');
+	ga('require', 'ec');
+</scri-->
+<!-- End Google Analytics -->
+
+<!-- Facebook/Twitter -->
+<script>
+	//record Facebook actions
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId	: '114652401890233',	// App ID
+			status	: true,	// check login status
+			cookie	: true,	// enable cookies to allow the server to access the session
+			xfbml	: true	// parse XFBML
+		});
+		//like button
+		FB.Event.subscribe("edge.create", function(targetUrl) {
+			ga('send', 'social', 'facebook', 'like', targetUrl);
+		});
+		//comment
+		FB.Event.subscribe("comment.create", function(target) {
+			ga('send', 'social', 'facebook', 'comment', target.href);
+		});
+	};
+
+	if (typeof twttr !== 'undefined') {
+		twttr.ready(function (twttr) {
+			twttr.events.bind('click', tweetToAnalytics);
+		});
+	}
+
+	function tweetToAnalytics(){
+		//record tweet
+		ga('send', 'social', 'twitter', 'tweet', window.location.href);
+	}
+</script>
+
+
+
+<script type="text/javascript">
+	/* <![CDATA[ */
+		var google_conversion_id = 1048726565;
+		var google_conversion_label = "";
+		var google_custom_params = window.google_tag_params;
+		var google_remarketing_only = true;
+	/* ]]> */
+</script>
+<script type="text/javascript" src="../../../www.googleadservices.com/pagead/conversion.js"></script>
+<noscript>
+	<div style="display:inline;">
+		<img height="1" width="1" style="border-style:none;" alt="" src="../../../googleads.g.doubleclick.net/pagead/viewthroughconversion/1048726565/@value=0&label=&guid=ON&script=0"/>
+	</div>
+</noscript>
+
+
+<!-- Slate -->
+<script async="async" src="../../../https@admissions.dts.edu/ping">/**/</script>
+		
+<!-- begin olark code -->
+<script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+f[z]=function(){
+(a.s=a.s||[]).push(arguments)};var a=f[z]._={
+},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+0:+new Date};a.P=function(u){
+a.p[u]=new Date-a.p[0]};function s(){
+a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+b.contentWindow[g].open()}catch(w){
+c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+/* custom configuration goes here (www.olark.com/documentation) */
+olark.identify('8525-271-10-2847');/*]]>*/
+</script>
+<noscript>
+	<a href="../../../https@www.olark.com/site/8525-271-10-2847/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by 
+	<a href="../../../www.olark.com/@welcome_2F" title="Olark live chat software">Olark live chat software</a>
+</noscript>
+<!-- end olark code -->
+
+<style>
+	#habla_panel_div {
+		
+	}
+	#habla_both_div {
+		
+	}
+	#habla_window_div textarea#habla_pre_chat_name_input,
+	#habla_window_div textarea#habla_pre_chat_email_input {
+		height: 24px !important;
+	}
+	#habla_pre_chat_submit_input {
+		background-color: #421F50 !important;
+	}
+	#habla_topbar_div {
+		background-color: #B67E07 !important;
+	}
+	#habla_expanded_div {
+		
+	}
+	#habla_offline_submit_input {
+		background-color: #B67E07 !important;
+	}
+</style>
+<script>
+	$( document ).ready(function() {
+		var checkExist = setInterval(function() {
+			if ($('#habla_expanded_div').length) {
+				$( "#habla_middle_div ~ div" ).css( "border", "9px solid red" );
+				$( "#habla_middle_div ~ div" ).remove();
+				clearInterval(checkExist);
+			}
+		}, 100);
+	});
+</script>
+<script>
+// Creates a new Targeted Chat rule
+olark('api.rules.defineRule', {
+	id: '44',
+	description: "notify backup team if customers aren't responded to within 60 seconds ",
+	condition: function(pass) {
+		// Retrieve info about the chat
+		olark('api.visitor.getDetails', function(details) {
+			// Trigger this action if message hasn't been responded to within 60 seconds (NOTE: This will trigger if an operator initiates a message)
+			if ((details.messageCountForThisVisit < 2) && (details.secondsSinceLastMessage > 60) && (details.isConversing)) {
+				pass();
+			}
+		});
+	},
+	action: function() {
+		// Change the group to the backup group using their Group ID
+		olark('api.chat.setOperatorGroup', {
+			group: '12875'
+		});
+		// Send a notification to the backup group operators
+		olark('api.chat.sendNotificationToOperator',
+		{
+			body: "Visitor has been waiting more than 60 seconds"
+		});
+	},
+	// Trigger the rule page change if customer still hasn't received response
+	perPage: true
+});
+</script>
+		<script>
+			$( document ).ready(function() {
+				$('form').attr('novalidate', 'novalidate');
+			});
+			 
+		</script>
+	</body>
+</html>

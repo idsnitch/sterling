@@ -1,0 +1,148 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="ROBOTS" content="NOINDEX">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+    <title>Karbon CMS Administration Panel</title>
+
+    <!-- icons -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="57x57"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-57x57.png?2018062101">
+    <link rel="apple-touch-icon" sizes="60x60"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-60x60.png?2018062101">
+    <link rel="apple-touch-icon" sizes="72x72"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-72x72.png?2018062101">
+    <link rel="apple-touch-icon" sizes="76x76"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-76x76.png?2018062101">
+    <link rel="apple-touch-icon" sizes="114x114"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-114x114.png?2018062101">
+    <link rel="apple-touch-icon" sizes="120x120"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-120x120.png?2018062101">
+    <link rel="apple-touch-icon" sizes="144x144"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-144x144.png?2018062101">
+    <link rel="apple-touch-icon" sizes="152x152"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-152x152.png?2018062101">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="https://cdn.sirvoy.com/build/meta/apple-touch-icon-180x180.png?2018062101">
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.sirvoy.com/build/meta/favicon.ico?2018062101">
+    <link rel="icon" type="image/png" href="https://cdn.sirvoy.com/build/meta/favicon-32x32.png?2018062101"
+          sizes="32x32">
+    <link rel="icon" type="image/png" href="https://cdn.sirvoy.com/build/meta/android-chrome-192x192.png?2018062101"
+          sizes="192x192">
+    <link rel="icon" type="image/png" href="https://cdn.sirvoy.com/build/meta/favicon-96x96.png?2018062101"
+          sizes="96x96">
+    <link rel="icon" type="image/png" href="https://cdn.sirvoy.com/build/meta/favicon-16x16.png?2018062101"
+          sizes="16x16">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('templates/karbon/css/fonts.css') }}" media="all">
+    <link rel="stylesheet" type="text/css" href="{{ asset('templates/karbon/css/backend.css') }}" media="all">
+    <link rel="stylesheet" type="text/css" href="{{ asset('templates/karbon/css/tamasha.css') }}" media="all">
+
+    <!-- javascripts -->
+    <script src="{{ asset('templates/karbon/js/jquery-jquery-ui.1.11.0.min.js') }}"></script>
+    <script src="{{ asset('templates/karbon/js/jquery.ui.touch-punch.min.js') }}"></script>
+    <script src="{{ asset('templates/karbon/js/sweetalert2.min.js') }}"></script>
+    <script src="{{ asset('templates/karbon/js/backend-functions.js') }}"></script>
+
+
+    <script>
+        // always clear sessionStorage when we end up here so things are tidy
+        // (we are here before login, and redirected here after logout)
+        sessionStorage.clear();
+
+        $(function () {
+            $('#login_form__username').focus();
+        });
+    </script>
+
+
+</head>
+
+<body class="login">
+
+
+<header class="page-header">
+    <div id="menu_bar">
+        <div id="nav_inner">
+            <div id="logo">
+                <a href="/"><img style="width: 200px;margin-left: -37px" src="{{ asset('logo.png') }}"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="main">
+
+    <div class="content_wrapper">
+        <div class="inner_wrapper">
+            <div class="body-wrapper ">
+                <article>
+                    <div class="article_inner">
+                        <div class="form form-wrap">
+                            {{ form_start(loginForm) }}
+
+                            {% if error %}
+                                <div class="alert alert-danger" style="display: block">
+                                    {{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                            {% endif %}
+                            <div class="column">
+
+                                <div class="form-row form-field-login_form_credentials_username ">
+                                    <div class="form-label">
+                                        <label for="login_form_credentials_username"
+                                               class="required">Username</label>
+
+                                    </div>
+                                    <div class="form-widget">
+                                        {{ form_row(loginForm._username, { 'attr': {'id': 'login_form_credentials_username'} }) }}
+                                    </div>
+                                    <div class="form-errors"></div>
+                                </div>
+
+                                <div class="form-row form-field-login_form_credentials_password ">
+                                    <div class="form-label">
+                                        <label for="login_form_credentials_password"
+                                                                   class="required">Password</label>
+                                    </div>
+                                    <div class="form-widget">
+                                        {{ form_row(loginForm._password, { 'attr': {'id': 'login_form_credentials_password'} }) }}
+                                    </div>
+                                    <div class="form-errors"></div>
+                                </div>
+
+
+                            </div>
+                            <input type="hidden" name="_target_path" value="admin-home"/>
+                            <input type="hidden" name="_failure_path" value="admin-login"/>
+                            <div class="button-row">
+                                <input id="login_form__submit" type="submit" value="Sign in">
+                                <a href="{{ path('forgot-password') }}" id="restore">
+                                    Forgot your password? </a>
+
+                            </div>
+                            {{ form_end(loginForm) }}
+                        </div>
+                        <div class="signup-wrap">
+                            <a href="{{ path('request-admin-account') }}" id="register">
+                                Don't have an account? <span>Request One</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>  <!-- div.body-wrapper -->
+        </div> <!-- div.inner_wrapper -->
+    </div> <!-- div.content_wrapper -->
+</section> <!-- section.main -->
+
+
+<footer class="page-footer">
+    <div class="copyright">
+        <a href="https://sirvoy.com/terms-and-conditions/" target="_blank">Terms &amp; Conditions</a>
+        | Copyright © {{ "now" | date('Y') }} Sterling Capital Ltd
+    </div>
+</footer>
+
+</body>
+</html>
