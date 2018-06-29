@@ -1,0 +1,47 @@
+{% extends 'base.htm.twig' %}
+  {% block breadcrumb %}
+      <li class="rsmItem sfNoBreadcrumbNavigation select">
+          <div class="rsmTemplate">
+
+              <a id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i0_hypBreabcrumb"
+                 href="/">Home</a>
+
+          </div>
+      </li>
+  {% endblock %}
+{% block body %}
+
+    <h1>Services</h1>
+
+
+    <div class="sfNavWrp sfNavHorizontalWrp ">
+
+        <div class="portal">
+            {% for service in services %}
+            <div class="portal-item col-sm-6">
+                <div class="portal-item-border border-none">
+
+                    <img style="width:394px;height: 197px" class="max-width" title="{{ service.service }}"
+                         alt="Stock Exchange Listing"
+                         src="{{ asset('images/products/') }}{{ service.imageName }}">
+
+
+                    <div class="description" style="min-height: 0px; max-height: none; height: 71px;">
+                        <h2 class="portal-title-size">{{ service.service }}</h2>
+                        <p class="intro"> {{ service.intro | raw }}</p>
+                    </div>
+<br/>
+                    <a href="{{ path('service', {'slug': service.service.slug }) }}"
+                       class="btn btn-md pull-right green-theme-button">VIEW</a>
+
+
+                </div>
+                <div class="drop-shadow"></div>
+
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}

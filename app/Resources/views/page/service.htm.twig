@@ -1,0 +1,50 @@
+{% extends 'base.htm.twig' %}
+{% block title %}{{ service.title }}{% endblock %}
+{% block banner %}{% endblock %}
+  {% block breadcrumb %}
+      <li class="rsmItem sfBreadcrumbNavigation">
+          <div class="rsmTemplate">
+              <a id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i0_hypBreabcrumb"
+                 href="{{ path('homepage') }}">Home</a>
+
+          </div>
+          <span class="sfBreadcrumbNodeSeparator"></span></li>
+      <li class="rsmItem sfBreadcrumbNavigation">
+      <div class="rsmTemplate">
+
+          <a href="{{ path('services') }}" id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i1_hypBreabcrumb">Services</a>
+
+      </div>
+  </li>
+      <span class="sfBreadcrumbNodeSeparator"></span></li>
+      <li class="rsmItem sfNoBreadcrumbNavigation select">
+          <div class="rsmTemplate">
+
+              <a id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i1_hypBreabcrumb">{{ service.title }}</a>
+
+          </div>
+      </li>
+  {% endblock %}
+{% block body %}
+    <style>
+        .bread-crumb-control{
+            margin-top: 75px;
+        }
+    </style>
+    <h1>{{ service.title }}</h1>
+    <div class="sfContentBlock">
+        <div class="prominent-text">
+            {{ service.content | raw }}</div>
+
+
+    </div>
+
+    <div class="sfNavWrp sfNavHorizontalWrp ">
+
+        <div class="portal">
+           {% include 'page/clients.htm.twig' %}
+
+        </div>
+    </div>
+
+{% endblock %}

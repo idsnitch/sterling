@@ -3,7 +3,7 @@
 <head id="Head1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        Sterling Capital - Investments, savings, insurance, asset management &amp; retirement products
+       {% block title %} {% endblock %} Sterling Capital - Investments, savings, insurance, asset management &amp; retirement products
     </title>
 
     <link href="{{ asset('templates/sterling/global/sterling.css') }}"
@@ -46,10 +46,7 @@
     <!-- Navigation Markup -->
     <div class="nav-section clearfix">
         <div class="container">
-
-
             <div class="navbar navbar-default" role="navigation">
-
                 <div class="navbar-header">
                     <ul class="visible-xs">
                         <li class="icon-sprites menu navbar-toggle" id="menu-icon-mobile"></li>
@@ -59,33 +56,23 @@
                     </ul>
                     <a class="logo" href="/" id="omcozalogo">
                         <img height="77px"
-                             src="{{ asset('templates/sterling/images/logo.jpg') }}">
+                             src="{{ asset('logo.png') }}">
                         <span class="down-arrow"
                               style="background-image: url(&quot;/templates/sterling/images/table-data-arrow-down.png&quot;);"></span>
                     </a>
                 </div>
-
                 <div class="navbar-collapse" id="navbar">
                     <ul class="nav navbar-nav custom-nav hide-mobile" id="menu-section-mobile">
-
-
-                        <li class="has-sub-nav">
-                            <a id="cphNavigation_T84CFA523002_rptTopNav_hypTopNav_1" href="personal">Home</a>
+                        <li class="has-sub-nav {% if home is defined %}{{ home }}{% endif %}">
+                            <a id="cphNavigation_T84CFA523002_rptTopNav_hypTopNav_1" href="{{ path('homepage') }}">Home</a>
                         </li>
-                        <li class="has-sub-nav">
-                            <a id="cphNavigation_T84CFA523002_rptTopNav_hypTopNav_1" href="personal">Services</a>
+                        <li class="has-sub-nav {% if servicex is defined %}{{ servicex }}{% endif %}">
+                            <a id="cphNavigation_T84CFA523002_rptTopNav_hypTopNav_1" href="{{ path('services') }}">Services</a>
                         </li>
-                        <li class="has-sub-nav">
-                            <a id="cphNavigation_T84CFA523002_rptTopNav_hypTopNav_1" href="personal">Clients</a>
-                        </li>
-                        <li class="has-sub-nav hidden-sm hidden-md">
+                        <li class="has-sub-nav {% if contactsx is defined %}{{ contactsx }}{% endif %}">
                             <a id="cphNavigation_T84CFA523002_rptTopNav_hypTopNav_6" href="contact">Contacts</a>
                         </li>
-
-
                     </ul>
-
-
                     <div id="cphNavigation_T84CFA523002_nav_serarch">
                         <ul class="nav navbar-nav navbar-right header-search" id="nav-search">
                             <li>
@@ -106,189 +93,6 @@
                     </div>
 
 
-
-                </div>
-            </div>
-
-            <div class="topnav-menu-cover"
-                 style="display: none; height: 434px; padding-top: 0px; margin-top: 0px; padding-bottom: 10px; margin-bottom: 0px;">
-                <div class="topnav-menu">
-                    <div class="container">
-                        <div class="col-sm-6 border-right topnav-personallinks">
-
-
-                            <ul id="personal-links">
-
-                                <ul class="main-category-align border-right">
-                                    <li class="main-category">
-                                        <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_hypTopNavChildNodes_0"
-                                           href="personal/investments-and-savings">Investments and Savings</a>
-
-                                        <ul>
-
-                                            <li>
-                                                <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_rpt_TopNavSubChilnodes_0_hypTopNavSubChildNodes_0"
-                                                   href="personal/investments-and-savings/rafiki-halisi-plan">Rafiki
-                                                    Halisi Plan</a></li>
-
-
-                                            <li>
-                                                <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_rpt_TopNavSubChilnodes_0_hypTopNavSubChildNodes_1"
-                                                   href="personal/investments-and-savings/max-investment-plan">Max
-                                                    Investment Plan</a></li>
-
-
-                                            <li>
-                                                <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_rpt_TopNavSubChilnodes_0_hypTopNavSubChildNodes_2"
-                                                   href="personal/investments-and-savings/unit-trusts">Save with
-                                                    Unit Trusts</a></li>
-
-
-                                            <li>
-                                                <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_rpt_TopNavSubChilnodes_0_hypTopNavSubChildNodes_3"
-                                                   href="personal/investments-and-savings/lengo-savings-plan">Lengo
-                                                    Savings Plan</a></li>
-
-
-                                        </ul>
-
-                                    </li>
-                                    <li class="main-category">
-                                        <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_hypTopNavChildNodes_1"
-                                           href="personal/financial-planning">Financial Planning</a>
-
-                                        <ul>
-
-                                            <li>
-                                                <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_rpt_TopNavSubChilnodes_1_hypTopNavSubChildNodes_0"
-                                                   href="personal/financial-planning/overview">Overview</a></li>
-
-
-                                            <li>
-                                                <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_rpt_TopNavSubChilnodes_1_hypTopNavSubChildNodes_1"
-                                                   href="personal/financial-planning/goal-setting">Goal Setting</a>
-                                            </li>
-
-
-                                            <li>
-                                                <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_rpt_TopNavSubChilnodes_1_hypTopNavSubChildNodes_2"
-                                                   href="personal/financial-planning/life-circumstances">Life
-                                                    Circumstances</a></li>
-
-
-                                        </ul>
-
-                                    </li>
-                                    <li class="main-category">
-                                        <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_hypTopNavChildNodes_2"
-                                           href="personal/education-planning">Education Planning</a>
-
-                                        <ul>
-
-                                            <li>
-                                                <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_rpt_TopNavSubChilnodes_2_hypTopNavSubChildNodes_0"
-                                                   href="personal/education-planning/rafiki-halisi-plan">Rafiki
-                                                    Halisi Plan</a></li>
-
-
-                                            <li>
-                                                <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_rpt_TopNavSubChilnodes_2_hypTopNavSubChildNodes_1"
-                                                   href="personal/education-planning/max-education-plan">Max
-                                                    Education Plan</a></li>
-
-
-                                            <li>
-                                                <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_rpt_TopNavSubChilnodes_2_hypTopNavSubChildNodes_2"
-                                                   href="personal/education-planning/education-savings-plan">Education
-                                                    Savings Plan</a></li>
-
-
-                                        </ul>
-
-                                    </li>
-                                </ul>
-
-
-                                <ul class="main-category-align">
-                                    <li class="main-category">
-                                        <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_hypTopNavChildNodes_3"
-                                           href="personal/life-insurance">Life Insurance</a>
-
-                                        <ul>
-
-                                            <li>
-                                                <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_rpt_TopNavSubChilnodes_3_hypTopNavSubChildNodes_0"
-                                                   href="personal/life-insurance/greenlight-life-cover">Greenlight
-                                                    Life Cover</a></li>
-
-
-                                            <li>
-                                                <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_rpt_TopNavSubChilnodes_3_hypTopNavSubChildNodes_1"
-                                                   href="personal/life-insurance/premium-protection-plan">Premium
-                                                    Protection Plan</a></li>
-
-
-                                            <li>
-                                                <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_rpt_TopNavSubChilnodes_3_hypTopNavSubChildNodes_2"
-                                                   href="personal/life-insurance/rafiki-halisi-life-plan">Rafiki
-                                                    Halisi Life Plan</a></li>
-
-
-                                        </ul>
-
-                                    </li>
-                                    <li class="main-category">
-                                        <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_hypTopNavChildNodes_4"
-                                           href="personal/disability-insurance">Disability Insurance</a>
-
-                                        <ul>
-
-                                            <li>
-                                                <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_rpt_TopNavSubChilnodes_4_hypTopNavSubChildNodes_0"
-                                                   href="personal/disability-insurance/greenlight-disability">Greenlight
-                                                    Disability</a></li>
-
-
-                                            <li>
-                                                <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_rpt_TopNavSubChilnodes_4_hypTopNavSubChildNodes_1"
-                                                   href="personal/disability-insurance/premium-protection-plan">Premium
-                                                    Protection Plan</a></li>
-
-
-                                            <li>
-                                                <a id="cphNavigation_T84CFA523002_rpt_TopNavChilnodes_rpt_TopNavSubChilnodes_4_hypTopNavSubChildNodes_2"
-                                                   href="personal/disability-insurance/severe-illness-benefit">Severe
-                                                    Illness Benefit</a></li>
-
-
-                                        </ul>
-
-                                    </li>
-                                </ul>
-
-
-                            </ul>
-
-
-                        </div>
-                        <div class="col-sm-3 col-sm-4">
-                            <div class="portal" style="padding-left: 10px;">
-                                <div class="promo-item col-lg-12">
-                                    <div class="promo-name" id="promo-megemenu-ke"
-                                         style="min-height: 285px; background-image: url(&quot;/images/librariesprovider8/promo/unit_trusts_mega_menu.jpg&quot;);">
-                                        <h3>Old Mutual <span>Unit Trusts</span><br>
-                                            There is an Old Mutual Unit Trust to suite every investor's need.
-                                        </h3>
-                                        <a class="btn btn-md green-theme-button"
-                                           href="/personal/investments-and-savings/unit-trusts">VIEW</a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
                 </div>
             </div>
 
@@ -311,14 +115,14 @@
                 <div>
                     <ul class="myMenu">
                         <li class="select" style="display: list-item;"><a
-                                    href="https://www.csfs.co.ke/activelite/login.aspx">iSterling</a>
+                                    href="https://onlinetrading.nse.co.ke/TradeWeb105/">iSterling</a>
                         </li>
                     </ul>
                     <i class="sprite-select-arrow"></i>
                 </div>
 
                 <div class="searchGoBtn">
-                    <a id="goAnchor" href="https://www.csfs.co.ke/activelite/login.aspx"
+                    <a id="goAnchor" href="https://onlinetrading.nse.co.ke/TradeWeb105/"
                        target="_blank">
                         <input type="button" value="&nbsp;" id="goButton" class="go" name="button"
                                onclick="goToPlatform('ul#dtmQuickLinkOnlinePlatform');">
@@ -333,6 +137,7 @@
 
 <!-- Banner Markup -->
 <div class="banner-bg mobile-hide">
+    {% block banner %}
     <div class="banner">
 
         <div id="static-banner">
@@ -529,6 +334,7 @@ AND GROWING YOUR MONEY</span></h2> <a href="[7e41b34c-0365-6002-bb9d-ff0000361e5
 
         </div>
     </div>
+    {% endblock %}
 </div>
 
 <!-- Banner Markup Ends -->
@@ -550,18 +356,10 @@ AND GROWING YOUR MONEY</span></h2> <a href="[7e41b34c-0365-6002-bb9d-ff0000361e5
                         <div id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb"
                              class="RadSiteMap RadSiteMap_Default">
                             <ul class="rsmFlow rsmLevel rsmOneLevel">
-                                <li class="rsmItem sfNoBreadcrumbNavigation select">
-                                    <div class="rsmTemplate">
-
-                                        <a id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i0_hypBreabcrumb"
-                                           href="/">Home</a>
-
-                                    </div>
-                                </li>
+                             {% block breadcrumb %}
+                             {% endblock %}
                             </ul>
-                            <input id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_ClientState"
-                                   name="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_ClientState"
-                                   type="hidden" autocomplete="off">
+
                         </div>
                     </div>
                 </div>
@@ -573,151 +371,8 @@ AND GROWING YOUR MONEY</span></h2> <a href="[7e41b34c-0365-6002-bb9d-ff0000361e5
         <!-- Left column -->
         <div class="col-lg-9 home-left-panel">
 
-
-            <h1>Services</h1>
-
-
-            <div class="sfNavWrp sfNavHorizontalWrp ">
-
-                <div class="portal">
-
-                    <div class="portal-item col-sm-6 ASP.sfctrlpresentation_openaccessdataprovider_c14cb34c03656002bb9dff0000361e55_ascx">
-                        <div class="portal-item-border">
-
-                            <img style="width:394px;height: 197px" class="max-width" title="Brokerage"
-                                 alt="Brokerage"
-                                 src="{{ asset('images/brokerage.jpg') }}">
-
-
-                            <div class="description" style="min-height: 0px; max-height: none; height: 71px;">
-                                <h2 class="portal-title-size">Brokerage</h2>
-                                Leading financial solutions to meet an array of protection, savings, investment and
-                                retirement benefit needs.
-                            </div>
-
-                            <a href="http://www.oldmutual.co.ke/personal"
-                               class="btn btn-md pull-right green-theme-button">VIEW</a>
-
-
-                        </div>
-                        <div class="drop-shadow"></div>
-
-                    </div>
-
-                    <div class="portal-item col-sm-6 ASP.sfctrlpresentation_openaccessdataprovider_c14cb34c03656002bb9dff0000361e55_ascx">
-                        <div class="portal-item-border border-none">
-
-                            <img style="width:394px;height: 197px" class="max-width" title="Research and Advisory"
-                                 alt="Research and Advisory"
-                                 src="{{ asset('images/research.jpg') }}">
-
-
-                            <div class="description" style="min-height: 0px; max-height: none; height: 71px;">
-                                <h2 class="portal-title-size">Research & Advisory</h2>
-                                We offer Group Life Assurance, Investment &amp; Retirement Benefits solutions.
-                            </div>
-
-                            <a href="http://www.oldmutual.co.ke/corporate"
-                               class="btn btn-md pull-right green-theme-button">VIEW</a>
-
-
-                        </div>
-                        <div class="drop-shadow"></div>
-
-                    </div>
-
-                    <div class="portal-item col-sm-6">
-                        <div class="portal-item-border">
-
-                            <img style="width:394px;height: 197px" class="max-width" title="Asset Management"
-                                 alt="Asset Management"
-                                 src="{{ asset('images/asset.jpg') }}">
-
-
-                            <div class="description" style="min-height: 0px; max-height: none; height: 71px;">
-                                <h2 class="portal-title-size">Asset Management</h2>
-                                A leading, global financial institution servicing Kenyan investors for over 80
-                                years.
-                            </div>
-
-                            <a href="http://www.oldmutual.co.ke/about-us"
-                               class="btn btn-md pull-right green-theme-button">VIEW</a>
-
-
-                        </div>
-                        <div class="drop-shadow"></div>
-
-                    </div>
-
-                    <div class="portal-item col-sm-6">
-                        <div class="portal-item-border border-none">
-
-                            <img style="width:394px;height: 197px" class="max-width" title="Loans for Shares"
-                                 alt="Loans for Shares"
-                                 src="{{ asset('images/loans.jpg') }}">
-
-
-                            <div class="description" style="min-height: 0px; max-height: none; height: 71px;">
-                                <h2 class="portal-title-size">Loans for Shares</h2>
-                                Work for a leading financial services company. See what Old Mutual Kenya offers.
-                            </div>
-
-                            <a href="http://www.oldmutual.co.ke/careers"
-                               class="btn btn-md pull-right green-theme-button">VIEW</a>
-
-
-                        </div>
-                        <div class="drop-shadow"></div>
-
-                    </div>
-                    <div class="portal-item col-sm-6">
-                        <div class="portal-item-border border-none">
-
-                            <img style="width:394px;height: 197px" class="max-width" title="Fundraising for Business"
-                                 alt="Fundraising for Business"
-                                 src="{{ asset('images/funding.jpg') }}">
-
-
-                            <div class="description" style="min-height: 0px; max-height: none; height: 71px;">
-                                <h2 class="portal-title-size">Fundraising for Businesses</h2>
-                                Work for a leading financial services company. See what Old Mutual Kenya offers.
-                            </div>
-
-                            <a href="http://www.oldmutual.co.ke/careers"
-                               class="btn btn-md pull-right green-theme-button">VIEW</a>
-
-
-                        </div>
-                        <div class="drop-shadow"></div>
-
-                    </div>
-                    <div class="portal-item col-sm-6">
-                        <div class="portal-item-border border-none">
-
-                            <img style="width:394px;height: 197px" class="max-width" title="Stock Exchange Listing"
-                                 alt="Stock Exchange Listing"
-                                 src="{{ asset('images/listing.jpg') }}">
-
-
-                            <div class="description" style="min-height: 0px; max-height: none; height: 71px;">
-                                <h2 class="portal-title-size">Stock Exchange Listing</h2>
-                                Work for a leading financial services company. See what Old Mutual Kenya offers.
-                            </div>
-
-                            <a href="http://www.oldmutual.co.ke/careers"
-                               class="btn btn-md pull-right green-theme-button">VIEW</a>
-
-
-                        </div>
-                        <div class="drop-shadow"></div>
-
-                    </div>
-
-
-                </div>
-            </div>
-
-
+        {% block body %}
+        {% endblock %}
         </div>
         <!-- Left column -->
 
@@ -893,7 +548,8 @@ AND GROWING YOUR MONEY</span></h2> <a href="[7e41b34c-0365-6002-bb9d-ff0000361e5
     <div class="container">
         <div class="footer" id="footer">
 
-            <p class="disclaimer">Copyright © 2018 Sterling Capital Ltd<br>Head Office: 11th Floor, Barclays Plaza,
+            <p class="disclaimer">Copyright © {{ "now" | date('Y') }} Sterling Capital Ltd<br>Head Office: 11th Floor,
+                Barclays Plaza,
                 Loita Street, Nairobi. </p>
             <p class="disclaimer">Sterling Capital Ltd is a Licensed member of the Nairobi Securities Exchange.</p>
 

@@ -21,14 +21,53 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $home = "select";
         $em = $this->getDoctrine()->getManager();
-
+        $services = $em->getRepository("AppBundle:ServiceSettings")
+            ->findBy(
+                [],
+                ['sortOrder'=>'Asc']);
         //var_dump($recentArticles);exit;
         // replace this example code with whatever you need
-        return $this->render('home.htm.twig', [
+        return $this->render('page/home.htm.twig', [
+            'services'=>$services,
+            'home'=>$home
+        ]);
+    }
+    /**
+     * @Route("/services", name="services")
+     */
+    public function servicesAction(Request $request)
+    {
+        $servicesx = "select";
+        $em = $this->getDoctrine()->getManager();
+        $services = $em->getRepository("AppBundle:ServiceSettings")
+            ->findBy(
+                [],
+                ['sortOrder'=>'Asc']);
+        //var_dump($recentArticles);exit;
+        // replace this example code with whatever you need
+        return $this->render('page/services.htm.twig', [
+            'services'=>$services,
+            'servicex'=>$servicesx
         ]);
     }
 
+    /**
+     * @Route("/services/{slug}",name="service")
+     */
+    public function serviceAction(Request $request,$slug){
+        $servicesx = "select";
+        $em = $this->getDoctrine()->getManager();
+        $service = $em->getRepository("AppBundle:Service")
+            ->findOneBy([
+                'slug'=>$slug
+            ]);
+        return $this->render('page/service.htm.twig',[
+            'service'=>$service,
+            'servicex'=>$servicesx
+        ]);
+    }
 
     /**
      * @Route("/article/{slug}",name="view-article")
