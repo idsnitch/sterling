@@ -1,0 +1,41 @@
+{% extends 'base.htm.twig' %}
+{% block title %}{{ page }}{% endblock %}
+  {% block breadcrumb %}
+      <li class="rsmItem sfBreadcrumbNavigation">
+          <div class="rsmTemplate">
+              <a id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i0_hypBreabcrumb" href="{{ path('homepage') }}">Home</a>
+
+          </div>
+          <span class="sfBreadcrumbNodeSeparator"></span></li>
+      <li class="rsmItem sfNoBreadcrumbNavigation">
+          <div class="rsmTemplate">
+
+              <a href="{{ path('view-page', {'slug': page.slug}) }}" id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i1_hypBreabcrumb">{{ page.title }}</a>
+
+          </div>
+      </li>
+      <li class="rsmItem sfNoBreadcrumbNavigation select">
+          <div class="rsmTemplate">
+
+              <a id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i1_hypBreabcrumb">{{ subpage.title }}</a>
+
+          </div>
+      </li>
+  {% endblock %}
+{% block banner %}{% endblock %}
+{% block body %}
+    <style>
+        .bread-crumb-control{
+            margin-top: 75px;
+        }
+    </style>
+    <h1>{{ subpage.title }}</h1>
+
+    <div class="sfContentBlock">
+        <div class="prominent-text">
+            {{ subpage.content | raw }}</div>
+
+
+    </div>
+
+{% endblock %}

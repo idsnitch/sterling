@@ -1,0 +1,68 @@
+{% extends 'base.htm.twig' %}
+{% block title %}{{ scheme.title }}{% endblock %}
+{% block banner %}{% endblock %}
+  {% block breadcrumb %}
+      <li class="rsmItem sfBreadcrumbNavigation">
+          <div class="rsmTemplate">
+              <a id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i0_hypBreabcrumb"
+                 href="{{ path('homepage') }}">Home</a>
+
+          </div>
+          <span class="sfBreadcrumbNodeSeparator"></span></li>
+      <li class="rsmItem sfBreadcrumbNavigation">
+          <div class="rsmTemplate">
+
+              <a href="#" id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i1_hypBreabcrumb">Clients</a>
+
+          </div>
+      </li>
+      <span class="sfBreadcrumbNodeSeparator"></span></li>
+      <li class="rsmItem sfNoBreadcrumbNavigation select">
+          <div class="rsmTemplate">
+
+              <a id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i1_hypBreabcrumb">{{ scheme.title }}</a>
+
+          </div>
+      </li>
+  {% endblock %}
+{% block body %}
+    <style>
+        .bread-crumb-control{
+            margin-top: 75px;
+        }
+    </style>
+    <h1>{{ scheme.title }}</h1>
+    <div class="sfContentBlock">
+        <img style="width:100%" src="{{ asset('images/products/') }}{{ scheme.imageName }}"/><br/><br/>
+
+        <div class="prominent-text">
+            {{ scheme.summary }}</div>
+
+
+    </div>
+
+    <div class="sfNavWrp sfNavHorizontalWrp ">
+
+        <div class="portal">
+            {% for scheme in scheme.myServiceSchemes %}
+
+                <a href="{{ path('service', {'slug': scheme.service.slug}) }}"
+                   class="">
+                    <div class="portal-item col-sm-6">
+                        <div class="portal-item-border border-none">
+
+                            <div class="description" style="min-height: 0px; max-height: none;">
+                                <h2 class="portal-title-size">{{ scheme.service.title }}</h2>
+                                <p>{{ scheme.service.content | raw }}</p>
+                            </div>
+
+                        </div>
+                        <div class="drop-shadow"></div>
+
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

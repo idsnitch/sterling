@@ -1,7 +1,17 @@
 {% extends 'base.htm.twig' %}
+{% block javascript %}
+
+{% endblock %}
 {% block title %}{{ service.title }}{% endblock %}
-{% block banner %}{% endblock %}
-  {% block breadcrumb %}
+ {% block banner %}
+     <style>
+         .banner-margin-inner{
+             margin-top:90px;
+         }
+     </style>
+
+ {% endblock %}
+{% block breadcrumb %}
       <li class="rsmItem sfBreadcrumbNavigation">
           <div class="rsmTemplate">
               <a id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i0_hypBreabcrumb"
@@ -26,15 +36,15 @@
       </li>
   {% endblock %}
 {% block body %}
-    <style>
-        .bread-crumb-control{
-            margin-top: 75px;
-        }
-    </style>
+
     <h1>{{ service.title }}</h1>
     <div class="sfContentBlock">
+        <img style="width:100%" src="{{ asset('images/products/') }}{{ service.imageName }}"/><br/><br/>
         <div class="prominent-text">
-            {{ service.content | raw }}</div>
+
+            {{ service.content | raw }}<br/>
+            {{ service.footer | raw }}
+        </div>
 
 
     </div>
@@ -42,8 +52,24 @@
     <div class="sfNavWrp sfNavHorizontalWrp ">
 
         <div class="portal">
-           {% include 'page/clients.htm.twig' %}
+          {% for scheme in service.mySchemes %}
 
+            <a href="{{ path('scheme', {'serviceSlug': scheme.service.slug, 'slug': scheme.scheme.slug }) }}"
+               class="">
+              <div class="portal-item col-sm-6">
+                <div class="portal-item-border border-none">
+
+                    <div class="description" style="min-height: 0px; max-height: none; height: 71px;">
+                        <h2 class="portal-title-size">{{ scheme.scheme.title }}</h2>
+                        <p>{{ scheme.scheme.summary }}</p>
+                    </div>
+
+                </div>
+                <div class="drop-shadow"></div>
+
+            </div>
+            </a>
+           {% endfor %}
         </div>
     </div>
 

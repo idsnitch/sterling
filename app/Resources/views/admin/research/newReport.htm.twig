@@ -1,0 +1,45 @@
+<div id="form-data" class="form form-wrap" style="">
+    {{ form_start(form,{'attr':{'id':'newForm'}}) }}
+    <h2>Basic Details</h2>
+
+    <div style="height:90px">
+        <div class="column">
+            <div class="form-row">
+                <div class="form-widget">
+                    {{ form_row(form.title, { 'attr': {'id': 'login_form_credentials_username'} }) }}
+                </div>
+                <div class="form-errors"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-widget">
+                    {{ form_row(form.category, { 'attr': {'id': 'login_form_credentials_username'} }) }}
+                </div>
+                <div class="form-errors"></div>
+            </div>
+        </div>
+        <div class="column">
+
+            <div class="form-row">
+                <div class="form-widget">
+                    <label for="app_bundle_service_form_tagline" class="required">Document</label>
+                    {{ form_row(form.imageFile, { 'attr': {'id': 'login_form_credentials_username'} }) }}
+                </div>
+                <div class="form-errors"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-widget">
+                    {{ form_row(form.accessLevel, { 'attr': {'id': 'login_form_credentials_username'} }) }}
+                </div>
+                <div class="form-errors"></div>
+            </div>
+        </div>
+    </div>
+    <div class="button-row">
+        <input id="login_form__submit" type="submit" value="Save and Close">
+        <input id="new" type="submit" value="Save and New">
+
+        <a href="{{ path('research') }}" id="restore">
+            Cancel </a>
+    </div>
+    {{ form_end(form) }}
+</div>

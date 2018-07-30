@@ -41,7 +41,7 @@
                     }).done(function (company) {
                         $('#saving').fadeOut("slow");
                         $('#message').fadeIn("slow");
-                        jQuery.get("/administrator/pages/form", function( data ) {
+                        jQuery.get("/administrator/scheme/form", function( data ) {
                             jQuery('#form-data').html(data);
                         });
                         setTimeout(function () {
@@ -68,7 +68,7 @@
 
 {% endblock %}
 {% block service %}active{% endblock %}
-{% block pageTitle %}New SubPage{% endblock %}
+{% block pageTitle %}Update Scheme{% endblock %}
 {% block body %}
     <style>
         .required:after {
@@ -87,37 +87,7 @@
                 {{ form_start(form,{'attr':{'id':'newForm'}}) }}
                 <h2>Basic Details</h2>
 
-                <div style="height:220px">
-                    <div class="column">
-                        <div class="form-row">
-                            <div class="form-widget">
-                                {{ form_row(form.page, { 'attr': {'id': 'login_form_credentials_username'} }) }}
-                            </div>
-                            <div class="form-errors"></div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-widget">
-                                {{ form_row(form.tagline, { 'attr': {'id': 'login_form_credentials_username'} }) }}
-                            </div>
-                            <div class="form-errors"></div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-widget">
-                                {{ form_row(form.intro, { 'attr': {'id': 'login_form_credentials_username'} }) }}
-                            </div>
-                            <div class="form-errors"></div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-widget">
-                                {{ form_row(form.sortOrder, { 'attr': {'id': 'login_form_credentials_username'} }) }}
-                            </div>
-                            <div class="form-errors"></div>
-                        </div>
-
-
-                    </div>
+                <div style="">
                     <div class="column">
                         <div class="form-row">
                             <div class="form-widget">
@@ -125,35 +95,38 @@
                             </div>
                             <div class="form-errors"></div>
                         </div>
+
                         <div class="form-row">
                             <div class="form-widget">
-                                {{ form_row(form.subLine, { 'attr': {'id': 'login_form_credentials_username'} }) }}
+                                {{ form_row(form.summary, { 'attr': {'id': 'login_form_credentials_username'} }) }}
+                            </div>
+                            <div class="form-errors"></div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="column">
+                        <div class="form-row">
+                            <div class="form-widget">
+                                {{ form_row(form.sortOrder, { 'attr': {'id': 'login_form_credentials_username'} }) }}
                             </div>
                             <div class="form-errors"></div>
                         </div>
                         <div class="form-row">
                             <div class="form-widget">
-                                <label for="app_bundle_service_form_tagline" class="required">Banner</label>
+                                <label for="app_bundle_client_type_form_summary" class="required">Banner</label>
                                 {{ form_row(form.imageFile, { 'attr': {'id': 'login_form_credentials_username'} }) }}
                             </div>
                             <div class="form-errors"></div>
                         </div>
-                    </div>
-                </div>
-                <div>
-                    <h2>Content</h2>
-                    <div class="form-row">
-                        <div class="form-widget">
-                            {{ form_row(form.content, { 'attr': {'id': 'login_form_credentials_username','class':'tinymce'} }) }}
-                        </div>
-                        <div class="form-errors"></div>
-                    </div>
-                </div>
 
+                    </div>
+                </div>
                 <div class="button-row">
                     <input id="login_form__submit" type="submit" value="Save and Close">
 
-                    <a href="{{ path('sub-pages') }}" id="restore">
+                    <a href="{{ path('schemes') }}" id="restore">
                         Cancel </a>
                 </div>
                 {{ form_end(form) }}
@@ -166,13 +139,11 @@
     <aside class="">
         <i class="fa fa-question-circle help-icon"></i>
         <p>ALL the fields marked (*) are required.</p>
-        <p>The <b>Tagline</b> is the first line on an image placed on the Banner at the top of the page</p>
-        <p>The <b>Subline</b> is the second line</p>
-        <p>The image selected here will be the main banner on the service page.</p>
-        {% if page is defined %}
-            <p>To update the image File, choose a new file and tick the delete button at the bottom of the form then Save the page.</p>
+        <p>The image selected here will be the main banner on the scheme page.</p>
+    {% if service is defined %}
+        <p>To update the image File, choose a new file and tick the delete button at the bottom of the form then Save the service.</p>
 
-        {% endif %}
+    {% endif %}
     </aside>
 
 

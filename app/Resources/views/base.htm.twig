@@ -3,12 +3,12 @@
 <head id="Head1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-       {% block title %} {% endblock %} Sterling Capital - Investments, savings, insurance, asset management &amp; retirement products
+       {% block title %} Sterling Capital {% endblock %} - Investments, savings, insurance, asset management &amp; retirement products
     </title>
-
+    <link rel="shortcut icon" href="{{ asset('templates/sterling/images/favicon.ico') }}" type="image" />
     <link href="{{ asset('templates/sterling/global/sterling.css') }}"
           type="text/css" rel="stylesheet">
-    <link href="//customer.cludo.com/css/328/1864/cludo-search-new.min.css" type="text/css" rel="stylesheet">
+    <link href="{{ asset('templates/sterling/global/search-new.min.css') }} type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{{ asset('templates/sterling/global/layoutbasics.css') }}"
           type="text/css" rel="stylesheet">
@@ -49,38 +49,225 @@
             <div class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
                     <ul class="visible-xs">
-                        <li class="icon-sprites menu navbar-toggle" id="menu-icon-mobile"></li>
-                        <li class="navbar-toggle">
-                            <button id="closs" type="button" class="btn-sm btn comm-login">LOGIN</button>
-                        </li>
+                        <li class="icon-sprites menu navbar-toggle" id="menu-icon-mobile" onclick="CludoShowAdvancedFilters()"></li>
                     </ul>
-                    <a class="logo" href="/" id="omcozalogo">
+                    <a class="logo" href="{{ path('homepage') }}" id="omcozalogo">
                         <img height="77px"
                              src="{{ asset('logo.png') }}">
-                        <span class="down-arrow"
-                              style="background-image: url(&quot;/templates/sterling/images/table-data-arrow-down.png&quot;);"></span>
+
                     </a>
                 </div>
+                <style>
+                    .topnav {
+                        overflow: hidden;
+                        position: relative;
+                        max-height: 60px !important;
+                    }
+
+                    .topnav a {
+                        float: left;
+                        display: block;
+                        color: #155498;
+                        text-align: center;
+                        padding: 14px 16px;
+                        text-decoration: none;
+                        font-size: 17px;
+                    }
+
+                    .active {
+                        background-color: #155498;
+                        color: white;
+                    }
+
+                    .topnav .icon {
+                        display: none;
+                    }
+
+                    .dropdown {
+                        float: left;
+                        overflow: hidden;
+                    }
+
+                    .dropdown .dropbtn {
+                        font-size: 17px;
+                        border: none;
+                        outline: none;
+                        color: #155498;
+                        padding: 14px 36px;
+                        background-color: inherit;
+                        font-family: inherit;
+                        margin: 0;
+                    }
+
+                    .dropdown-content {
+                        display: none;
+                        position: fixed;
+                        background-color: #f9f9f9;
+                        min-width: 160px;
+                        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                        z-index: 10000;
+                    }
+
+                    .dropdown-content a {
+                        float: none;
+                        color: #155498;
+                        padding: 12px 16px;
+                        text-decoration: none;
+                        display: block;
+                        text-align: left;
+                    }
+
+                    .topnav a:hover, .dropdown:hover .dropbtn,.dropdown.active .dropbtn {
+                        background-color: #155498;
+                        color: white;
+                    }
+
+                    .dropdown-content a:hover {
+                        background-color: #ddd;
+                        color: black;
+                    }
+
+                    .dropdown:hover .dropdown-content {
+                        display: block;
+                    }
+
+                    @media screen and (max-width: 600px) {
+                        .topnav a:not(:first-child), .dropdown .dropbtn {
+                            display: none;
+                        }
+                        .topnav a.icon {
+                            float: right;
+                            display: block;
+                        }
+                    }
+
+                    @media screen and (max-width: 600px) {
+                        .topnav.responsive {position: relative;}
+                        .topnav.responsive .icon {
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                        }
+                        .topnav.responsive a {
+                            float: none;
+                            display: block;
+                            text-align: left;
+                        }
+                        .topnav.responsive .dropdown {float: none;}
+                        .topnav.responsive .dropdown-content {position: relative;}
+                        .topnav.responsive .dropdown .dropbtn {
+                            display: block;
+                            width: 100%;
+                            text-align: left;
+                        }
+                    }
+                </style>
                 <div class="navbar-collapse" id="navbar">
-                    <ul class="nav navbar-nav custom-nav hide-mobile" id="menu-section-mobile">
-                        <li class="has-sub-nav {% if home is defined %}{{ home }}{% endif %}">
+                    <div class="topnav" id="myTopnav" style="top:60px">
+                        <div class="dropdown {% if servicex is defined %}active{% endif %}">
+                            <button class="dropbtn">Services
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="/services/asset-management">Asset Management</a>
+                                <a href="/services/brokerage">Brokerage</a>
+                                <a href="/services/fundraising-for-business">Fundraising for Business</a>
+                                <a href="/services/loans-for-shares">Loans for Shares</a>
+                                <a href="/services/research-and-advisory">Research & Advisory</a>
+                                <a class="last" href="/services/stock-exchange-listing">Stock Exchange Listing</a>
+                            </div>
+                        </div>
+                        <div class="dropdown {% if clientsx is defined %}active{% endif %}">
+                            <button class="dropbtn">Clients
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="/clients/high-income-individuals">High Income Individuals</a>
+                                <a href="/clients/foreign-institutions">Foreign Institutions</a>
+                                <a href="/clients/large-local-institutions">Large Local Institutions</a>
+                                <a href="/clients/middle-income-individuals">Middle Income Individuals</a>
+                                <a href="/clients/small-and-medium-enterprise">Small and Medium Enterprise</a>
+                                <a href="/clients/high-networth-individuals">Wealthy Individuals</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown {% if researchx is defined %}active{% endif %}">
+                            <button class="dropbtn">Research
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                               <a href="#">Banking Stocks</a>
+                               <a href="#">Daily Market Wrap</a>
+                               <a href="#">Fixed Income</a>
+                               <a href="#">Morning Note</a>
+                               <a href="#">Real Estate</a>
+                               <a href="#">Telecom Stocks</a>
+                               <a href="#">Weekly Market Wrap</a>
+                            </div>
+                        </div>
+                        <a href="{{ path('contactsPage') }}">Contact</a>
+                    </div>
+
+
+
+                    <ul class="nav navbar-nav custom-nav hide-mobile mobile-only" id="" style="display: none">
+                       <!-- <li class="has-sub-nav {% if home is defined %}{{ home }}{% endif %}">
                             <a id="cphNavigation_T84CFA523002_rptTopNav_hypTopNav_1" href="{{ path('homepage') }}">Home</a>
-                        </li>
+                        </li> -->
                         <li class="has-sub-nav {% if servicex is defined %}{{ servicex }}{% endif %}">
                             <a id="cphNavigation_T84CFA523002_rptTopNav_hypTopNav_1" href="{{ path('services') }}">Services</a>
+
+                            <ul class="sub-nav">
+                                <li><a href="/services/asset-management">Asset Management</a></li>
+                                <li><a href="/services/brokerage">Brokerage</a></li>
+                                <li><a href="/services/fundraising-for-business">Fundraising for Business</a></li>
+                                <li><a href="/services/loans-for-shares">Loans for Shares</a></li>
+                                <li><a href="/services/research-and-advisory">Research & Advisory</a></li>
+                                <li><a class="last" href="/services/stock-exchange-listing">Stock Exchange Listing</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-sub-nav {% if clientsx is defined %}{{ clientsx }}{% endif %}">
+                            <a id="cphNavigation_T84CFA523002_rptTopNav_hypTopNav_1" href="#">Clients</a>
+
+                            <ul class="sub-nav">
+                                <li><a href="/clients/high-income-individuals">High Income Individuals</a></li>
+                                <li><a href="/clients/foreign-institutions">Foreign Institutions</a></li>
+                                <li><a href="/clients/large-local-institutions">Large Local Institutions</a></li>
+                                <li><a href="/clients/middle-income-individuals">Middle Income Individuals</a></li>
+                                <li><a href="/clients/small-and-medium-enterprise">Small and Medium Enterprise</a></li>
+                                <li><a href="/clients/high-networth-individuals">Wealthy Individuals</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="has-sub-nav {% if researchx is defined %}{{ researchx }}{% endif %}">
+                            <a id="cphNavigation_T84CFA523002_rptTopNav_hypTopNav_1" href="{{ path('view-page', {'slug': 'research'}) }}">Research</a>
+                            <ul class="sub-nav">
+                                <li><a href="#">Banking Stocks</a></li>
+                                <li><a href="#">Daily Market Wrap</a></li>
+                                <li><a href="#">Fixed Income</a></li>
+                                <li><a href="#">Morning Note</a></li>
+                                <li><a href="#">Real Estate</a></li>
+                                <li><a href="#">Telecom Stocks</a></li>
+                                <li><a href="#">Weekly Market Wrap</a></li>
+
+                            </ul>
+
                         </li>
                         <li class="has-sub-nav {% if contactsx is defined %}{{ contactsx }}{% endif %}">
-                            <a id="cphNavigation_T84CFA523002_rptTopNav_hypTopNav_6" href="contact">Contacts</a>
+                            <a id="cphNavigation_T84CFA523002_rptTopNav_hypTopNav_6" href="{{ path('contactsPage') }}">Contacts</a>
                         </li>
                     </ul>
+
+
+
+                    {% block search %}
                     <div id="cphNavigation_T84CFA523002_nav_serarch">
                         <ul class="nav navbar-nav navbar-right header-search" id="nav-search">
                             <li>
                                 <div class="form-group" id="cludo-search-form" role="search">
                                     <div id="cludo-search-box" class="input-group">
-                                        <label for="cludo-search-form-input">Type search term to search the
-                                            site</label>
-                                        <input name="searchrequest" id="cludo-search-form-input"
+                                        <input name="search-term" id="search-form-input"
                                                class="cludo-input-txt" type="search" placeholder="Search" value=""
                                                title="Type search term" autocomplete="off" aria-autocomplete="list"
                                                aria-haspopup="true">
@@ -91,7 +278,7 @@
                             </li>
                         </ul>
                     </div>
-
+                    {% endblock %}
 
                 </div>
             </div>
@@ -105,33 +292,24 @@
 </header>
 <!-- Header Markup Ends -->
 <div class="mobile-clear">&nbsp;</div>
+
 <div class="loginRegister rightside mobile-only">
     <span class="rtsTxt">Trade in real time</span>
     <i class="sprite-headline_gradient_navy"></i>
     <div class="blueBg">
         <p>Buy/Sell Shares online:</p>
-        <div class="internetBanking actionBar searchBg">
-            <div class="searchOutline">
-                <div>
-                    <ul class="myMenu">
-                        <li class="select" style="display: list-item;"><a
-                                    href="https://onlinetrading.nse.co.ke/TradeWeb105/">iSterling</a>
-                        </li>
-                    </ul>
-                    <i class="sprite-select-arrow"></i>
-                </div>
+        <p><a href="" class="btn btn-md pull-center green-theme-button">Trade Now</a>
+            <a href="" class="btn btn-md pull-center green-theme-button">Register</a>
+        </p>
+    </div>
+</div>
 
-                <div class="searchGoBtn">
-                    <a id="goAnchor" href="https://onlinetrading.nse.co.ke/TradeWeb105/"
-                       target="_blank">
-                        <input type="button" value="&nbsp;" id="goButton" class="go" name="button"
-                               onclick="goToPlatform('ul#dtmQuickLinkOnlinePlatform');">
-                        <i class="sprite-icon_arrow_white"></i>
-                    </a>
-                </div>
-            </div>
-
-        </div>
+<div class="loginRegister rightside mobile-only">
+    <span class="rtsTxt">Loans for Shares</span>
+    <i class="sprite-headline_gradient_navy"></i>
+    <div class="blueBg">
+        <p>Apply for a Loan</p>
+        <p><a href="{{ path('loansPage') }}" class="btn btn-md pull-center green-theme-button">Apply Now</a></p>
     </div>
 </div>
 
@@ -147,8 +325,6 @@
                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
                 <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-                <li data-target="#carousel-example-generic" data-slide-to="3" class=""></li>
-                <li data-target="#carousel-example-generic" data-slide-to="4" class=""></li>
             </ol>
 
             <div class="carousel-inner" id="dynamic-carousal">
@@ -156,81 +332,34 @@
                      style="background-image:url({{ asset('images/chain.png') }})">
                     <div class="container">
                         <div class="container">
-                            <div class="carousel-caption banner-text-green"><h1><span>ASSET MANAGEMENT</span></h1>
-                                <div class="content"><p>Unit trust Funds AGM 11h30, 29 June 2018</p> <a
+                            <div class="carousel-caption banner-text-green"><h1><span>Sterling Capital</span></h1>
+                                <div class="content"><p>The preferred brokers for equities and fixed income trading <br/>in the Nairobi Securities Exchange </p> <a
                                             class="btn btn-md green-theme-button"
-                                            href="http://www.oldmutual.co.ke/news/agm-notice">READ MORE</a></div>
+                                            href="#">READ MORE</a></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="item"
-                     style="background-image:url(http://www.oldmutual.co.ke/images/librariesprovider8/banner/home/20170706-kenya-headofficerelocation_banner_desktop.jpg?sfvrsn=4)">
+                     style="background-image:url({{ asset('images/slides/high-income.jpg') }})">
                     <div class="container">
                         <div class="container">
-                            <div class="carousel-caption banner-text-green"><h1><span>We have moved</span></h1>
-                                <div class="content"><p>Our Head Office has moved to the UAP Old Mutual Tower <br>located
-                                        along Upper Hill road, Nairobi</p> <a class="btn btn-md green-theme-button"
-                                                                              href="http://www.oldmutual.co.ke/contact">VIEW</a>
+                            <div class="carousel-caption banner-text-green"><h1><span>High Income Individuals</span></h1>
+                                <div class="content"><p>If you meet certain criteria with regards to wealth<br/> and/or investment experience</p> <a class="btn btn-md green-theme-button"
+                                                                              href="#">VIEW</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="item bubble-height"
-                     style="background-image:url(http://www.oldmutual.co.ke/images/librariesprovider8/banner/personal-solutions/desktop/family_savings_desktop.jpg?sfvrsn=0)">
+                <div class="item"
+                     style="background-image:url({{ asset('images/slides/foreign-institutions.jpg') }})">
                     <div class="container">
                         <div class="container">
-                            <div class="carousel-caption banner-text-heading">
-                                <div class=" bubble-align">
-                                    <div class="banner-bubble-cover">
-                                        <div class="banner-bubble">
-                                            <div class="text">How do I save for my lifetime plans?</div>
-                                        </div>
-                                    </div>
-                                    <h2>A lot happens in a few years, <br> <span>prepare for it today</span></h2> <a
-                                            href="[7e41b34c-0365-6002-bb9d-ff0000361e55]2783c14c-0365-6002-bb9d-ff0600361e55"
-                                            class="btn btn-md green-theme-button">READ MORE</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item bubble-height"
-                     style="background-image:url(http://www.oldmutual.co.ke/images/librariesprovider8/banner/home/personalsolutions_educationplan_landingpage_quecamp_desktop_carousel.jpg?sfvrsn=2)">
-                    <div class="container">
-                        <div class="container">
-                            <div class="carousel-caption banner-text-heading">
-                                <div class=" bubble-align">
-                                    <div class="banner-bubble-cover">
-                                        <div class="banner-bubble">
-                                            <div class="text">How do I save for my child's
-                                                secondary and university education?
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h2>TALK TO US ABOUT <span>EDUCATION PLANS</span></h2> <a
-                                            href="[7e41b34c-0365-6002-bb9d-ff0000361e55]fbbab64c-0365-6002-bb9d-ff0300361e55"
-                                            class="btn btn-md green-theme-button">VIEW</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item bubble-height"
-                     style="background-image:url(http://www.oldmutual.co.ke/images/librariesprovider8/banner/home/personalsolutions_investmentandsavings_landingpage_quecamp_desktop_carousel.jpg?sfvrsn=2)">
-                    <div class="container">
-                        <div class="container">
-                            <div class="carousel-caption banner-text-heading">
-                                <div class=" bubble-align">
-                                    <div class="banner-bubble-cover">
-                                        <div class="banner-bubble">
-                                            <div class="text">How do I grow my <br>
-                                                savings?
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h2>TALK TO US ABOUT <span>SAVING, INVESTING<br>
-AND GROWING YOUR MONEY</span></h2> <a href="[7e41b34c-0365-6002-bb9d-ff0000361e55]39b9b64c-0365-6002-bb9d-ff0300361e55"
-                                      class="btn btn-md green-theme-button">VIEW</a></div>
+                            <div class="carousel-caption banner-text-green"><h1><span>Foreign Institutions</span></h1>
+                                <div class="content"><p>if you meet certain criteria with regards to wealth <br/>and/or investment experience</p> <a class="btn btn-md green-theme-button"
+                                                                              href="#">VIEW</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -243,101 +372,13 @@ AND GROWING YOUR MONEY</span></h2> <a href="[7e41b34c-0365-6002-bb9d-ff0000361e5
         <div>
             <!-- 2014.2.724.40 -->
 
-            <ul id="carousal-content" class="hide">
-
-                <li class="banner-desktop"
-                    id="http://www.oldmutual.co.ke/images/librariesprovider8/banner/media/desktop/news_agmnotice_desktop.jpg?sfvrsn=2"
-                    data-guid="270dc44c-0365-6002-bb9d-ff0600361e55">
-
-                </li>
-                <li class="banner-tablet"
-                    id="http://www.oldmutual.co.ke/images/librariesprovider8/banner/media/tablet/news_agmnotice_tablet.jpg?sfvrsn=2"
-                    data-guid="270dc44c-0365-6002-bb9d-ff0600361e55">
-
-                </li>
-                <li class="banner-mobile"
-                    id="http://www.oldmutual.co.ke/images/librariesprovider8/banner/media/mobile/news_agmnotice_mobile.jpg?sfvrsn=2"
-                    data-guid="270dc44c-0365-6002-bb9d-ff0600361e55">
-
-                </li>
-
-                <li class="banner-desktop"
-                    id="http://www.oldmutual.co.ke/images/librariesprovider8/banner/home/20170706-kenya-headofficerelocation_banner_desktop.jpg?sfvrsn=4"
-                    data-guid="d362cb4c-0365-6002-bb9d-ff0600361e55">
-
-                </li>
-                <li class="banner-tablet"
-                    id="http://www.oldmutual.co.ke/images/librariesprovider8/banner/home/20170706-kenya-headofficerelocation_banner_tablet.jpg?sfvrsn=4"
-                    data-guid="d362cb4c-0365-6002-bb9d-ff0600361e55">
-
-                </li>
-                <li class="banner-mobile"
-                    id="http://www.oldmutual.co.ke/images/librariesprovider8/banner/home/20170706-kenya-headofficerelocation_banner_mobile.jpg?sfvrsn=4"
-                    data-guid="d362cb4c-0365-6002-bb9d-ff0600361e55">
-
-                </li>
-
-                <li class="banner-desktop"
-                    id="http://www.oldmutual.co.ke/images/librariesprovider8/banner/personal-solutions/desktop/family_savings_desktop.jpg?sfvrsn=0"
-                    data-guid="f129c64c-0365-6002-bb9d-ff0600361e55">
-
-                </li>
-                <li class="banner-tablet"
-                    id="http://www.oldmutual.co.ke/images/librariesprovider8/banner/personal-solutions/tablet/family_savings_tablet.jpg?sfvrsn=0"
-                    data-guid="f129c64c-0365-6002-bb9d-ff0600361e55">
-
-                </li>
-                <li class="banner-mobile"
-                    id="http://www.oldmutual.co.ke/images/librariesprovider8/banner/personal-solutions/mobile/family_savings_mobile.jpg?sfvrsn=0"
-                    data-guid="f129c64c-0365-6002-bb9d-ff0600361e55">
-
-                </li>
-
-                <li class="banner-desktop"
-                    id="http://www.oldmutual.co.ke/images/librariesprovider8/banner/home/personalsolutions_educationplan_landingpage_quecamp_desktop_carousel.jpg?sfvrsn=2"
-                    data-guid="1627b74c-0365-6002-bb9d-ff0300361e55">
-
-                </li>
-                <li class="banner-tablet"
-                    id="http://www.oldmutual.co.ke/images/librariesprovider8/banner/home/personalsolutions_educationplan_landingpage_quecamp_tablet_carousel.jpg?sfvrsn=2"
-                    data-guid="1627b74c-0365-6002-bb9d-ff0300361e55">
-
-                </li>
-                <li class="banner-mobile"
-                    id="http://www.oldmutual.co.ke/images/librariesprovider8/banner/mobile_generic_for_bubble_images.jpg?sfvrsn=2"
-                    data-guid="1627b74c-0365-6002-bb9d-ff0300361e55">
-
-                </li>
-
-                <li class="banner-desktop"
-                    id="http://www.oldmutual.co.ke/images/librariesprovider8/banner/home/personalsolutions_investmentandsavings_landingpage_quecamp_desktop_carousel.jpg?sfvrsn=2"
-                    data-guid="fe26b74c-0365-6002-bb9d-ff0300361e55">
-
-                </li>
-                <li class="banner-tablet"
-                    id="http://www.oldmutual.co.ke/images/librariesprovider8/banner/home/personalsolutions_investmentandsavings_landingpage_quecamp_tablet_carousel.jpg?sfvrsn=2"
-                    data-guid="fe26b74c-0365-6002-bb9d-ff0300361e55">
-
-                </li>
-                <li class="banner-mobile"
-                    id="http://www.oldmutual.co.ke/images/librariesprovider8/banner/mobile_generic_for_bubble_images.jpg?sfvrsn=2"
-                    data-guid="fe26b74c-0365-6002-bb9d-ff0300361e55">
-
-                </li>
-
-            </ul>
-
-            <input id="ctl00_cphBanner_ctl00_ctl00_ctl00_dynamicContentListView_ClientState"
-                   name="ctl00_cphBanner_ctl00_ctl00_ctl00_dynamicContentListView_ClientState" type="hidden"
-                   autocomplete="off"><span id="ctl00_cphBanner_ctl00_ctl00_ctl00_dynamicContentListView"
-                                            style="display:none;"></span>
-
         </div>
     </div>
     {% endblock %}
 </div>
 
 <!-- Banner Markup Ends -->
+{% block mobile %}{% endblock %}
 <!-- Main content markup -->
 <div class="banner-margin-inner">
     <div class="container">
@@ -384,85 +425,81 @@ AND GROWING YOUR MONEY</span></h2> <a href="[7e41b34c-0365-6002-bb9d-ff0000361e5
                 <i class="sprite-headline_gradient_navy"></i>
                 <div class="blueBg">
                     <p>Buy/Sell Shares online:</p>
-                    <div class="internetBanking actionBar searchBg">
-                        <div class="searchOutline">
-                            <div>
-                                <ul class="myMenu">
-                                    <li class="select" style="display: list-item;"><a
-                                                href="https://www.csfs.co.ke/activelite/login.aspx">iSterling</a>
-                                    </li>
-                                </ul>
-                                <i class="sprite-select-arrow"></i>
-                            </div>
+                    <p>
+                        <a href="" class="btn btn-md pull-center green-theme-button">Trade Now</a>
+                        <a href="" class="btn btn-md pull-center green-theme-button">Register</a>
 
-                            <div class="searchGoBtn">
-                                <a id="goAnchor" href="https://www.csfs.co.ke/activelite/login.aspx"
-                                   target="_blank">
-                                    <input type="button" value="&nbsp;" id="goButton" class="go" name="button"
-                                           onclick="goToPlatform('ul#dtmQuickLinkOnlinePlatform');">
-                                    <i class="sprite-icon_arrow_white"></i>
-                                </a>
-                            </div>
-                        </div>
+                    </p>
+                </div>
+            </div>
 
-                    </div>
+            <div class="loginRegister rightside">
+                <span class="rtsTxt">Loans for Shares</span>
+                <i class="sprite-headline_gradient_navy"></i>
+                <div class="blueBg">
+                    <p>Apply for a Loan</p>
+                    <p><a href="{{ path('loansPage') }}" class="btn btn-md pull-center green-theme-button">Apply Now</a></p>
                 </div>
             </div>
             <div class="col-sm-12 quicklinksbox rightside">
                 <h4><span class="pointericon"></span> Subscribe to our Newsletters</h4>
                 <ul>
                     <li>
-                        <a href="/SBGSecurities/About-Us/Contact-us"><i class="fa fa-newspaper-o"></i>&nbsp;
+                        <a href="#"><i class="fa fa-newspaper-o"></i>&nbsp;
                             All
                             <i class="sprite-icon_arrow_blue"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="http://www.cfcstanbicbank.co.ke"><i class="fa fa-bank"></i>&nbsp;
+                        <a href="#"><i class="fa fa-sticky-note-o"></i>&nbsp;
+                            Morning Note
+                            <i class="sprite-icon_arrow_blue"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-info-circle"></i>&nbsp;
+                            Daily Market Wrap
+                            <i class="sprite-icon_arrow_blue"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-info-circle"></i>&nbsp;
+                            Weekly Market Wrap
+                            <i class="sprite-icon_arrow_blue"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-money"></i>&nbsp;
+                            Fixed Income
+                            <i class="sprite-icon_arrow_blue"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-bank"></i>&nbsp;
                             Banking Stocks
                             <i class="sprite-icon_arrow_blue"></i>
                         </a>
                     </li>
 
                     <li>
-                        <a href="http://www.heritageinsurance.co.ke/"><i class="fa fa-phone"></i>&nbsp;
+                        <a href="#"><i class="fa fa-phone"></i>&nbsp;
                             Telecom Stocks
                             <i class="sprite-icon_arrow_blue"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="http://www.heritageinsurance.co.ke/"><i class="fa fa-money"></i>&nbsp;
-                            Fixed Income
-                            <i class="sprite-icon_arrow_blue"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.heritageinsurance.co.ke/"><i class="fa fa-building-o"></i>&nbsp;
+                        <a href="#"><i class="fa fa-building-o"></i>&nbsp;
                             Real Estate
                             <i class="sprite-icon_arrow_blue"></i>
                         </a>
                     </li>
-                    <li>
-                        <a href="http://www.heritageinsurance.co.ke/"><i class="fa fa-sticky-note-o"></i>&nbsp;
-                            Morning Note
-                            <i class="sprite-icon_arrow_blue"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.heritageinsurance.co.ke/"><i class="fa fa-info-circle"></i>&nbsp;
-                            Daily Market Wrap
-                            <i class="sprite-icon_arrow_blue"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.heritageinsurance.co.ke/"><i class="fa fa-info-circle"></i>&nbsp;
-                            Weekly Market Wrap
-                            <i class="sprite-icon_arrow_blue"></i>
-                        </a>
-                    </li>
+
                 </ul>
             </div>
-
+            <div class="col-md-12 quicklinksbox rightside">
+                <iframe width="262" height="290" src="https://www.youtube.com/embed/videoseries?list=PL9UNNRRWQROTEpifKEB9n8dDo5mHY-i2j" frameborder="0" allowfullscreen=""></iframe>
+            </div>
         </div>
         <!-- Right column -->
 
@@ -472,22 +509,20 @@ AND GROWING YOUR MONEY</span></h2> <a href="[7e41b34c-0365-6002-bb9d-ff0000361e5
 <!-- Footer Markup -->
 <footer>
     <div class="footer-gradient">
-        <img class="max-width" src="/templates/sterling/images/footer.png"
-             alt="">
+       &nbsp;
     </div>
     <div id="footerNavBar" class="row">
         <div class="container">
             <div class="topNav">
                 <ul class="mainMenu">
-                    <li><a href="/contact">About Us</a></li>
-                    <li><a href="/about-us/disclaimer">Location</a></li>
-                    <li><a href="/about-us/disclaimer">Blog</a></li>
-                    <li><a href="/v5/forms/rating.aspx?RatingID=3">Contact Us</a></li>
+                    <li><a href="{{ path('view-page', {'slug': 'about-us'}) }}">About Us</a></li>
+                    <li><a href="{{ path('view-page', {'slug': 'careers'}) }}">Careers</a></li>
+                    <li><a href="{{ path('view-page', {'slug': 'contacts'}) }}">Contact Us</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <footer class="row">
+   <!-- <footer class="row">
         <div class="container">
             <div class="footerContentBar">
 
@@ -500,14 +535,12 @@ AND GROWING YOUR MONEY</span></h2> <a href="[7e41b34c-0365-6002-bb9d-ff0000361e5
 
                     <div class="socialIconset">
                         <a style="margin-left: 30px" target="_blank"
-                           href="http://www.facebook.com/pages/Standard-Bank-Angola/134204553315455?ref=tn_tnmn"><span
+                           href="https://www.facebook.com/SterlingCapitalLtd/?ref=br_rs"><span
                                     class="faceBookIcon">&nbsp;</span> </a>
-                        <a target="_blank" href="http://www.blog.standardbank.com"><span
-                                    class="blogIcon">&nbsp;</span> </a>
-                        <a target="_blank" href="http://twitter.com/sbgroup"><span
+                        <a target="_blank" href="https://twitter.com/SterlingNairobi"><span
                                     class="twitterIcon">&nbsp;</span> </a>
-                        <a target="_blank" href="http://www.youtube.com/user/StandardBankGroup"><span
-                                    class="uTubeIcon">&nbsp;</span></a>
+                        <a target="_blank" href="https://ke.linkedin.com/in/sterling-capital-ltd-543b4a77"><span
+                                    class="LinkedInIcon">&nbsp;</span></a>
                     </div>
 
                     <p>&nbsp;</p>
@@ -522,8 +555,7 @@ AND GROWING YOUR MONEY</span></h2> <a href="[7e41b34c-0365-6002-bb9d-ff0000361e5
                     <p>Join our international team and you could move your career forward from the start.</p>
 
                     <p>
-                        <a onclick="s_objectID=&quot;http://careers.standardbank.com/standimg/Careers/index.html_1&quot;;return this.s_oc?this.s_oc(e):true"
-                           class="arrowLink" href="http://careers.standardbank.com/standimg/Careers/index.html">View
+                        <a  class="arrowLink" href="{{ path('view-page', {'slug': 'careers'}) }}">View
                             opportunities</a></p>
                 </div>
 
@@ -536,22 +568,21 @@ AND GROWING YOUR MONEY</span></h2> <a href="[7e41b34c-0365-6002-bb9d-ff0000361e5
                     <p>Join our international team and you could move your career forward from the start.</p>
 
                     <p>
-                        <a onclick="s_objectID=&quot;http://careers.standardbank.com/standimg/Careers/index.html_1&quot;;return this.s_oc?this.s_oc(e):true"
-                           class="arrowLink" href="http://careers.standardbank.com/standimg/Careers/index.html">Read
+                        <a class="arrowLink" href="{{ path('view-page', {'slug': 'about-us'}) }}">Read
                             more</a></p>
                 </div>
 
 
             </div>
         </div>
-    </footer>
+    </footer> -->
     <div class="container">
         <div class="footer" id="footer">
 
             <p class="disclaimer">Copyright © {{ "now" | date('Y') }} Sterling Capital Ltd<br>Head Office: 11th Floor,
                 Barclays Plaza,
                 Loita Street, Nairobi. </p>
-            <p class="disclaimer">Sterling Capital Ltd is a Licensed member of the Nairobi Securities Exchange.</p>
+            <p class="disclaimer">Sterling Capital Ltd is a member of the Nairobi Securities Exchange.</p>
 
         </div>
     </div>
@@ -561,10 +592,23 @@ AND GROWING YOUR MONEY</span></h2> <a href="[7e41b34c-0365-6002-bb9d-ff0000361e5
 <div class="mobile-menu-overlay hide"></div>
 
 <!-- script bundles -->
-<script src="{{ asset('templates/sterling/assets/static/jquery-1.10.2.min.js') }}"></script>
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="{{ asset('templates/sterling/js/main.bundle.js') }}"></script>
 <script src="{{ asset('templates/sterling/js/nav.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
 
+        $(".has-sub-nav").hover(function () {
+            $(this).find('ul').slideToggle('medium');
+        });
+        $('.collapse').collapse();
+    });
+</script>
 
 </body>
 </html>

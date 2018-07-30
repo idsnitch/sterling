@@ -30,9 +30,10 @@ class ServiceForm extends AbstractType
             ])
             ->add('footer',TextareaType::class,[
                 'attr'=>[
-                    'id'=>'tinymce'
+                    'id'=>''
                 ],
-                'required'=>false
+                'required'=>true,
+                'label'=>'Clients'
             ])
             ->add('imageFile',VichFileType::class,[
                 'label'=>false,

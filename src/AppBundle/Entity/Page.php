@@ -9,6 +9,7 @@
  ********************************************************************************/
 
 namespace AppBundle\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -29,6 +30,7 @@ class Page
      * @ORM\Column(type="string")
      */
     private $id;
+
     /**
      * @ORM\Column(type="string")
      */
@@ -97,6 +99,10 @@ class Page
      * @ORM\Column(type="datetime")
      */
     private $updatedAt;
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\SubPage",mappedBy="page",fetch="EXTRA_LAZY")
+     */
+    private $subPages;
 
     function __construct()
     {
@@ -106,7 +112,7 @@ class Page
         if ($this->getUpdatedAt() == null) {
             $this->setUpdatedAt(new \DateTime());
         }
-
+        $this->subPages = new ArrayCollection();
     }
 
     /**
@@ -116,6 +122,18 @@ class Page
     {
         return $this->id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getSubPages()
+    {
+        return $this->subPages;
+    }
+
+    /**
+     * @return mixed
+     */
 
 
     /**

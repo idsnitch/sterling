@@ -14,16 +14,16 @@
     {% endif %}
     {% if is_granted('ROLE_CAN_UPDATE') %}
     <li>
-        <a href="{{ path('services') }}"
+        <a href="{{ path('admin-services') }}"
            class="menu menu_main menu_item_services {% if services is defined %}{{ services }}{% endif %}">
             <span class="menu_text">Services</span>
         </a>
     </li>
 
     <li>
-        <a href="#"
-           class="menu menu_main menu_item_schemes {% if schemes is defined %}{{ schemes }}{% endif %}">
-            <span class="menu_text">Service Schemes</span>
+        <a href="{{ path('clientList') }}"
+           class="menu menu_main menu_item_schemes {% if schemesx is defined %}{{ schemesx }}{% endif %}">
+            <span class="menu_text">Clients</span>
         </a>
     </li>
     <li>
@@ -41,8 +41,8 @@
     {% endif %}
     {% if is_granted('ROLE_RESEARCH') %}
     <li>
-        <a href="#"
-           class="menu menu_main menu_item_research {% if research is defined %}{{ research }}{% endif %}">
+        <a href="{{ path('research') }}"
+           class="menu menu_main menu_item_research {% if researchx is defined %}{{ researchx }}{% endif %}">
             <span class="menu_text">Research</span>
         </a>
     </li>

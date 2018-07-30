@@ -1,0 +1,108 @@
+{% extends 'admin.htm.twig' %}
+{% block javascripts %}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( ".js-date" ).datepicker();
+        } );
+    </script>
+    <script type="text/javascript">
+        // prepare the form when the DOM is ready
+        $(document).ready(function () {
+            $('body').on('click','#new',function (e) {
+                // bind to the form's submit event
+                $('#newForm').submit(function (e) {
+                    var ajaxRequest;
+
+                    //Prevent Normal Submit
+                    e.preventDefault();
+
+                    $(".message").fadeOut("slow");
+                    $("#newForm").fadeOut("slow");
+                    $('#saving').fadeIn("slow");
+
+                    var form = document.getElementById("newForm");
+                    var elements = form.elements;
+                    for (var i = 0, len = elements.length; i < len; ++i) {
+                        elements[i].readOnly = true;
+                    }
+                    // get form values
+                    var values = $(this).serialize();
+
+                    $.ajax({
+                        url: $(this).data('url'),
+                        data: new FormData(this),
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        method: 'POST'
+                    }).done(function (company) {
+                        $('#saving').fadeOut("slow");
+                        $('#message').fadeIn("slow");
+                        jQuery.get("/administrator/scheme/form", function( data ) {
+                            jQuery('#form-data').html(data);
+                        });
+                        setTimeout(function () {
+                            jQuery("#message").fadeOut("slow");
+                        }, 3000);
+
+                    }).fail(function () {
+                        $('#saving').fadeOut("slow");
+
+                        $("#error").fadeIn("slow");
+
+
+                    })
+
+
+                });
+
+            })
+
+        });
+
+
+    </script>
+
+{% endblock %}
+{% block service %}active{% endblock %}
+{% block pageTitle %}New Scheme{% endblock %}
+{% block body %}
+    <style>
+        .required:after {
+            content:" *";
+            color:red;
+        }
+        label{
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+    </style>
+
+    <article>
+        <div class="article_inner">
+            <div id="saving" class="alert alert-warning" style="display: none">
+                <i class="fa fa-spin fa-spinner"></i>&nbsp;Saving Scheme
+            </div>
+            <div id="error" class="alert alert-danger" style="display: none">
+                <i class="fa fa-times"></i>&nbsp;Error, Scheme not Saved
+            </div>
+            <div id="message" class="alert alert-success" style="display: none">
+                <i class="fa fa-check"></i>&nbsp;Scheme Saved
+            </div>
+            {{ render(controller("AppBundle:Admin:newSchemeForm")) }}
+        </div>
+    </article>
+
+
+    <aside class="">
+        <i class="fa fa-question-circle help-icon"></i>
+        <p>ALL the fields marked (*) are required.</p>
+
+    </aside>
+
+
+
+{% endblock %}

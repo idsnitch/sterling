@@ -1,0 +1,133 @@
+{% extends 'base.htm.twig' %}
+{% block title %}Contacts{% endblock %}
+  {% block breadcrumb %}
+      <li class="rsmItem sfBreadcrumbNavigation">
+          <div class="rsmTemplate">
+              <a id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i0_hypBreabcrumb" href="{{ path('homepage') }}">Home</a>
+
+          </div>
+          <span class="sfBreadcrumbNodeSeparator"></span></li>
+      <li class="rsmItem sfNoBreadcrumbNavigation select">
+          <div class="rsmTemplate">
+
+              <a id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i1_hypBreabcrumb">Contacts</a>
+
+          </div>
+      </li>
+  {% endblock %}
+{% block banner %}
+    <div class="mapouter" style="margin-top: 60px;">
+        <div class="gmap_canvas"><iframe id="gmap_canvas" src="https://maps.google.com/maps?q=sterling%20capital&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width="100%" height="750" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></div>
+    </div>
+    <div class="contact-area">
+    <div class="container">
+
+        <div class="col-md-offset-1 col-md-12 mainsectionate">
+            <div class="sectionate">
+                <h4><i class="fa fa-map-marker"></i><span>Visit Us</span><br></h4>
+                <p>Sterling Capital Limited<br/>
+                    Barclays Plaza,11th Floor, Loita Street<br/>
+                    Tel.: +254(020)2213914, 2244077, 315414<br/>
+                    Fax: +254(20) 2218261, 2219911<br/>
+                    Mobile:(+254)723153219, (+254)734219146<br/>
+                    Email: info@sterlingib.com<br></p>
+            </div>
+
+
+            <div class="sectionate">
+                <h4><i class="fa fa-pencil"></i><span>Write To Us</span><br></h4>
+                <p>Sterling Capital Ltd<br>
+                    P.O. Box 45080-00100,<br/>
+                    Nairobi, Kenya.<br/></p>
+            </div>
+
+            <hr>
+
+            <div class="sectionate">
+                <h4>We would like to hear from you</h4>
+                <br>
+                <form role="form">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Email Address *</label>
+                        <input type="text" class="form-control" id="name" placeholder="Email Address">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="name">Your Enquiry *</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-md pull-right green-theme-button">Submit</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+{% block mobile %}
+    <div class="sectionate mobile-only">
+        <h4><i class="fa fa-map-marker"></i><span>Visit Us</span><br></h4>
+        <p>Sterling Capital Limited<br/>
+            Barclays Plaza,11th Floor, Loita Street<br/>
+            Tel.: +254(020)2213914, 2244077, 315414<br/>
+            Fax: +254(20) 2218261, 2219911<br/>
+            Mobile:(+254)723153219, (+254)734219146<br/>
+            Email: info@sterlingib.com<br></p>
+    </div>
+{% endblock %}
+{% block body %}
+
+    <style>
+        .banner-margin-inner{
+            display:none;
+        }
+        .mobile-only{
+
+        }
+        h4,p{
+            font-family: 'futura-pt', Verdana, sans-serif;
+        }
+        p{
+            font-size:15px;
+        }
+        .contact-area{
+            width:30%;
+            height: 100%;
+            position:absolute;
+            top:50px;
+            margin-left: 54.33333333%;
+        }
+        .contact-area .container{
+            width:450px;
+            margin-left: 28.33333333%;
+        }
+        .mainsectionate {
+            background-color: white;
+            margin-top: 80px;
+            padding: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 10px;
+        }
+        .col-md-offset-12 {
+
+        }
+        .col-md-12 {
+            width: 80.66666667%;
+        }
+        .sectionate {
+            margin-bottom: 20px;
+        }
+    </style>
+
+
+{% endblock %}

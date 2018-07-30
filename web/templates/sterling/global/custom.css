@@ -31,7 +31,7 @@ div#cludo-search-form {
 }
 
 ul#ulSocialNetworkBW {
-    text-transform: uppercase;
+    text-transform: none;
     margin-right: 5px;
 }
 
@@ -42,8 +42,8 @@ a#cludoSearchBtn {
     margin-right: 17px;
     border: none;
     color: #fff;
-    text-transform: uppercase;
-    font-size: 15px;
+    text-transform: none;
+    font-size: 16px;
     font-family: futura-pt,Verdana,sans-serif;
     right: -17px;
     border-radius: 0 5px 5px 0;
@@ -149,13 +149,13 @@ input#cludo-search-form-input {
 
 h1, h2, h3, h4 {
     font-family: 'futura-pt', Verdana, sans-serif !important;
-    text-transform: uppercase;
+    text-transform: none;
     font-weight: 100 !important;
 }
 
 h1 {
     /* Font size changes (35 to 30) - 2015-10-26 - Arun */
-    font-size: 30px;
+    font-size: 34px;
 }
 
 h2 {
@@ -177,9 +177,8 @@ h4 {
     }
 
 a {
-    color: #029179;
+    color: #e07c14/*#029179;*/
     text-decoration: none;
-    outline: none;
     outline: none;
 }
 
@@ -191,13 +190,13 @@ a {
 
     a:active {
         outline: none;
-        color: #029179;
+        color: #e07c14;/*#029179;*/
         text-decoration: none;
     }
 
     a:focus {
         outline: none;
-        color: #029179;
+        color: #e07c14;/*#029179;*/
         text-decoration: none;
     }
 
@@ -274,7 +273,7 @@ a {
 
 .btn-md {
     padding: 10px 25px;
-    font-size: 15px; /* Font size changed from 14 to 15 2016-09-13 - Kenneth */
+    font-size: 16px; /* Font size changed from 14 to 15 2016-09-13 - Kenneth */
     line-height: 1.2;
     border-radius: 3px;
     outline: none;
@@ -285,10 +284,10 @@ a {
 }
 
 .green-theme-button, .green-theme-button:focus {
-    background: #406fa2;
+    background: #e07c14;/*#406fa2;*/
     border: none;
     color: #ffffff !important;
-    text-transform: uppercase;
+    text-transform: none;
     transition: background-color 0.7s ease;
     outline: none;
 }
@@ -508,10 +507,13 @@ header {
 }
 
 .navbar .custom-nav li {
-    padding-left: 8px;
-    padding-right: 12px;
+    margin-left: 18px;
+    margin-right: 74px;
 }
-
+.required:after {
+    content:" *";
+    color:red;
+}
 /*Added on 03/04/2017 for new top navigation personal menu*/
 .leftpadd {
     padding-left: 0px !important;
@@ -549,9 +551,9 @@ header {
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 7px;
-    font-size: 15px; /* Font size changed from 14 to 15 2016-09-13 - Kenneth */
+    font-size: 18px; /* Font size changed from 14 to 15 2016-09-13 - Kenneth */
     font-family: 'futura-pt', Verdana, sans-serif;
-    text-transform: uppercase;
+    text-transform: none;
     outline: none;
     transition: all 0.3s ease;
 }
@@ -561,7 +563,7 @@ header {
     padding: 15px 0;
     font-size: 18px !important;
     font-family: 'futura-pt', Verdana, sans-serif;
-    text-transform: uppercase !important;
+    text-transform: none !important;
     outline: none;
     transition: all 0.3s ease;
 }
@@ -581,12 +583,12 @@ header {
 
 
 .navbar .custom-nav li.select a {
-    border-bottom: 3px solid #009966;
+    border-bottom: 3px solid #4475aa;
     font-weight: bold;
 }
 
 .navbar .custom-nav li a.active, .navbar .custom-nav li a:hover {
-    border-bottom: 3px solid #009966;
+    border-bottom: 3px solid #4475aa;
     color: #029179;
 }
 
@@ -636,9 +638,9 @@ ul.dropdown-menu li a {
 
     .navbar-default .header-search input {
         background: #e7eaeb;
-        height: 28px;
+        height: 30px;
         border: 1px solid #e2e2e2;
-        border-radius: 0;
+        border-radius: 3px;
         font-family: 'futura-pt', Verdana, sans-serif;
         font-size: 14px;
         box-shadow: none;
@@ -823,7 +825,7 @@ header .network-section {
         float: left;
         font-family: 'futura_lt_bt_light', Arial, sans-serif;
         font-size: 12px;
-        text-transform: uppercase;
+        text-transform: none;
         margin: 0 1.5%;
         margin-top: 0.55%;
     }
@@ -842,7 +844,7 @@ header .network-section {
             width: 100%;
             color: #333333;
             font-size: 12px;
-            text-transform: uppercase !important;
+            text-transform: none !important;
             padding: 4px 4px 0 8px;
             border: 1px solid #ccc;
             box-sizing: content-box !important;
@@ -853,7 +855,7 @@ header .network-section {
                 float: left;
                 padding-right: 7px;
                 font-family: "futura_lt_bt_light",Arial,sans-serif;
-                text-transform: uppercase;
+                text-transform: none;
                 font-size: 14px;
             }
 
@@ -891,7 +893,7 @@ header .network-section {
                 background: #FFF;
                 color: #639ee2;
                 font-family: "futura_lt_bt_light",Arial,sans-serif;
-                text-transform: uppercase;
+                text-transform: none;
                 font-size: 12px;
             }
 
@@ -1239,7 +1241,7 @@ header .network-section {
 }
 
     .banner-text-green .content p {
-        color: #639ee2;
+        color: #222;/*#639ee2*/
         font-family: 'futura-pt', Verdana, sans-serif;
         font-size: 20px; /* Font Size top changes (22 to 20 ) - 2015-11-02 - Arun */
         margin: 0 0 25px 0;
@@ -1674,6 +1676,9 @@ a.bread-crumb-arrow {
             cursor: pointer;
             margin-top: -25px;
             padding-top: 25px;
+        }
+        .portal .portal-item.header:hover{
+            background: none;
         }
 
             .portal .portal-item:hover .green-theme-button {
@@ -2121,7 +2126,7 @@ a.bread-crumb-arrow {
     }
 
 .portal .promo-item p {
-    font-size: 15px;
+    font-size: 16px;
     margin-bottom: 14px;
 }
 
@@ -2326,7 +2331,7 @@ a.bread-crumb-arrow {
 }
 
     .call-widget .call-widget-footer p {
-        font-size: 15px;
+        font-size: 16px;
         color: #017862;
         font-family: 'futura-pt', Verdana, sans-serif;
         margin-bottom: 0;
@@ -2550,7 +2555,7 @@ a.bread-crumb-arrow {
     .cust-accord dt {
         padding: 15px 0 15px 15px;
         font-weight: normal;
-        text-transform: uppercase;
+        text-transform: none;
         border-bottom: #cccccc 1px dotted;
         cursor: pointer;
         color: #333333;
@@ -2608,7 +2613,7 @@ a.bread-crumb-arrow {
     font-weight: normal;
     height: 50px;
     padding: 15px 0 0 15px;
-    text-transform: uppercase;
+    text-transform: none;
 }
 /*Contact-Us*/
 
@@ -2658,7 +2663,7 @@ a.bread-crumb-arrow {
         display: block;
         margin-right: 10px;
         outline: none;
-        text-transform: uppercase;
+        text-transform: none;
         padding-right: 5px;
     }
 
@@ -3028,7 +3033,7 @@ a.bread-crumb-arrow {
 
     .funds-summary table tr.prompt-text td {
         background: #f9f9f9;
-        text-transform: uppercase;
+        text-transform: none;
     }
 
     .funds-summary table tr td.border-none-right {
@@ -3955,12 +3960,12 @@ table.datepicker {
 
 #global-drop-box {
     display: block;
-    text-transform: uppercase;
+    text-transform: none;
     border-radius: 3px;
 }
 
 .global-drop-box {
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 .global-dropdown span.nav-arrow {
@@ -4015,9 +4020,9 @@ table.datepicker {
             display: block;
             margin-right: 10px;
             outline: none;
-            text-transform: uppercase;
+            text-transform: none;
             width: 100%;
-            text-transform: uppercase;
+            text-transform: none;
         }
 
         .global-dropdown ul li:hover, .global-dropdown ul li.active {
@@ -4087,7 +4092,7 @@ div.RadTabStrip .rtsLevel .rtsLI {
         font-size: 16px;
         box-shadow: none;
         color: #029179;
-        text-transform: uppercase;
+        text-transform: none;
     }
 
         div.RadTabStrip .rtsLevel .rtsLI a.rtsSelected {
@@ -4141,7 +4146,7 @@ input.gsc-input {
     text-decoration: none !important;
     clear: both;
     font-family: 'futura-pt', Verdana, sans-serif;
-    text-transform: uppercase;
+    text-transform: none;
     font-weight: bold;
     word-wrap: break-word;
 }
@@ -4218,7 +4223,7 @@ table.gsc-search-box:before {
 }
 
 .cse input.gsc-search-button, input.gsc-search-button {
-    background: scroll center center #009966 !important;
+    background: scroll center center #4475aa !important;
     height: 28px !important;
     width: auto !important;
     margin-top: 4px !important;
@@ -4381,7 +4386,7 @@ tab Strip Style ends
 
         .topnav-menu .container .col-sm-12 .main-category-align .main-category > a {
             font-family: 'futura-pt', Verdana, sans-serif;
-            font-size: 15px; /* Font size changed from 14 to 15 2016-09-13 - Kenneth */
+            font-size: 16px; /* Font size changed from 14 to 15 2016-09-13 - Kenneth */
             display: block;
             font-weight: bold;
             text-transform: none;
@@ -4398,7 +4403,7 @@ tab Strip Style ends
 
             .topnav-menu .container .col-sm-12 .main-category-align .main-category ul li a {
                 font-family: 'futura-pt', Verdana, sans-serif;
-                font-size: 15px; /* Font size changed from 14 to 15 2016-09-13 - Kenneth */
+                font-size: 16px; /* Font size changed from 14 to 15 2016-09-13 - Kenneth */
                 display: block;
                 padding: 2px 0;
                 text-transform: none;
@@ -5157,7 +5162,7 @@ tab Strip Style ends
     overflow: hidden;
     padding: 17px 0 7px 10px;
     z-index: -1;
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 #iconnav-drop-box span {
@@ -5311,7 +5316,7 @@ tab Strip Style ends
     .tfsa-navigation ul {
         width: 100%;
         padding: 0;
-        text-transform: uppercase;
+        text-transform: none;
         font-family: 'futura-pt', Verdana, sans-serif;
         font-size: 14px;
     }
@@ -5341,12 +5346,12 @@ tab Strip Style ends
             }
 
             .tfsa-navigation ul li a.active {
-                border-bottom: 3px solid #009966;
+                border-bottom: 3px solid #4475aa;
                 color: #029179;
             }
 
             .tfsa-navigation ul li a:hover {
-                border-bottom: 3px solid #009966;
+                border-bottom: 3px solid #4475aa;
                 color: #029179;
             }
 
@@ -5436,7 +5441,7 @@ tab Strip Style ends
         overflow: hidden;
         padding: 17px 0 7px 10px;
         z-index: -1;
-        text-transform: uppercase;
+        text-transform: none;
     }
 
     .tfsa-navigation ul {
@@ -5469,7 +5474,7 @@ tab Strip Style ends
                 display: block;
                 margin-right: 10px;
                 outline: none;
-                text-transform: uppercase;
+                text-transform: none;
                 line-height: 16px;
             }
 
@@ -5611,7 +5616,7 @@ tab Strip Style ends
     font-weight: normal;
     margin-top: 12px;
     text-align: right;
-    text-transform: uppercase;
+    text-transform: none;
     width: 100%;
 }
 
@@ -7364,7 +7369,7 @@ table.two-in-one tr td a {
         overflow: hidden;
         padding: 17px 0 7px 10px;
         z-index: -1;
-        text-transform: uppercase;
+        text-transform: none;
     }
 
     .left-nav ul {
@@ -7395,7 +7400,7 @@ table.two-in-one tr td a {
                 display: block;
                 margin-right: 10px;
                 outline: none;
-                text-transform: uppercase;
+                text-transform: none;
             }
 
             .left-nav ul li:hover, .left-nav ul li.active {
@@ -7693,7 +7698,7 @@ table.two-in-one tr td a {
                     .logo-dropdown-menu .container .col-lg-3 ul li a {
                         font-family: 'futura-pt', Verdana, sans-serif;
                         font-size: 14px;
-                        text-transform: uppercase;
+                        text-transform: none;
                         display: block;
                         padding: 10px 15px;
                         border-bottom: 1px solid #CCCCCC;
@@ -8568,7 +8573,7 @@ a.video-btn-overlay {
         border: medium none;
         color: #ffffff;
         outline: medium none;
-        text-transform: uppercase;
+        text-transform: none;
         transition: background-color 0.7s ease 0s;
         padding: 6px 18px;
     }
@@ -8583,7 +8588,7 @@ a.video-btn-overlay {
 }
 
 .sfTxtLbl {
-    text-transform: uppercase;
+    text-transform: none;
     font-family: 'futura-pt', Verdana, sans-serif;
     font-size: 16px;
     font-weight: normal;
@@ -8854,7 +8859,7 @@ a.video-btn-overlay {
     font-family: ''futura-pt', Verdana, sans-serif';
     font-size: 55px;
     line-height: 55px;
-    text-transform: uppercase;
+    text-transform: none;
 }
 
     .content p span {
@@ -8907,7 +8912,7 @@ a.video-btn-overlay {
 
         .sandwich-animation-wrapper .animation section .blurb {
             color: #6fab43;
-            font-size: 15px;
+            font-size: 16px;
             font-family: 'FuturaBook';
             line-height: 16px;
             position: relative;
@@ -9221,7 +9226,7 @@ a.video-btn-overlay {
 .sav-val-equal-content {
     margin-top: 66px;
     font-family: 'futura-pt', Verdana, sans-serif;
-    font-size: 30px;
+    font-size: 34px;
 }
 
 .tfsa-chat-content {
@@ -9389,7 +9394,7 @@ a.video-btn-overlay {
     .sav-val-equal-content {
         margin-top: 0px;
         font-family: 'futura-pt', Verdana, sans-serif;
-        font-size: 30px;
+        font-size: 34px;
     }
 
     .tfsa-sav-content-calc .tfsa-sav-col-1 {
@@ -9465,7 +9470,7 @@ a.video-btn-overlay {
 }
 
 .portal-resp-bus .description {
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .portal-resp-bus .twitter {
@@ -9661,7 +9666,7 @@ a.video-btn-overlay {
     .consultant-form .form-field-submit .call-me-button {
         border-radius: 2px;
         font-family: 'futura-pt', Verdana, sans-serif;
-        font-size: 15px;
+        font-size: 16px;
         padding-bottom: 11px;
         padding-top: 14px;
         width: 80%;
@@ -9699,7 +9704,7 @@ a.video-btn-overlay {
     padding-right: 17px;
     padding-top: 6px;
     font-family: 'futura-pt', Verdana, sans-serif;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .res1-wrapper .btnUpdate {
@@ -9768,7 +9773,7 @@ a.video-btn-overlay {
     .btn-protect-wrap .call-me-button {
         border-radius: 2px;
         font-family: 'futura-pt', Verdana, sans-serif;
-        font-size: 15px;
+        font-size: 16px;
         padding: 14px 30px;
         white-space: normal;
     }
@@ -10052,7 +10057,7 @@ a.video-btn-overlay {
 
     .tax-reform-form .submitEntry {
         font-family: 'futura-pt', Verdana, sans-serif;
-        font-size: 15px;
+        font-size: 16px;
         padding: 15px 35px;
     }
 /*.tax-reform-result-wrap .funds-summary {
@@ -10660,10 +10665,10 @@ button#closs {
         color: #fff !important;
         padding: 7px 16px;
         border: none;
-        font-size: 15px;
+        font-size: 16px;
         line-height: normal;
         cursor: pointer;
-        text-transform: uppercase;
+        text-transform: none;
         position: relative;
         -webkit-appearance: none;
         -webkit-transition: all 0.2s ease-in-out !important;
@@ -10927,7 +10932,7 @@ button#closs {
         font-size: 16px;
         line-height: normal;
         cursor: pointer;
-        text-transform: uppercase;
+        text-transform: none;
         position: relative;
         -webkit-appearance: none;
         -webkit-transition: all 0.2s ease-in-out !important;
@@ -10955,7 +10960,7 @@ button#closs {
         width: 85%;
         padding: 8px 20px !important;
         border-radius: 12px;
-        font-size: 15px;
+        font-size: 16px;
     }
 }
 /** -------------- END --------------- **/
@@ -11323,7 +11328,7 @@ button#closs {
         font-size: 1.1em;
         line-height: normal;
         cursor: pointer;
-        text-transform: uppercase;
+        text-transform: none;
         position: relative;
         -webkit-appearance: none;
         -webkit-transition: all 0.2s ease-in-out !important;
@@ -11451,7 +11456,7 @@ body{
     padding-left: 22px;
     line-height: 40px;
     font-family: futura-pt, Verdana, sans-serif;
-    text-transform: uppercase;
+    text-transform: none;
     color: #26428b;
     font-size: 16px;
     margin-bottom: 12px;
@@ -11631,13 +11636,102 @@ div.quicklinksbox ul li a:hover{
 .LinkedInIcon, .blogIcon, .contactIcon, .emailIcon, .faceBookIcon, .telephoneIcon, .twitterIcon, .uTubeIcon {
     margin-right: 5px !important;
 }
+.LinkedInIcon, .linkedIn {
+    width: 36px;
+    height: 36px;
+    background-position: -353px -5px;
+}
+.gmap_canvas a{
+    display:none;
+}
 div.mobile-only{
     display: none;
 }
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 768px) {
     .mobile-hide{ display: none !important; }
     .mobile-clear{ margin-top: 180px !important; }
     div.mobile-only{ display: block;}
     .socialIconset a{ padding: 2px;}
 }
+.has-sub-nav a:hover{
+    border:0px;
+}
+.sub-nav{
+    list-style: none;
+    display:none;
+    margin-left:-50px;
+    position: absolute;
+    background-color: #fff;
+    margin-top:12px;
+    border-bottom:2px #155498 solid;
+    box-shadow: 2px 2px #fafafa;
+    z-index: 1;
+}
+.sub-nav li{
+    background-color: #fff;
 
+    width:250px;
+}
+.sub-nav li a{
+    display: block;
+    color: #155498;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 22px;
+    font-size: 16px;
+    font-family: 'futura-pt', Verdana, sans-serif;
+    text-transform: none;
+    outline: none;
+    transition: all 0.3s ease;
+    font-weight: normal;
+}
+.navbar .custom-nav li.select .sub-nav li a{
+    font-weight:normal;
+    border:0px;
+}
+.navbar .custom-nav li.select .sub-nav li a:hover{
+    border-bottom: 3px solid #155498;
+}
+.sub-nav li a:hover{
+    text-decoration:none;
+}
+.sub-nav li a.last:hover,.navbar .custom-nav li.select .sub-nav li a.last:hover{
+    text-decoration:none;
+    border:0px;
+}
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.06);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+h5.mb-0 .btn{
+    font-size:15px;
+    color:#e07c14;
+    font-weight:bold;
+}

@@ -4,24 +4,27 @@
  * (C) 2017 Crysoft Dynamics Ltd
  * Karbon V 2.1
  * User: Maxx
- * Date: 5/31/2018
- * Time: 5:14 PM
+ * Date: 4/13/2018
+ * Time: 11:45 AM
  ********************************************************************************/
 
 namespace AppBundle\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-
-use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ResearchRepository")
  * @ORM\HasLifecycleCallbacks
  * @Vich\Uploadable
- * @ORM\Table(name="sub_page")
+ * @ORM\Table(name="research")
+ *
  */
-class SubPage
+class Research
 {
     /**
      * @ORM\Id
@@ -30,38 +33,18 @@ class SubPage
      */
     private $id;
     /**
-     * @ORM\ManyToOne(targetEntity="Page",inversedBy="subPages")
-     */
-    private $page;
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $sortOrder;
-    /**
      * @ORM\Column(type="string")
      */
     private $title;
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $intro;
     /**
      * @Gedmo\Slug(fields={"title"},updatable=false)
      * @ORM\Column(length=255, unique=true)
      */
     private $slug;
     /**
-     * @ORM\Column(type="string",nullable=true)
+     * @ORM\Column(type="string")
      */
-    private $tagline;
-    /**
-     * @ORM\Column(type="string",nullable=true)
-     */
-    private $subLine;
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $content;
+    private $category;
     /**
      * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName", size="imageSize")
      * @var File
@@ -76,15 +59,6 @@ class SubPage
      * @ORM\Column(type="integer",nullable=true)
      */
     private $imageSize;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $isActive=true;
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $isFeatured=false;
     /**
      * @ORM\Column(type="string")
      */
@@ -117,6 +91,17 @@ class SubPage
 
     }
 
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function updateModifiedDatetime()
+    {
+        // update the modified time
+        $this->setUpdatedAt(new \DateTime());
+    }
+
     /**
      * @return mixed
      */
@@ -124,35 +109,6 @@ class SubPage
     {
         return $this->id;
     }
-    public function getSortOrder()
-    {
-        return $this->sortOrder;
-    }
-
-    /**
-     * @param mixed $sortOrder
-     */
-    public function setSortOrder($sortOrder)
-    {
-        $this->sortOrder = $sortOrder;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPage()
-    {
-        return $this->page;
-    }
-
-    /**
-     * @param mixed $page
-     */
-    public function setPage($page)
-    {
-        $this->page = $page;
-    }
-
 
 
     /**
@@ -174,22 +130,6 @@ class SubPage
     /**
      * @return mixed
      */
-    public function getIntro()
-    {
-        return $this->intro;
-    }
-
-    /**
-     * @param mixed $intro
-     */
-    public function setIntro($intro)
-    {
-        $this->intro = $intro;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getSlug()
     {
         return $this->slug;
@@ -206,34 +146,36 @@ class SubPage
     /**
      * @return mixed
      */
-    public function getTagline()
+    public function getCategory()
     {
-        return $this->tagline;
+        return $this->category;
     }
 
     /**
-     * @param mixed $tagline
+     * @param mixed $category
      */
-    public function setTagline($tagline)
+    public function setCategory($category)
     {
-        $this->tagline = $tagline;
+        $this->category = $category;
     }
+
 
     /**
      * @return mixed
      */
-    public function getSubLine()
+    public function getAccessLevel()
     {
-        return $this->subLine;
+        return $this->accessLevel;
     }
 
     /**
-     * @param mixed $subLine
+     * @param mixed $accessLevel
      */
-    public function setSubLine($subLine)
+    public function setAccessLevel($accessLevel)
     {
-        $this->subLine = $subLine;
+        $this->accessLevel = $accessLevel;
     }
+
     /**
      * @return mixed
      */
@@ -260,7 +202,7 @@ class SubPage
 
     /**
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $imageFile
-     * @return Page
+     * @return Research
      */
     public function setImageFile(File $image = null)
     {
@@ -282,7 +224,7 @@ class SubPage
 
     /**
      * @param integer $imageSize
-     * @return Page
+     * @return Research
      */
     public function setImageSize($imageSize)
     {
@@ -291,69 +233,6 @@ class SubPage
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
-
-    /**
-     * @param mixed $content
-     */
-    public function setContent($content)
-    {
-        $this->content = $content;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIsActive()
-    {
-        return $this->isActive;
-    }
-
-    /**
-     * @param mixed $isActive
-     */
-    public function setIsActive($isActive)
-    {
-        $this->isActive = $isActive;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIsFeatured()
-    {
-        return $this->isFeatured;
-    }
-
-    /**
-     * @param mixed $isFeatured
-     */
-    public function setIsFeatured($isFeatured)
-    {
-        $this->isFeatured = $isFeatured;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAccessLevel()
-    {
-        return $this->accessLevel;
-    }
-
-    /**
-     * @param mixed $accessLevel
-     */
-    public function setAccessLevel($accessLevel)
-    {
-        $this->accessLevel = $accessLevel;
-    }
 
     /**
      * @return mixed
@@ -417,6 +296,11 @@ class SubPage
     public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;
+    }
+
+    function __toString()
+    {
+        return $this->getTitle();
     }
 
 }

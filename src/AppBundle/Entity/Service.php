@@ -53,7 +53,7 @@ class Service
      */
     private $content;
     /**
-     * @ORM\Column(type="string",nullable=true)
+     * @ORM\Column(type="text",nullable=true)
      */
     private $footer;
     /**
@@ -103,6 +103,10 @@ class Service
      * @ORM\Column(type="datetime")
      */
     private $updatedAt;
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ServiceScheme",mappedBy="service",fetch="EXTRA_LAZY")
+     */
+    private $mySchemes;
 
     function __construct()
     {
@@ -112,8 +116,18 @@ class Service
         if ($this->getUpdatedAt() == null) {
             $this->setUpdatedAt(new \DateTime());
         }
+        $this->mySchemes = new ArrayCollection();
 
     }
+
+    /**
+     * @return mixed
+     */
+    public function getMySchemes()
+    {
+        return $this->mySchemes;
+    }
+
 
 
     /**

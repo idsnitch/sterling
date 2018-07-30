@@ -20,7 +20,6 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  * @ORM\HasLifecycleCallbacks
  * @Vich\Uploadable
  * @ORM\Table(name="service_scheme")
- * @UniqueEntity(fields={"slug"},message="This alias exist. Scheme alias have to be unique!")
  */
 class ServiceScheme
 {
@@ -31,35 +30,17 @@ class ServiceScheme
      */
     private $id;
     /**
-     * @ORM\ManyToOne(targetEntity="Service")
+     * @ORM\ManyToOne(targetEntity="Service",inversedBy="mySchemes")
      */
     private $service;
     /**
-     * @ORM\Column(type="string")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Scheme",inversedBy="myServiceSchemes")
      */
-    private $title;
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $slug;
+    private $scheme;
     /**
      * @ORM\Column(type="string")
      */
     private $content;
-    /**
-     * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName", size="imageSize")
-     * @var File
-     */
-    private $imageFile;
-
-    /**
-     * @ORM\Column(type="string",nullable=true)
-     */
-    private $imageName;
-    /**
-     * @ORM\Column(type="integer",nullable=true)
-     */
-    private $imageSize;
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
      */
@@ -125,90 +106,17 @@ class ServiceScheme
     /**
      * @return mixed
      */
-    public function getImageName()
+    public function getScheme()
     {
-        return $this->imageName;
+        return $this->scheme;
     }
 
     /**
-     * @param mixed $imageName
+     * @param mixed $scheme
      */
-    public function setImageName($imageName)
+    public function setScheme($scheme)
     {
-        $this->imageName = $imageName;
-    }
-
-    /**
-     * @return File|null
-     */
-    public function getImageFile()
-    {
-        return $this->imageFile;
-    }
-
-    /**
-     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $imageFile
-     * @return ServiceScheme
-     */
-    public function setImageFile(File $image = null)
-    {
-        $this->imageFile = $image;
-        if ($image) {
-            //Lets make sure at least one field changes so Doctrine can process the file
-            $this->updatedAt = new \DateTimeImmutable();
-        }
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getImageSize()
-    {
-        return $this->imageSize;
-    }
-
-    /**
-     * @param integer $imageSize
-     * @return ServiceScheme
-     */
-    public function setImageSize($imageSize)
-    {
-        $this->imageSize = $imageSize;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * @param mixed $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSlug()
-    {
-        return $this->slug;
-    }
-
-    /**
-     * @param mixed $slug
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
+        $this->scheme = $scheme;
     }
 
     /**
@@ -226,6 +134,7 @@ class ServiceScheme
     {
         $this->content = $content;
     }
+
 
     /**
      * @return mixed

@@ -29,6 +29,7 @@
 
         <div class="portal">
             {% for service in services %}
+                <a href="{{ path('service', {'slug': service.service.slug }) }}">
                 <div class="portal-item col-sm-6">
                     <div class="portal-item-border border-none">
 
@@ -42,14 +43,13 @@
                             <p> {{ service.intro | raw }}</p>
                         </div>
 <br/>
-                        <a href="{{ path('service', {'slug': service.service.slug }) }}"
-                           class="btn btn-md pull-right green-theme-button">VIEW</a>
 
 
                     </div>
                     <div class="drop-shadow"></div>
 
                 </div>
+                </a>
             {% endfor %}
 
         </div>

@@ -13,18 +13,26 @@ use AppBundle\Entity\Artist;
 use AppBundle\Entity\Page;
 use AppBundle\Entity\Partner;
 use AppBundle\Entity\Recording;
+use AppBundle\Entity\Research;
+use AppBundle\Entity\Scheme;
 use AppBundle\Entity\Service;
+use AppBundle\Entity\ServiceScheme;
 use AppBundle\Entity\ServiceSettings;
 use AppBundle\Entity\SubPage;
 use AppBundle\Entity\User;
+use AppBundle\Form\ClientTypeForm;
 use AppBundle\Form\HomeSettingsForm;
 use AppBundle\Form\NewAdministratorForm;
+use AppBundle\Form\NewClientForm;
+use AppBundle\Form\NewSchemeForm;
 use AppBundle\Form\PageForm;
 use AppBundle\Form\PartnerForm;
 use AppBundle\Form\PartnerUserForm;
 use AppBundle\Form\ProducerForm;
 use AppBundle\Form\ProfileReviewForm;
 use AppBundle\Form\RecordingForm;
+use AppBundle\Form\ReportForm;
+use AppBundle\Form\SchemeForm;
 use AppBundle\Form\ServiceForm;
 use AppBundle\Form\SubPageForm;
 use AppBundle\Form\UserUpdateForm;
@@ -53,6 +61,107 @@ class AdminController extends Controller
             'dashboard'=>$dashboard
         ]);
     }
+    /**
+     * @Route("/report/new",name="new-report")
+     */
+    public function newReportAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $admin = $this->get('security.token_storage')->getToken()->getUser();
+
+        $research = new Research();
+        $research->setCreatedAt(new \DateTime());
+        $research->setCreatedBy($admin);
+        $research->setUpdatedAt(new \DateTime());
+        $research->setUpdatedBy($admin);
+
+        $form = $this->createForm(ReportForm::class,$research);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&&$form->isValid()){
+            $pro = $form->getData();
+            $em->persist($pro);
+            $em->flush();
+
+            return $this->redirectToRoute('research');
+        }
+        return $this->render(':admin/research:new.htm.twig',[
+            'form'=>$form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/report/{id}/edit",name="update-report")
+     */
+    public function updateReportAction(Request $request, Research $report){
+        $em = $this->getDoctrine()->getManager();
+        $admin = $this->get('security.token_storage')->getToken()->getUser();
+
+        $form = $this->createForm(ReportForm::class,$report);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&&$form->isValid()){
+            $pro = $form->getData();
+            $em->persist($pro);
+            $em->flush();
+
+            return $this->redirectToRoute('research');
+        }
+        return $this->render(':admin/research:edit.htm.twig',[
+            'form'=>$form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/research",name="research")
+     */
+    public function researchListAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $reports = $em->getRepository("AppBundle:Research")
+            ->findBy([
+
+            ],
+                [
+                    'createdAt'=>'Desc'
+                ]);
+        return $this->render(":admin/research:list.htm.twig",[
+            'reports'=>$reports,
+            'researchx'=>'Active'
+        ]);
+    }
+    /**
+     * @Route("/report/form",name="new-reportform")
+     */
+    public function newReportFormAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $admin = $this->get('security.token_storage')->getToken()->getUser();
+
+        $research = new Research();
+        $research->setCreatedAt(new \DateTime());
+        $research->setCreatedBy($admin);
+        $research->setUpdatedAt(new \DateTime());
+        $research->setUpdatedBy($admin);
+
+        $form = $this->createForm(ReportForm::class,$research);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&&$form->isValid()){
+            $pro = $form->getData();
+            $em->persist($pro);
+            $em->flush();
+
+            return $this->redirectToRoute('research');
+        }
+        return $this->render(":admin/research:newReport.htm.twig",[
+            'form'=>$form->createView()
+        ]);
+
+    }
+
+
 
     /**
      * @Route("/homepage-settings",name="homepage-settings")
@@ -75,7 +184,7 @@ class AdminController extends Controller
 
     }
     /**
-     * @Route("/services",name="services")
+     * @Route("/services",name="admin-services")
      */
     public function servicesAction(Request $request){
         $servicesx = "active";
@@ -100,12 +209,75 @@ class AdminController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($pro);
             $em->flush();
-            return $this->redirectToRoute('services');
+            return $this->redirectToRoute('admin-services');
         }
         return $this->render('admin/services/edit.htm.twig',[
             'form'=>$form->createView()
         ]);
     }
+    /**
+     * @Route("/schemes",name="schemes")
+     */
+    public function schemeAction(Request $request){
+        $schemesx = "active";
+        $em = $this->getDoctrine()->getManager();
+        $schemes = $em->getRepository("AppBundle:Scheme")
+            ->findAll();
+        return $this->render('admin/schemes/list.htm.twig',[
+            'schemes'=>$schemes,
+            'schemesx'=>$schemesx
+        ]);
+    }
+    /**
+     * @Route("/schemes/{id}/edit",name="update-scheme")
+     */
+    public function editSchemeAction(Request $request,Scheme $scheme){
+        $form = $this->createForm(ClientTypeForm::class,$scheme);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&&$form->isValid()){
+            $pro = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($pro);
+            $em->flush();
+            return $this->redirectToRoute('schemes');
+        }
+        return $this->render('admin/schemes/edit.htm.twig',[
+            'form'=>$form->createView()
+        ]);
+    }
+    /**
+     * @Route("/clients",name="clientList")
+     */
+    public function clientsAction(Request $request){
+        $schemesx = "active";
+        $em = $this->getDoctrine()->getManager();
+        $schemes = $em->getRepository("AppBundle:ServiceScheme")
+            ->findAll();
+        return $this->render('admin/clients/list.htm.twig',[
+            'schemes'=>$schemes,
+            'schemesx'=>$schemesx
+        ]);
+    }
+    /**
+     * @Route("/clients/{id}/edit",name="update-client")
+     */
+    public function editClientsAction(Request $request,ServiceScheme $scheme){
+        $form = $this->createForm(ClientTypeForm::class,$scheme);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&&$form->isValid()){
+            $pro = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($pro);
+            $em->flush();
+            return $this->redirectToRoute('schemes');
+        }
+        return $this->render('admin/schemes/edit.htm.twig',[
+            'form'=>$form->createView()
+        ]);
+    }
+
     /**
      * @Route("/pages",name="pages")
      */
@@ -269,6 +441,124 @@ class AdminController extends Controller
 
         }
         return $this->render("admin/models/service/newService.htm.twig",[
+            'form'=>$form->createView()
+        ]);
+
+    }
+
+    /**
+     * @Route("/scheme/new",name="new-scheme")
+     */
+    public function newSchemeAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $admin = $this->get('security.token_storage')->getToken()->getUser();
+
+        $scheme = new Scheme();
+        $scheme->setCreatedAt(new \DateTime());
+        $scheme->setCreatedBy($admin);
+        $scheme->setModifiedAt(new \DateTime());
+        $scheme->setModifiedBy($admin);
+
+        $form = $this->createForm(ClientTypeForm::class,$scheme);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&&$form->isValid()){
+            $pro = $form->getData();
+            $em->persist($pro);
+            $em->flush();
+
+            return $this->redirectToRoute('new-models');
+        }
+        return $this->render(':admin/models/scheme:new.htm.twig',[
+            'form'=>$form->createView()
+        ]);
+    }
+    /**
+     * @Route("/scheme/form",name="new-schemeform")
+     */
+    public function newSchemeFormAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $admin = $this->get('security.token_storage')->getToken()->getUser();
+
+
+        $scheme = new Scheme();
+        $scheme->setCreatedAt(new \DateTime());
+        $scheme->setCreatedBy($admin);
+        $scheme->setModifiedAt(new \DateTime());
+        $scheme->setModifiedBy($admin);
+
+        $form = $this->createForm(ClientTypeForm::class,$scheme);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&&$form->isValid()){
+            $pro = $form->getData();
+            $em->persist($pro);
+            $em->flush();
+
+        }
+        return $this->render("admin/models/scheme/newScheme.htm.twig",[
+            'form'=>$form->createView()
+        ]);
+
+    }
+    /**
+     * @Route("/client/new",name="new-client")
+     */
+    public function newClientAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $admin = $this->get('security.token_storage')->getToken()->getUser();
+
+        $scheme = new ServiceScheme();
+        $scheme->setCreatedAt(new \DateTime());
+        $scheme->setCreatedBy($admin);
+        $scheme->setUpdatedAt(new \DateTime());
+        $scheme->setUpdatedBy($admin);
+
+        $form = $this->createForm(NewClientForm::class,$scheme);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&&$form->isValid()){
+            $pro = $form->getData();
+            $em->persist($pro);
+            $em->flush();
+
+            return $this->redirectToRoute('new-models');
+        }
+        return $this->render(':admin/models/serviceScheme:new.htm.twig',[
+            'form'=>$form->createView()
+        ]);
+    }
+    /**
+     * @Route("/client/form",name="new-clientform")
+     */
+    public function newClientFormAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $admin = $this->get('security.token_storage')->getToken()->getUser();
+
+
+        $scheme = new ServiceScheme();
+        $scheme->setCreatedAt(new \DateTime());
+        $scheme->setCreatedBy($admin);
+        $scheme->setUpdatedAt(new \DateTime());
+        $scheme->setUpdatedBy($admin);
+
+        $form = $this->createForm(NewClientForm::class,$scheme);
+
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&&$form->isValid()){
+            $pro = $form->getData();
+            $em->persist($pro);
+            $em->flush();
+
+        }
+        return $this->render("admin/models/serviceScheme/newScheme.htm.twig",[
             'form'=>$form->createView()
         ]);
 

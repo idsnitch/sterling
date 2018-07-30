@@ -68,7 +68,7 @@
 
 {% endblock %}
 {% block service %}active{% endblock %}
-{% block pageTitle %}New Page{% endblock %}
+{% block pageTitle %}Update  SubPage{% endblock %}
 {% block body %}
     <style>
         .required:after {
@@ -109,7 +109,12 @@
                             </div>
                             <div class="form-errors"></div>
                         </div>
-
+                        <div class="form-row">
+                            <div class="form-widget">
+                                {{ form_row(form.sortOrder, { 'attr': {'id': 'login_form_credentials_username'} }) }}
+                            </div>
+                            <div class="form-errors"></div>
+                        </div>
 
 
                     </div>

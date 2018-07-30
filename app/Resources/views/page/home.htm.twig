@@ -9,36 +9,186 @@
           </div>
       </li>
   {% endblock %}
+{% block banner %}
+    <style>
+        .banner-margin-inner{
+            margin-top: 100px;
+        }
+    </style>
+{% endblock %}
 {% block body %}
+    <div class="sfNavWrp sfNavHorizontalWrp ">
+        <h1 style="font-weight:bold!important">Clients</h1>
+<div class="mobile-hide">
+        <div class="portal">
 
+            <div class="portal-item header col-sm-6">
+                <h2 class="portal-title-size"><strong>Institutional Clients</strong></h2>
+
+            </div>
+            <div class="portal-item header col-sm-6">
+                <h2 class="portal-title-size"><strong>Individual Clients</strong></h2>
+
+            </div>
+        </div>
+        <div class="portal">
+
+            {% for scheme in schemes %}
+                <a href="{{ path('clients', {'slug': scheme.slug }) }}">
+                <div class="portal-item col-sm-6">
+                    <div class="portal-item-border border-none">
+                        <img style="width:394px;height: 197px" class="max-width" title="Brokerage" alt="Stock Exchange Listing" src="{{ asset('images/products/') }}{{ scheme.imageName }}">
+                        <div class="description" style="min-height: 0px; max-height: none; ">
+                            <h2 class="portal-title-size">{{ scheme.title }}</h2>
+                            <p class="intro"> {{ scheme.summary }}</p>
+                        </div>
+                        <br/>
+
+                    </div>
+                    <div class="drop-shadow"></div>
+
+                </div>
+                </a>
+            {% endfor %}
+
+        </div>
+</div>
+        <div class="mobile-only">
+            <div class="portal">
+                <div class="portal-item col-sm-6">
+                    <h2 class="portal-title-size"><strong>Institutional Clients</strong></h2>
+
+                </div>
+                <a href="/clients/large-local-institutions">
+
+                <div class="portal-item col-sm-6">
+                    <div class="portal-item-border border-none">
+                        <img style="width:394px;height: 197px" class="max-width" title="Brokerage" alt="Stock Exchange Listing" src="/images/products/5b4da4d270050.jpg">
+                        <div class="description" style="min-height: 0px; max-height: none; ">
+                            <h2 class="portal-title-size">Large Local Institutions</h2>
+                            <p class="intro"> Leading financial solutions to meet an array of protection, savings, investment and retirement benefit needs.</p>
+                        </div>
+                        <br>
+
+                    </div>
+                    <div class="drop-shadow"></div>
+
+                </div>
+                </a>
+                <a href="/clients/foreign-institutions">
+                    <div class="portal-item col-sm-6">
+                        <div class="portal-item-border border-none">
+                            <img style="width:394px;height: 197px" class="max-width" title="Brokerage" alt="Stock Exchange Listing" src="/images/products/5b4da51599f07.jpg">
+                            <div class="description" style="min-height: 0px; max-height: none; ">
+                                <h2 class="portal-title-size">Foreign Institutions</h2>
+                                <p class="intro"> A leading, global financial institution servicing Kenyan investors for over 80 years.</p>
+                            </div>
+                            <br>
+
+                        </div>
+                        <div class="drop-shadow"></div>
+
+                    </div>
+                </a>
+                <a href="/clients/small-and-medium-enterprise">
+                    <div class="portal-item col-sm-6">
+                        <div class="portal-item-border border-none">
+                            <img style="width:394px;height: 197px" class="max-width" title="Brokerage" alt="Stock Exchange Listing" src="/images/products/5b4da54dcf710.jpg">
+                            <div class="description" style="min-height: 0px; max-height: none; ">
+                                <h2 class="portal-title-size">Small and Medium Enterprise</h2>
+                                <p class="intro"> A leading, global financial institution servicing Kenyan investors for over 80 years.</p>
+                            </div>
+                            <br>
+
+                        </div>
+                        <div class="drop-shadow"></div>
+
+                    </div>
+                </a>
+            </div>
+            <div class="portal">
+                <div class="portal-item col-sm-6">
+                    <h2 class="portal-title-size"><strong>Individual Clients</strong></h2>
+
+                </div>
+                <a href="/clients/high-income-individuals">
+                    <div class="portal-item col-sm-6">
+                        <div class="portal-item-border border-none">
+                            <img style="width:394px;height: 197px" class="max-width" title="Brokerage" alt="Stock Exchange Listing" src="/images/products/5b4da4ff09764.jpg">
+                            <div class="description" style="min-height: 0px; max-height: none; ">
+                                <h2 class="portal-title-size">High Income Individuals</h2>
+                                <p class="intro"> A leading, global financial institution servicing Kenyan investors for over 80 years.</p>
+                            </div>
+                            <br>
+
+                        </div>
+                        <div class="drop-shadow"></div>
+
+                    </div>
+                </a>
+                <a href="/clients/high-networth-individuals">
+                    <div class="portal-item col-sm-6">
+                        <div class="portal-item-border border-none">
+                            <img style="width:394px;height: 197px" class="max-width" title="Brokerage" alt="Stock Exchange Listing" src="/images/products/5b4da52c26841.jpg">
+                            <div class="description" style="min-height: 0px; max-height: none; ">
+                                <h2 class="portal-title-size">High Networth Individuals</h2>
+                                <p class="intro"> A leading, global financial institution servicing Kenyan investors for over 80 years.</p>
+                            </div>
+                            <br>
+
+                        </div>
+                        <div class="drop-shadow"></div>
+
+                    </div>
+                </a>
+                <a href="/clients/middle-income-individuals">
+                    <div class="portal-item col-sm-6">
+                        <div class="portal-item-border border-none">
+                            <img style="width:394px;height: 197px" class="max-width" title="Brokerage" alt="Stock Exchange Listing" src="/images/products/5b4da57a823a3.jpg">
+                            <div class="description" style="min-height: 0px; max-height: none; ">
+                                <h2 class="portal-title-size">Middle Income Individuals</h2>
+                                <p class="intro"> A leading, global financial institution servicing Kenyan investors for over 80 years.</p>
+                            </div>
+                            <br>
+
+                        </div>
+                        <div class="drop-shadow"></div>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br/><br/>
     <h1>Services</h1>
-
+    <br/>
 
     <div class="sfNavWrp sfNavHorizontalWrp ">
 
         <div class="portal">
             {% for service in services %}
-            <div class="portal-item col-sm-6">
-                <div class="portal-item-border border-none">
+            <a href="{{ path('service', {'slug': service.service.slug }) }}">
+                <div class="portal-item col-sm-4">
+                    <div class="portal-item-border border-none">
 
-                    <img style="width:394px;height: 197px" class="max-width" title="{{ service.service }}"
-                         alt="Stock Exchange Listing"
-                         src="{{ asset('images/products/') }}{{ service.imageName }}">
+                        <img style="width:394px;height: 197px" class="max-width" title="{{ service.service }}"
+                             alt="Stock Exchange Listing"
+                             src="{{ asset('images/products/') }}{{ service.imageName }}">
 
 
-                    <div class="description" style="min-height: 0px; max-height: none; height: 71px;">
-                        <h2 class="portal-title-size">{{ service.service }}</h2>
-                        <p class="intro"> {{ service.intro | raw }}</p>
-                    </div>
-<br/>
-                    <a href="{{ path('service', {'slug': service.service.slug }) }}"
+                        <div class="description" style="min-height: 0px; max-height: none; height: 120px;">
+                            <h2 class="portal-title-size">{{ service.service }}</h2>
+                            <p class="intro"> {{ service.intro | raw }}</p>
+                        </div>
+                        <!--   <a href="{{ path('service', {'slug': service.service.slug }) }}"
                        class="btn btn-md pull-right green-theme-button">VIEW</a>
+                    -->
 
+                    </div>
+                    <div class="drop-shadow"></div>
 
                 </div>
-                <div class="drop-shadow"></div>
-
-            </div>
+            </a>
             {% endfor %}
 
         </div>

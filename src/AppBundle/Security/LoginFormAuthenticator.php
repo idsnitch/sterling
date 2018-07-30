@@ -128,7 +128,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
     protected function getLoginUrl()
     {
         if($this->redirectFailureUrl==""){
-            $this->redirectFailureUrl='security_login';
+            $this->redirectFailureUrl='admin-login';
         }
 
         return $this->router->generate($this->redirectFailureUrl);
