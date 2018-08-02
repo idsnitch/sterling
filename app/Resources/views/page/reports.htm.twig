@@ -40,6 +40,7 @@
 
         <div class="portal">
             {% for report in reports %}
+                {% if category == "Morning Note" %}
                     <div class="portal-item col-sm-12">
                         <div class="portal-item-border border-none">
 
@@ -59,9 +60,30 @@
                         </div>
 
                     </div>
+                 {% else %}
+                   <a href="{{ path('view-report', {'slug': category.slug, 'subSlug': report.slug }) }}">
+                       <div class="portal-item col-sm-12">
+                           <div class="portal-item-border border-none">
 
+                               <table>
+                                   <tr>
+                                       <td>
+                                           {{ report.createdAt | date("l F jS Y") }} -
+                                       </td>
+                                       <td colspan="2">
+                                           {{ report.title }}&nbsp;&nbsp;
+                                       </td>
+                                   </tr>
+                               </table>
+                           </div>
+
+                       </div>
+                   </a>
+                {% endif %}
             {% endfor %}
             {{ knp_pagination_render(reports) }}
+
+            <a style="" href="" class="btn btn-md pull-center green-theme-button">Subscribe to {{ category }}</a>
         </div>
     </div>
 

@@ -29,18 +29,18 @@
 
         <div class="portal">
             {% for service in services %}
-                <a href="{{ path('service', {'slug': service.service.slug }) }}">
+                <a href="{{ path('service', {'slug': service.slug }) }}">
                 <div class="portal-item col-sm-6">
                     <div class="portal-item-border border-none">
 
-                        <img style="width:394px;height: 197px" class="max-width" title="{{ service.service }}"
+                        <img style="width:394px;height: 197px" class="max-width" title="{{ service.title }}"
                              alt="Stock Exchange Listing"
                              src="{{ asset('images/products/') }}{{ service.imageName }}">
 
 
                         <div class="description" style="min-height: 0px; max-height: none; height: 71px;">
-                            <h2 class="portal-title-size">{{ service.service }}</h2>
-                            <p> {{ service.intro | raw }}</p>
+                            <h2 class="portal-title-size">{{ service.title }}</h2>
+                            <p> {{ service.content | raw }}</p>
                         </div>
 <br/>
 

@@ -24,7 +24,7 @@ class DefaultController extends Controller
     {
         $home = "select";
         $em = $this->getDoctrine()->getManager();
-        $services = $em->getRepository("AppBundle:ServiceSettings")
+        $services = $em->getRepository("AppBundle:Service")
             ->findBy(
                 [],
                 ['sortOrder'=>'Asc']);
@@ -47,7 +47,7 @@ class DefaultController extends Controller
     {
         $servicesx = "select";
         $em = $this->getDoctrine()->getManager();
-        $services = $em->getRepository("AppBundle:ServiceSettings")
+        $services = $em->getRepository("AppBundle:Service")
             ->findBy(
                 [],
                 ['sortOrder'=>'Asc']);
@@ -56,6 +56,24 @@ class DefaultController extends Controller
         return $this->render('page/services.htm.twig', [
             'services'=>$services,
             'servicex'=>$servicesx
+        ]);
+    }
+    /**
+     * @Route("/research", name="research")
+     */
+    public function researchAction(Request $request)
+    {
+        $servicesx = "select";
+        $em = $this->getDoctrine()->getManager();
+        $categories = $em->getRepository("AppBundle:Category")
+            ->findBy(
+                [],
+                ['sortOrder'=>'Asc']);
+        //var_dump($recentArticles);exit;
+        // replace this example code with whatever you need
+        return $this->render('page/research.htm.twig', [
+            'categories'=>$categories,
+            'researchx'=>"select"
         ]);
     }
 
@@ -218,9 +236,12 @@ class DefaultController extends Controller
      * @Route("/reports/{slug}",name="reports")
      */
     public function reportsAction(Request $request,$slug){
-        $category = ucwords(str_replace("-", " ", $slug));
+        //$category = ucwords(str_replace("-", " ", $slug));
         $em = $this->getDoctrine()->getManager();
-
+        $category = $em->getRepository("AppBundle:Category")
+            ->findOneBy([
+                'slug'=>$slug
+            ]);
         $queryBuilder = $em->getRepository('AppBundle:Research')
             ->createQueryBuilder('research')
             ->andWhere('research.category = :category')
@@ -244,6 +265,27 @@ class DefaultController extends Controller
             'reports'=>$reports
         ]);
     }
+    /**
+     * @Route("reports/{slug}/v/{subSlug}",name="view-report")
+     */
+    public function viewReportAction(Request $request,$slug,$subSlug){
+
+        $category = ucwords(str_replace("-", " ", $slug));
+
+        $em = $this->getDoctrine()->getManager();
+
+        $report = $em->getRepository("AppBundle:Research")
+            ->findOneBy([
+                'slug'=>$subSlug
+            ]);
+
+        return $this->render('page/report.htm.twig',[
+            'report'=>$report,
+            'category'=>$category,
+            'slug'=>$slug
+        ]);
+    }
+
     /**
      * @Route("/page/contacts",name="contactsPage")
      */

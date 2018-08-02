@@ -4,27 +4,26 @@
  * (C) 2017 Crysoft Dynamics Ltd
  * Karbon V 2.1
  * User: Maxx
- * Date: 4/13/2018
- * Time: 11:45 AM
+ * Date: 6/28/2018
+ * Time: 11:11 AM
  ********************************************************************************/
 
 namespace AppBundle\Entity;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
-use Symfony\Component\Validator\Constraints as Assert;
+
 use Gedmo\Mapping\Annotation as Gedmo;
+
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ResearchRepository")
  * @ORM\HasLifecycleCallbacks
  * @Vich\Uploadable
- * @ORM\Table(name="research")
- *
+ * @ORM\Table(name="category")
  */
-class Research
+class Category
 {
     /**
      * @ORM\Id
@@ -35,38 +34,24 @@ class Research
     /**
      * @ORM\Column(type="string")
      */
-    private $title;
+    private $categoryName;
     /**
-     * @Gedmo\Slug(fields={"title"},updatable=false)
+     * @Gedmo\Slug(fields={"categoryName"},updatable=false)
      * @ORM\Column(length=255, unique=true)
      */
     private $slug;
     /**
-     * @ORM\Column(type="text",nullable=true)
+     * @ORM\Column(type="string")
+     */
+    private $icon;
+    /**
+     * @ORM\Column(type="text")
      */
     private $summary;
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category")
-     */
-    private $category;
-    /**
-     * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName", size="imageSize")
-     * @var File
-     */
-    private $imageFile;
-
-    /**
-     * @ORM\Column(type="string",nullable=true)
-     */
-    private $imageName;
-    /**
-     * @ORM\Column(type="integer",nullable=true)
-     */
-    private $imageSize;
-    /**
      * @ORM\Column(type="string")
      */
-    private $accessLevel="Public";
+    private $sortOrder;
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
      */
@@ -95,7 +80,6 @@ class Research
 
     }
 
-
     /**
      * @ORM\PrePersist()
      * @ORM\PreUpdate()
@@ -112,23 +96,6 @@ class Research
     public function getId()
     {
         return $this->id;
-    }
-
-
-    /**
-     * @return mixed
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * @param mixed $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
     }
 
     /**
@@ -150,6 +117,38 @@ class Research
     /**
      * @return mixed
      */
+    public function getCategoryName()
+    {
+        return $this->categoryName;
+    }
+
+    /**
+     * @param mixed $categoryName
+     */
+    public function setCategoryName($categoryName)
+    {
+        $this->categoryName = $categoryName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIcon()
+    {
+        return $this->icon;
+    }
+
+    /**
+     * @param mixed $icon
+     */
+    public function setIcon($icon)
+    {
+        $this->icon = $icon;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getSummary()
     {
         return $this->summary;
@@ -166,93 +165,18 @@ class Research
     /**
      * @return mixed
      */
-    public function getCategory()
+    public function getSortOrder()
     {
-        return $this->category;
+        return $this->sortOrder;
     }
 
     /**
-     * @param mixed $category
+     * @param mixed $sortOrder
      */
-    public function setCategory($category)
+    public function setSortOrder($sortOrder)
     {
-        $this->category = $category;
+        $this->sortOrder = $sortOrder;
     }
-
-
-    /**
-     * @return mixed
-     */
-    public function getAccessLevel()
-    {
-        return $this->accessLevel;
-    }
-
-    /**
-     * @param mixed $accessLevel
-     */
-    public function setAccessLevel($accessLevel)
-    {
-        $this->accessLevel = $accessLevel;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getImageName()
-    {
-        return $this->imageName;
-    }
-
-    /**
-     * @param mixed $imageName
-     */
-    public function setImageName($imageName)
-    {
-        $this->imageName = $imageName;
-    }
-
-    /**
-     * @return File|null
-     */
-    public function getImageFile()
-    {
-        return $this->imageFile;
-    }
-
-    /**
-     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $imageFile
-     * @return Research
-     */
-    public function setImageFile(File $image = null)
-    {
-        $this->imageFile = $image;
-        if ($image) {
-            //Lets make sure at least one field changes so Doctrine can process the file
-            $this->updatedAt = new \DateTimeImmutable();
-        }
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getImageSize()
-    {
-        return $this->imageSize;
-    }
-
-    /**
-     * @param integer $imageSize
-     * @return Research
-     */
-    public function setImageSize($imageSize)
-    {
-        $this->imageSize = $imageSize;
-
-        return $this;
-    }
-
 
     /**
      * @return mixed
@@ -317,10 +241,9 @@ class Research
     {
         $this->updatedAt = $updatedAt;
     }
-
     function __toString()
     {
-        return $this->getTitle();
+        return $this->categoryName;
     }
 
 }

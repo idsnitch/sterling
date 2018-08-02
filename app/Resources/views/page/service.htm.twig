@@ -49,28 +49,5 @@
 
     </div>
 
-    <div class="sfNavWrp sfNavHorizontalWrp ">
-
-        <div class="portal">
-          {% for scheme in service.mySchemes %}
-
-            <a href="{{ path('scheme', {'serviceSlug': scheme.service.slug, 'slug': scheme.scheme.slug }) }}"
-               class="">
-              <div class="portal-item col-sm-6">
-                <div class="portal-item-border border-none">
-
-                    <div class="description" style="min-height: 0px; max-height: none; height: 71px;">
-                        <h2 class="portal-title-size">{{ scheme.scheme.title }}</h2>
-                        <p>{{ scheme.scheme.summary }}</p>
-                    </div>
-
-                </div>
-                <div class="drop-shadow"></div>
-
-            </div>
-            </a>
-           {% endfor %}
-        </div>
-    </div>
 
 {% endblock %}

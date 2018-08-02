@@ -1,6 +1,13 @@
-{% extends 'admin-base.htm.twig' %}
-{% block quick %}active{% endblock %}
+{% extends 'admin.htm.twig' %}
 {% block javascripts %}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( ".js-date" ).datepicker();
+        } );
+    </script>
     <script type="text/javascript">
         // prepare the form when the DOM is ready
         $(document).ready(function () {
@@ -13,17 +20,6 @@
                     e.preventDefault();
 
                     $(".message").fadeOut("slow");
-                    /*
-                    $(this).find('.fa-save')
-                        .removeClass('fa-save')
-                        .addClass('fa-spinner')
-                        .addClass('fa-spin');
-
-                    $(this).find('.fa-check')
-                        .removeClass('fa-check')
-                        .addClass('fa-spinner')
-                        .addClass('fa-spin');
-                    */
                     $("#newForm").fadeOut("slow");
                     $('#saving').fadeIn("slow");
 
@@ -37,20 +33,26 @@
 
                     $.ajax({
                         url: $(this).data('url'),
-                        data: values,
+                        data: new FormData(this),
+                        contentType: false,
+                        cache: false,
+                        processData: false,
                         method: 'POST'
                     }).done(function (company) {
                         $('#saving').fadeOut("slow");
                         $('#message').fadeIn("slow");
-
-                        window.location.reload();
+                        jQuery.get("/administrator/research/category/form", function( data ) {
+                            jQuery('#form-data').html(data);
+                        });
+                        setTimeout(function () {
+                            jQuery("#message").fadeOut("slow");
+                        }, 3000);
 
                     }).fail(function () {
                         $('#saving').fadeOut("slow");
 
                         $("#error").fadeIn("slow");
 
-                        document.getElementById("companyCodeTxt").disabled = true;
 
                     })
 
@@ -65,139 +67,41 @@
     </script>
 
 {% endblock %}
+{% block service %}active{% endblock %}
+{% block pageTitle %}New Research Category{% endblock %}
 {% block body %}
     <style>
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
+        .required:after {
+            content:" *";
+            color:red;
         }
-
-        .switch input {display:none;}
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
-
-        input[type=checkbox]:checked ~ .slider {
-            background-color: #2196F3;
-        }
-
-        input:focus ~ .slider {
-            box-shadow: 0 0 1px #2196F3;
-        }
-
-        input:checked ~ .slider:before {
-            -webkit-transform: translateX(26px);
-            -ms-transform: translateX(26px);
-            transform: translateX(26px);
-        }
-
-        /* Rounded sliders */
-        .slider.round {
-            border-radius: 34px;
-        }
-
-        .slider.round:before {
-            border-radius: 50%;
+        label{
+            text-transform: capitalize;
+            font-weight: bold;
         }
     </style>
 
-    <div id="page-wrapper">
-        <div class="graphs">
-            <div class="breadcrumb">
-                <ul>
-                    <li><a href="{{ path('dashboard') }}">Dashboard</a></li>
-
-                    <li>/</li>
-                    <li><a href="#">Content</a></li>
-                    <li>/</li>
-                    <li><a href="{{ path('articles') }}">Manage Categories</a></li>
-                    <li>/</li>
-                    <li>New Category</li>
-                </ul>
+    <article>
+        <div class="article_inner">
+            <div id="saving" class="alert alert-warning" style="display: none">
+                <i class="fa fa-spin fa-spinner"></i>&nbsp;Saving Category
             </div>
-            <h3>New Category</h3>
-            <div class="tab-content">
-                <div class="tab-pane active" id="horizontal-form">
-                    <div id="message" style="display: none">
-                        <div class="alert alert-success" role="alert">
-                            Category saved!
-                        </div>
-                    </div>
-                    <div id="saving" style="display: none">
-                        <div class="alert alert-warning" role="alert">
-                            <span class="fa fa-spin fa-spinner"></span> Saving Category...
-                        </div>
-                    </div>
-                    <div id="error" style="display: none">
-                    <div class="alert alert-danger" role="alert">
-                        Category not Saved.
-                    </div>
-                    </div>
-                    {{ form_start(categoryForm,{'attr':{'id':'newForm'}}) }}
-                   <div class="col-md-12" style="padding: 10px;padding-bottom: 18px">
-                    <button type="submit" class="button button-primary" style="">
-                        <span class="icon"><span class="fa fa-save"></span> </span>
-                        Save and Close</button>
-                       <button id="new" type="submit" class="button button-primary" style="">
-                           <span class="icon"><span class="fa fa-save"></span> </span>
-                           Save and New</button>
-                   </div>
-                    <div class="col-md-9">
-                        <div class="form-group">
-                            {{ form_row(categoryForm.categoryName,{'attr':{'class':'form-control1'}}) }}
-                            <br/>
-                            <div class="form-group">
-                                <label>Active</label>
-                            </div>
-                            <div class="form-group switch">
-                                <label class="switch">
-                                    <input id="app_bundle_category_form_isActive" name="app_bundle_category_form_isActive" value="1" checked type="checkbox">
-                                    <span class="slider"></span>
-                                </label>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-                    <div class="col-md-3">
-
-                    </div>
-                    <div class="col-md-12">
-                    <button type="submit" class="button button-primary">
-                        <span class="icon"><span class="fa fa-save"></span> </span>
-                        Save and Close</button>
-                        <button id="new" type="submit" class="button button-primary" style="">
-                            <span class="icon"><span class="fa fa-save"></span> </span>
-                            Save and New</button>
-                    </div>
-                    {{ form_end(categoryForm) }}
-
-                </div>
+            <div id="error" class="alert alert-danger" style="display: none">
+                <i class="fa fa-times"></i>&nbsp;Error, Category not Saved
             </div>
+            <div id="message" class="alert alert-success" style="display: none">
+                <i class="fa fa-check"></i>&nbsp;Category Saved
+            </div>
+            {{ render(controller("AppBundle:Admin:newCategoryForm")) }}
         </div>
-    </div>
+    </article>
+
+
+    <aside class="">
+        <i class="fa fa-question-circle help-icon"></i>
+        <p>ALL the fields marked (*) are required.</p>
+    </aside>
+
+
+
 {% endblock %}

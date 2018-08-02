@@ -15,20 +15,10 @@ class ReportForm extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('category', ChoiceType::class, [
-                'choices' => array(
-                    'Morning Note' => 'Morning Note',
-                    'Daily Market Wrap' => 'Daily Market Wrap',
-                    'Weekly Market Wrap' => 'Weekly Market Wrap',
-                    'Fixed Income' => 'Fixed Income',
-                    'Banking Stocks' => 'Banking Stocks',
-                    'Telecom Stocks' => 'Telecom Stocks',
-                    'Real Estate' => 'Real Estate',
-                ),
-                'attr'=>['class'=>'form-control'],
-                'placeholder' => 'Choose Report Type'
+            ->add('category',null,[
+                'required'=>true
             ])
-
+            ->add('summary')
             ->add('accessLevel', ChoiceType::class, [
                 'choices' => array(
                     'Public' => 'Public',

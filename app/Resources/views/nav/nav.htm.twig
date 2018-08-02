@@ -4,14 +4,6 @@
             <span class="menu_text">Dashboard</span>
         </a>
     </li>
-    {% if is_granted('ROLE_SETTINGS') %}
-    <li>
-        <a href="{{ path('homepage-settings') }}"
-           class="menu menu_main menu_item_home_settings {% if homepage is defined %}{{ homepage }}{% endif %}">
-            <span class="menu_text">Homepage Settings</span>
-        </a>
-    </li>
-    {% endif %}
     {% if is_granted('ROLE_CAN_UPDATE') %}
     <li>
         <a href="{{ path('admin-services') }}"
@@ -40,25 +32,24 @@
     </li>
     {% endif %}
     {% if is_granted('ROLE_RESEARCH') %}
-    <li>
-        <a href="{{ path('research') }}"
+        <li>
+            <a href="{{ path('research-categories') }}"
+               class="menu menu_main menu_item_research {% if categoriesx is defined %}{{ categoriesx }}{% endif %}">
+                <span class="menu_text">Categories</span>
+            </a>
+        </li>
+        <li>
+        <a href="{{ path('research-pages') }}"
            class="menu menu_main menu_item_research {% if researchx is defined %}{{ researchx }}{% endif %}">
-            <span class="menu_text">Research</span>
-        </a>
-    </li>
-    {% endif %}
-    {% if is_granted('ROLE_CAN_MANAGE_USERS') %}
-    <li>
-        <a href="#" class="menu menu_main menu_item_users {% if usersx is defined %}{{ usersx }}{% endif %}">
-            <span class="menu_text">Users</span>
+            <span class="menu_text">Reports</span>
         </a>
     </li>
     {% endif %}
     {% if is_granted('ROLE_CORE') %}
     <li>
         <a href="{{ path('new-models') }}"
-           class="menu menu_main menu_item_new {% if new is defined %}{{ new }}{% endif %}">
-            <span class="menu_text">Models</span>
+           class="menu menu_main menu_item_users {% if new is defined %}{{ new }}{% endif %}">
+            <span class="menu_text">Administration</span>
         </a>
     </li>
     {% endif %}

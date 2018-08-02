@@ -20,7 +20,9 @@ class ServiceForm extends AbstractType
 
         $builder
             ->add('title')
-            ->add('tagline')
+            ->add('tagline',null,[
+                'label'=>'Intro'
+            ])
             ->add('subLine')
             ->add('sortOrder')
             ->add('content',TextareaType::class,[

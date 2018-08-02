@@ -1,0 +1,48 @@
+{% extends 'base.htm.twig' %}
+{% block title %}{{ report.title }}{% endblock %}
+  {% block breadcrumb %}
+      <li class="rsmItem sfBreadcrumbNavigation">
+          <div class="rsmTemplate">
+              <a id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i0_hypBreabcrumb" href="{{ path('homepage') }}">Home</a>
+
+          </div>
+          <span class="sfBreadcrumbNodeSeparator"></span></li>
+      <li class="rsmItem sfBreadcrumbNavigation">
+          <div class="rsmTemplate">
+              <a id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i0_hypBreabcrumb" href="{{ path('research') }}">Research</a>
+
+          </div>
+          <span class="sfBreadcrumbNodeSeparator"></span></li>
+      <li class="rsmItem sfBreadcrumbNavigation">
+          <div class="rsmTemplate">
+              <a id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i0_hypBreabcrumb" href="{{ path('reports', {'slug': slug }) }}">{{ category }}</a>
+
+          </div>
+          <span class="sfBreadcrumbNodeSeparator"></span></li>
+      <li class="rsmItem sfNoBreadcrumbNavigation select">
+          <div class="rsmTemplate">
+
+              <a id="ctl00_cphBreadCrumb_T84CFA523010_ctl00_ctl00_Breadcrumb_i1_hypBreabcrumb">{{ report.title }}</a>
+
+          </div>
+      </li>
+  {% endblock %}
+{% block banner %}{% endblock %}
+{% block body %}
+    <style>
+        .bread-crumb-control{
+            margin-top: 75px;
+        }
+    </style>
+    <h1>{{ report.title }}</h1>
+
+    <div class="sfContentBlock">
+        <div class="prominent-text">
+            {{ report.summary | raw }}<br/>
+            <a style="" href="{{ asset('images/products/') }}{{ report.imageName }}" class="btn btn-md pull-center green-theme-button">Download Report</a>
+        </div>
+
+
+    </div>
+
+{% endblock %}

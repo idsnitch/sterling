@@ -58,11 +58,7 @@
                     </a>
                 </div>
                 <style>
-                    .topnav {
-                        overflow: hidden;
-                        position: relative;
-                        max-height: 60px !important;
-                    }
+
 
                     .topnav a {
                         float: left;
@@ -163,46 +159,46 @@
                     }
                 </style>
                 <div class="navbar-collapse" id="navbar">
-                    <div class="topnav" id="myTopnav" style="top:60px">
+                    <div class="topnav" id="myTopnav" style="margin-top:30px">
                         <div class="dropdown {% if servicex is defined %}active{% endif %}">
-                            <button class="dropbtn">Services
+                            <button onclick="location.href = '{{ path('services') }}';" class="dropbtn">Services
                                 <i class="fa fa-caret-down"></i>
                             </button>
                             <div class="dropdown-content">
                                 <a href="/services/asset-management">Asset Management</a>
                                 <a href="/services/brokerage">Brokerage</a>
-                                <a href="/services/fundraising-for-business">Fundraising for Business</a>
+                                <a href="/services/fundraising-for-business">Fundraising for Businesses</a>
                                 <a href="/services/loans-for-shares">Loans for Shares</a>
                                 <a href="/services/research-and-advisory">Research & Advisory</a>
-                                <a class="last" href="/services/stock-exchange-listing">Stock Exchange Listing</a>
+                                <a class="last" href="/services/stock-exchange-listing">Stock Exchange Listings</a>
                             </div>
                         </div>
                         <div class="dropdown {% if clientsx is defined %}active{% endif %}">
-                            <button class="dropbtn">Clients
+                            <button onclick="location.href = '/clients';" class="dropbtn">Clients
                                 <i class="fa fa-caret-down"></i>
                             </button>
                             <div class="dropdown-content">
-                                <a href="/clients/high-income-individuals">High Income Individuals</a>
                                 <a href="/clients/foreign-institutions">Foreign Institutions</a>
                                 <a href="/clients/large-local-institutions">Large Local Institutions</a>
-                                <a href="/clients/middle-income-individuals">Middle Income Individuals</a>
                                 <a href="/clients/small-and-medium-enterprise">Small and Medium Enterprise</a>
                                 <a href="/clients/high-networth-individuals">Wealthy Individuals</a>
+                                <a href="/clients/high-income-individuals">High Income Individuals</a>
+                                <a href="/clients/middle-income-individuals">Middle Income Individuals</a>
                             </div>
                         </div>
 
                         <div class="dropdown {% if researchx is defined %}active{% endif %}">
-                            <button class="dropbtn">Research
+                            <button onclick="location.href = '{{ path('research') }}';" class="dropbtn">Research
                                 <i class="fa fa-caret-down"></i>
                             </button>
                             <div class="dropdown-content">
-                               <a href="#">Banking Stocks</a>
-                               <a href="#">Daily Market Wrap</a>
-                               <a href="#">Fixed Income</a>
-                               <a href="#">Morning Note</a>
-                               <a href="#">Real Estate</a>
-                               <a href="#">Telecom Stocks</a>
-                               <a href="#">Weekly Market Wrap</a>
+                                <a href="{{ path('reports', {'slug': 'morning-note'}) }}">Morning Note</a>
+                                <a href="{{ path('reports', {'slug': 'daily-market-wrap'}) }}">Daily Market Wrap</a>
+                                <a href="{{ path('reports', {'slug': 'weekly-market-wrap'}) }}">Weekly Market Wrap</a>
+                                <a href="{{ path('reports', {'slug': 'fixed-income'}) }}">Fixed Income</a>
+                                <a href="{{ path('reports', {'slug': 'telecom-stocks'}) }}">Telecom Stocks</a>
+                                <a href="{{ path('reports', {'slug': 'banking-stocks'}) }}">Banking Stocks</a>
+                               <a href="{{ path('reports', {'slug': 'real-estate'}) }}">Real Estate</a>
                             </div>
                         </div>
                         <a href="{{ path('contactsPage') }}">Contact</a>
@@ -220,10 +216,10 @@
                             <ul class="sub-nav">
                                 <li><a href="/services/asset-management">Asset Management</a></li>
                                 <li><a href="/services/brokerage">Brokerage</a></li>
-                                <li><a href="/services/fundraising-for-business">Fundraising for Business</a></li>
+                                <li><a href="/services/fundraising-for-business">Fundraising for Businesses</a></li>
                                 <li><a href="/services/loans-for-shares">Loans for Shares</a></li>
                                 <li><a href="/services/research-and-advisory">Research & Advisory</a></li>
-                                <li><a class="last" href="/services/stock-exchange-listing">Stock Exchange Listing</a></li>
+                                <li><a class="last" href="/services/stock-exchange-listing">Stock Exchange Listings</a></li>
                             </ul>
                         </li>
 
@@ -231,26 +227,25 @@
                             <a id="cphNavigation_T84CFA523002_rptTopNav_hypTopNav_1" href="#">Clients</a>
 
                             <ul class="sub-nav">
-                                <li><a href="/clients/high-income-individuals">High Income Individuals</a></li>
                                 <li><a href="/clients/foreign-institutions">Foreign Institutions</a></li>
                                 <li><a href="/clients/large-local-institutions">Large Local Institutions</a></li>
-                                <li><a href="/clients/middle-income-individuals">Middle Income Individuals</a></li>
                                 <li><a href="/clients/small-and-medium-enterprise">Small and Medium Enterprise</a></li>
                                 <li><a href="/clients/high-networth-individuals">Wealthy Individuals</a></li>
+                               <li><a href="/clients/high-income-individuals">High Income Individuals</a></li>
+                                <li><a href="/clients/middle-income-individuals">Middle Income Individuals</a></li>
 
                             </ul>
                         </li>
                         <li class="has-sub-nav {% if researchx is defined %}{{ researchx }}{% endif %}">
                             <a id="cphNavigation_T84CFA523002_rptTopNav_hypTopNav_1" href="{{ path('view-page', {'slug': 'research'}) }}">Research</a>
                             <ul class="sub-nav">
-                                <li><a href="#">Banking Stocks</a></li>
-                                <li><a href="#">Daily Market Wrap</a></li>
-                                <li><a href="#">Fixed Income</a></li>
-                                <li><a href="#">Morning Note</a></li>
-                                <li><a href="#">Real Estate</a></li>
-                                <li><a href="#">Telecom Stocks</a></li>
-                                <li><a href="#">Weekly Market Wrap</a></li>
-
+                                <li><a href="{{ path('reports', {'slug': 'morning-note'}) }}">Morning Note</a></li>
+                                <li><a href="{{ path('reports', {'slug': 'daily-market-wrap'}) }}">Daily Market Wrap</a></li>
+                                <li><a href="{{ path('reports', {'slug': 'weekly-market-note'}) }}">Weekly Market Wrap</a></li>
+                                <li><a href="{{ path('reports', {'slug': 'fixed-income'}) }}">Fixed Income</a></li>
+                                <li><a href="{{ path('reports', {'slug': 'banking-stocks'}) }}">Banking Stocks</a></li>
+                                <li><a href="{{ path('reports', {'slug': 'telecom-stocks'}) }}">Telecom Stocks</a></li>
+                                <li><a href="{{ path('reports', {'slug': 'real-estate'}) }}">Real Estate</a></li>
                             </ul>
 
                         </li>
@@ -298,8 +293,10 @@
     <i class="sprite-headline_gradient_navy"></i>
     <div class="blueBg">
         <p>Buy/Sell Shares online:</p>
-        <p><a href="" class="btn btn-md pull-center green-theme-button">Trade Now</a>
-            <a href="" class="btn btn-md pull-center green-theme-button">Register</a>
+        <p>
+            <a style="display:inline-block;width:100px;padding-left:15px" target="_blank" href="https://onlinetrading.nse.co.ke/TradeWeb105/" class="btn btn-md pull-center green-theme-button">Trade Now</a>
+            <a style="display:inline-block;width:100px" href="{{ path('view-page', {'slug': 'register-now'}) }}" class="btn btn-md pull-center green-theme-button">Register</a>
+
         </p>
     </div>
 </div>
@@ -420,20 +417,20 @@
         <!-- Right column -->
         <div class="col-lg-3 col-xs-12" id="tabbed-alignment">
 
-            <div class="loginRegister rightside">
+            <div class="loginRegister quicklinksbox rightside">
                 <span class="rtsTxt">Trade in real time</span>
                 <i class="sprite-headline_gradient_navy"></i>
                 <div class="blueBg">
                     <p>Buy/Sell Shares online:</p>
                     <p>
-                        <a href="" class="btn btn-md pull-center green-theme-button">Trade Now</a>
-                        <a href="" class="btn btn-md pull-center green-theme-button">Register</a>
+                        <a target="_blank" style="display:inline-block;width:100px;padding-left:15px" href="https://onlinetrading.nse.co.ke/TradeWeb105/" class="btn btn-md pull-center green-theme-button">Trade Now</a>
+                        <a style="display:inline-block;width:100px" href="{{ path('view-page', {'slug': 'register-now'}) }}" class="btn btn-md pull-center green-theme-button">Register</a>
 
                     </p>
                 </div>
             </div>
 
-            <div class="loginRegister rightside">
+            <div class="loginRegister quicklinksbox rightside">
                 <span class="rtsTxt">Loans for Shares</span>
                 <i class="sprite-headline_gradient_navy"></i>
                 <div class="blueBg">

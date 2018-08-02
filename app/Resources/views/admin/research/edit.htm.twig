@@ -87,7 +87,7 @@
                 {{ form_start(form,{'attr':{'id':'newForm'}}) }}
                 <h2>Basic Details</h2>
 
-                <div style="height:90px">
+                <div style="height:170px">
                     <div class="column">
                         <div class="form-row">
                             <div class="form-widget">
@@ -119,11 +119,20 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    <h2>Content</h2>
+                    <div class="form-row">
+                        <div class="form-widget">
+                            {{ form_row(form.summary, { 'attr': {'id': 'login_form_credentials_username','class':'tinymce'} }) }}
+                        </div>
+                        <div class="form-errors"></div>
+                    </div>
+                </div>
                 <div class="button-row">
                     <input id="login_form__submit" type="submit" value="Save and Close">
                     <input id="new" type="submit" value="Save and New">
 
-                    <a href="{{ path('research') }}" id="restore">
+                    <a href="{{ path('research-pages') }}" id="restore">
                         Cancel </a>
                 </div>
                 {{ form_end(form) }}
@@ -136,6 +145,7 @@
     <aside class="">
         <i class="fa fa-question-circle help-icon"></i>
         <p>ALL the fields marked (*) are required.</p>
+        <p>The Summary is not required for the Morning Note.</p>
         </aside>
 
 

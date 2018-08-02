@@ -44,7 +44,7 @@ class Scheme
      */
     private $summary = "";
     /**
-     * @ORM\Column(type="string",nullable=true)
+     * @ORM\Column(type="text",nullable=true)
      */
     private $services;
     /**
@@ -67,10 +67,6 @@ class Scheme
      * @ORM\Column(type="datetime")
      */
     private $modifiedAt;
-    /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ServiceScheme",mappedBy="scheme",fetch="EXTRA_LAZY")
-     */
-    private $myServiceSchemes;
     /**
      * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName", size="imageSize")
      * @var File

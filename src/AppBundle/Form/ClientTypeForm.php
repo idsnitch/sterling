@@ -22,8 +22,7 @@ class ClientTypeForm extends AbstractType
                 'attr'=>[
                     'id'=>'tinymce'
                 ],
-                'required'=>true,
-                'label'=>'Clients'
+                'required'=>false
             ])
             ->add('imageFile',VichFileType::class,[
                 'label'=>false,

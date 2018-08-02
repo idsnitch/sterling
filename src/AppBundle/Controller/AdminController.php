@@ -8,6 +8,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Category;
 use AppBundle\Entity\NextOfKin;
 use AppBundle\Entity\Artist;
 use AppBundle\Entity\Page;
@@ -20,6 +21,7 @@ use AppBundle\Entity\ServiceScheme;
 use AppBundle\Entity\ServiceSettings;
 use AppBundle\Entity\SubPage;
 use AppBundle\Entity\User;
+use AppBundle\Form\CategoryForm;
 use AppBundle\Form\ClientTypeForm;
 use AppBundle\Form\HomeSettingsForm;
 use AppBundle\Form\NewAdministratorForm;
@@ -107,7 +109,7 @@ class AdminController extends Controller
             $em->persist($pro);
             $em->flush();
 
-            return $this->redirectToRoute('research');
+            return $this->redirectToRoute('research-pages');
         }
         return $this->render(':admin/research:edit.htm.twig',[
             'form'=>$form->createView()
@@ -115,7 +117,7 @@ class AdminController extends Controller
     }
 
     /**
-     * @Route("/research",name="research")
+     * @Route("/reports",name="research-pages")
      */
     public function researchListAction(Request $request){
         $em = $this->getDoctrine()->getManager();
@@ -131,6 +133,105 @@ class AdminController extends Controller
             'researchx'=>'Active'
         ]);
     }
+    /**
+     * @Route("/research/categories",name="research-categories")
+     */
+    public function researchCategoriesListAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $categories = $em->getRepository("AppBundle:Category")
+            ->findBy([
+
+            ],
+                [
+                    'createdAt'=>'Desc'
+                ]);
+        return $this->render(":admin/category:list.htm.twig",[
+            'categories'=>$categories,
+            'categoriesx'=>'active'
+        ]);
+    }
+    /**
+     * @Route("/research/category/new",name="new-category")
+     */
+    public function newCategoryAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $admin = $this->get('security.token_storage')->getToken()->getUser();
+
+        $category = new Category();
+        $category->setCreatedAt(new \DateTime());
+        $category->setCreatedBy($admin);
+        $category->setUpdatedAt(new \DateTime());
+        $category->setUpdatedBy($admin);
+
+        $form = $this->createForm(CategoryForm::class,$category);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&&$form->isValid()){
+            $pro = $form->getData();
+            $em->persist($pro);
+            $em->flush();
+
+            return $this->redirectToRoute('research-categories');
+        }
+        return $this->render(':admin/category:new.htm.twig',[
+            'form'=>$form->createView()
+        ]);
+    }
+    /**
+     * @Route("/research/category/form",name="new-category-form")
+     */
+    public function newCategoryFormAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $admin = $this->get('security.token_storage')->getToken()->getUser();
+
+        $category = new Category();
+        $category->setCreatedAt(new \DateTime());
+        $category->setCreatedBy($admin);
+        $category->setUpdatedAt(new \DateTime());
+        $category->setUpdatedBy($admin);
+
+        $form = $this->createForm(CategoryForm::class,$category);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&&$form->isValid()){
+            $pro = $form->getData();
+            $em->persist($pro);
+            $em->flush();
+
+            return $this->redirectToRoute('research-categories');
+        }
+        return $this->render(':admin/category:newForm.htm.twig',[
+            'form'=>$form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/research/categories/{id}/edit",name="update-category")
+     */
+    public function updateCategoryAction(Request $request, Category $category){
+        $em = $this->getDoctrine()->getManager();
+        $admin = $this->get('security.token_storage')->getToken()->getUser();
+
+        $form = $this->createForm(CategoryForm::class,$category);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&&$form->isValid()){
+            $pro = $form->getData();
+            $em->persist($pro);
+            $em->flush();
+
+            return $this->redirectToRoute('research-categories');
+        }
+        return $this->render(':admin/category:edit.htm.twig',[
+            'form'=>$form->createView()
+        ]);
+    }
+
     /**
      * @Route("/report/form",name="new-reportform")
      */
@@ -181,7 +282,19 @@ class AdminController extends Controller
      * @Route("/homepage-settings/{id}/edit",name="update-homepage-settings")
      */
     public function editHomepageSettingAction(Request $request,ServiceSettings $settings){
+        $form = $this->createForm(ServiceForm::class,$settings);
+        $form->handleRequest($request);
 
+        if ($form->isSubmitted()&&$form->isValid()){
+            $pro = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($pro);
+            $em->flush();
+            return $this->redirectToRoute('admin-services');
+        }
+        return $this->render('admin/services/edit.htm.twig',[
+            'form'=>$form->createView()
+        ]);
     }
     /**
      * @Route("/services",name="admin-services")
@@ -252,7 +365,7 @@ class AdminController extends Controller
     public function clientsAction(Request $request){
         $schemesx = "active";
         $em = $this->getDoctrine()->getManager();
-        $schemes = $em->getRepository("AppBundle:ServiceScheme")
+        $schemes = $em->getRepository("AppBundle:Scheme")
             ->findAll();
         return $this->render('admin/clients/list.htm.twig',[
             'schemes'=>$schemes,

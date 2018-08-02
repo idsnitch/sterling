@@ -36,33 +36,12 @@
         <img style="width:100%" src="{{ asset('images/products/') }}{{ scheme.imageName }}"/><br/><br/>
 
         <div class="prominent-text">
-            {{ scheme.summary }}</div>
-
-
-    </div>
-
-    <div class="sfNavWrp sfNavHorizontalWrp ">
-
-        <div class="portal">
-            {% for scheme in scheme.myServiceSchemes %}
-
-                <a href="{{ path('service', {'slug': scheme.service.slug}) }}"
-                   class="">
-                    <div class="portal-item col-sm-6">
-                        <div class="portal-item-border border-none">
-
-                            <div class="description" style="min-height: 0px; max-height: none;">
-                                <h2 class="portal-title-size">{{ scheme.service.title }}</h2>
-                                <p>{{ scheme.service.content | raw }}</p>
-                            </div>
-
-                        </div>
-                        <div class="drop-shadow"></div>
-
-                    </div>
-                </a>
-            {% endfor %}
+            {{ scheme.summary | raw }}<br/>
+            {{ scheme.services | raw }}
         </div>
+
+
     </div>
+
 
 {% endblock %}
